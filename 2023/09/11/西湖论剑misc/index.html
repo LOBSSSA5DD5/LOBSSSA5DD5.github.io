@@ -163,7 +163,51 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <p><strong>mp3</strong></p>
+<p>binwalk 文件</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911161154148.png" alt="image-20230911161154148"></p>
+<p>发现里面音频文件里面藏在一张PNG格式图片</p>
+<p>foremost 文件得到图片</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911161314521.png" alt="image-20230911161314521"></p>
+<p>zsteg一把梭发现图片里面藏着压缩包</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911161417710.png" alt="image-20230911161417710"></p>
+<p>zsteg -e  b1,r,lsb,xy 00000646.png &gt; 00000646.zip 得到压缩包</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911161554395.png" alt="image-20230911161554395"></p>
+<p>打开压缩包文本发现压缩包损坏</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911162551069.png" alt="image-20230911162551069"></p>
+<p>修复压缩包</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911162619898.png" alt="image-20230911162619898"></p>
+<p>重新打开发现需要密码</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911162654902.png" alt="image-20230911162654902"></p>
+<p>mp3stego解密(音频隐写)</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911163242735.png" alt="image-20230911163242735"></p>
+<p>这个就是压缩包密码，解压压缩包打开文本</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911163343323.png" alt="image-20230911163343323"></p>
+<p>rot47解密</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911163453603.png" alt="image-20230911163453603"></p>
+<p>控制台解码得到flag</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911163526040.png" alt="image-20230911163526040"></p>
+<h4 id="take-the-zip-easy"><a href="#take-the-zip-easy" class="headerlink" title="take_the_zip_easy"></a>take_the_zip_easy</h4><p>7z查看算法</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911174107493.png" alt="image-20230911174107493"></p>
+<p>发现两个算法不一样，考虑明文攻击</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911181712349.png" alt="image-20230911181712349"></p>
+<p>获取密钥</p>
+<p>爆破出压缩包</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911191257918.png" alt="image-20230911191257918"></p>
+<p>打开wireshark导出对象</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911192205389.png" alt="image-20230911192205389"></p>
+<p>发现flag.zip</p>
+<p>保存并打开发现需要密码</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911192258441.png" alt="image-20230911192258441"></p>
+<p>打开文件追踪到关键部分，这是哥斯拉流量加密</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911191449788.png" alt="image-20230911191449788"></p>
+<p>解密</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911191849615.png" alt="image-20230911191849615"></p>
+<p>运行结果得到压缩包密码</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911191919895.png" alt="image-20230911191919895"></p>
+<p>打开压缩包获得flag</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911192412312.png" alt="image-20230911192412312"></p>
+
     </div>
     
     
