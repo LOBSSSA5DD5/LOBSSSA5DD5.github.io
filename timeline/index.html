@@ -3,8 +3,8 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>timeline | Hexo</title>
-        <meta name="author" content="John Doe" />
+        <title>timeline | 一清的博客</title>
+        <meta name="author" content="一清" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -35,6 +35,8 @@
 
 
 
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+
 
 
 <link rel="stylesheet" href="/css/main.css" />
@@ -54,7 +56,7 @@
             <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>HEXO</span>
+            <span>一清的博客</span>
         </a>
         
         <a href="/">
@@ -68,7 +70,7 @@
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <i class="fa-solid fa-类别 fa-fw"></i>
             <span>&ensp;Archives</span>
         </a>
         
@@ -78,7 +80,7 @@
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
+            <i class="fa-solid fa-标签 fa-fw"></i>
             <span>&ensp;Tags</span>
         </a>
         
@@ -86,7 +88,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
+            <span>&emsp;一清的博客</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -112,7 +114,7 @@
                 <a href="/archives">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                            <i class="fa-solid fa-类别 fa-fw"></i>
                         </div>
                         <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
                     </div>
@@ -130,7 +132,7 @@
                 <a href="/tags">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
+                            <i class="fa-solid fa-标签 fa-fw"></i>
                         </div>
                         <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
                     </div>
@@ -169,6 +171,10 @@
     
     
     
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -176,11 +182,11 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 Hexo
+            2022 - 2023 一清的博客
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;John Doe
+            &commat;一清
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
@@ -204,6 +210,16 @@
         
 
 
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
 
 
         
