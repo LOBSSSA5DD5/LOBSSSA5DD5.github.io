@@ -166,40 +166,39 @@
         <p>misc第一题：ai和nia的交响曲</p>
 <p><img src="https://s1.ax1x.com/2023/09/11/pPgA6wd.png" alt="image-20230911090719755"></p>
 <p>遇到流量包分析首先看看导出http对象有什么发现没有</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911090838513.png" alt="image-20230911090838513"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgAyeH.png" alt="image-20230911090838513"></p>
 <p>发现里面藏有一个flag2.zip</p>
 <p>保存到桌面并打开，发现有密码</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091016345.png" alt="image-20230911091016345"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgADyD.png" alt="image-20230911091016345"></p>
 <p>将压缩包放进010查看判断是伪加密</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091139506.png" alt="image-20230911091139506"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgArOe.png" alt="image-20230911091139506"></p>
 <p>将09改为00</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091238502.png" alt="image-20230911091238502"></p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091240406.png" alt="image-20230911091240406"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgABQO.png" alt="image-20230911091238502"></p>
 <p>保存并打开压缩包</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091324777.png" alt="image-20230911091324777"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgAIOg.png" alt="image-20230911091324777"></p>
 <p>0宽解密</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091514283.png" alt="image-20230911091514283"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgA2FI.png" alt="image-20230911091514283"></p>
 <p>提示我们先去找flag1，返回流量包分析</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091817552.png" alt="image-20230911091817552"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgARYt.png" alt="image-20230911091817552"></p>
 <p>发现flag1居然是一张PNG格式的图片保存原始数据</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911091934876.png" alt="image-20230911091934876"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgAWfP.png" alt="image-20230911091934876"></p>
 <p>根据PNG文件头:89504E47找开头，以C53F0E为结尾部分保存到txt中</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911092158997.png" alt="image-20230911092158997"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgAhSf.png" alt="image-20230911092158997"></p>
 <p>010导入16进制文本</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911092256396.png" alt="image-20230911092256396"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgA4l8.png" alt="image-20230911092256396"></p>
 <p>保存到桌面浏览图片</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911092640098.png" alt="image-20230911092640098"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgA56S.png" alt="image-20230911092640098"></p>
 <p>图片转二进制</p>
 <p>from PIL import Image</p>
 <p>im&#x3D;Image.open(‘1.png’)<br>pix&#x3D;im.load()<br>width&#x3D;im.size[0]<br>height&#x3D;im.size[1]<br>for x in range(width):<br>    for y in range(height):<br>        r,g,b&#x3D;pix[x,y]<br>        print(r,g,b)</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911093156682.png" alt="image-20230911093156682"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgAHTs.png" alt="image-20230911093156682"></p>
 <p>二进制转字符串</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911093447272.png" alt="image-20230911093447272"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgATmQ.png" alt="image-20230911093447272"></p>
 <p>得到了一个提示和部分flag</p>
 <p>提示很明显哔哩哔哩号</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911093742004.png" alt="image-20230911093742004"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgA7wj.png" alt="image-20230911093742004"></p>
 <p>题目提示说flag2.txt每行数字可能需要自行加一，最后是一串拼音</p>
-<p><img src="F:\blog\blog\羊城杯ai\image-20230911093935871.png" alt="image-20230911093935871"></p>
+<p><img src="https://s1.ax1x.com/2023/09/11/pPgAcTA.png" alt="image-20230911093935871"></p>
 <p>这个就是对应bilibili视频的时间帧拼出CAOCAOGAIFAN</p>
 <p>加上之前部分的flag完整的就应该是flag{@i_n1a_l0v3S_CAOCAOGAIFAN}</p>
 
