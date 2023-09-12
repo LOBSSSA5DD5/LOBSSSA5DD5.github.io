@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | 一清的博客</title>
+        <title>极客巅峰2019misc | 一清的博客</title>
         <meta name="author" content="一清" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -30,6 +30,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
 
 
 
@@ -141,68 +147,71 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+                <div class="article">
+    <div>
+        <h1>极客巅峰2019misc</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/12
+        </span>
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/11</div>
-                <a href="/2023/09/11/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="羊城杯misc">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/11</div>
-                <a href="/2023/09/11/%E7%BE%8A%E5%9F%8E%E6%9D%AFmisc/">
-                    <h3>羊城杯misc</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="西湖论剑misc">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/11</div>
-                <a href="/2023/09/11/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91misc/">
-                    <h3>西湖论剑misc</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="极客巅峰2019misc">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/9/12</div>
-                <a href="/2023/09/12/dier/">
-                    <h3>极客巅峰2019misc</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>题目描述：</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912103319149.56wcvarfdg00.webp" alt="image-20230912103319149"></p>
+<p>题目附件给了一张PNG格式的图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912103934946.1o8vsrhmjgu8.webp" alt="image-20230912103934946"></p>
+<p>010查看发现藏着flag.xml（word文件）以及压缩包</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912104023645.89rsanrt7oo.webp" alt="image-20230912104023645"></p>
+<p>foremost 提取出文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912104429505.5g3amblv8i80.webp" alt="image-20230912104429505"></p>
+<p>打开压缩包发现有密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912104527126.4uz5i57k6fc0.webp" alt="image-20230912104527126"></p>
+<p>只能从word文档入手了打开word发现是base编码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912105537217.62ztz0j0mi80.webp" alt="image-20230912105537217"></p>
+<p>使用base隐写工具解出字符串</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912105615608.5t78dxmvgqo0.webp" alt="image-20230912105615608"></p>
+<p>盲猜是压缩包密码，使用此密码解压压缩包并打开</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912105825777.717f4r9qvyo0.webp" alt="image-20230912105825777"></p>
+<p>发现文件一打开闪退,试一试pyc隐写（stegosaurus）友情提示：此工具仅支持python3.6以下</p>
+<p>这里翻车了好几次</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912124137119.4i2zro676yg0.webp" alt="image-20230912124137119"></p>
+<p>获得第一部分flag</p>
+<p>第二部分估计在之前发现的flag.xml中，将flag.xml分离出来</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912124444475.6rx8eminyu40.webp" alt="image-20230912124444475"></p>
+<p>将文件打开发现什么都没有</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912124808258.21d7qt9igusg.webp" alt="image-20230912124808258"></p>
+<p>ctrl+a全选会发现有东西并将其复制到submit</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125119552.4uczy1ha06g0.webp" alt="image-20230912125119552"></p>
+<p>看起来像摩斯密码试一试解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125447288.6snmdxisgog0.webp" alt="image-20230912125447288"></p>
+<p>发现不是摩斯密码</p>
+<p>试一试点为0，横杠为1二进制数</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125712953.44sy8a2reiw0.webp" alt="image-20230912125712953"></p>
+<p>01100110011011000110000101100111011110110011001000111000001100000011011000110001001100000011010101100110001011010110010101100011001101000011001100101101</p>
+<p>二进制转字符串</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125842929.33s544j324q0.webp" alt="image-20230912125842929"></p>
+<p>获得第二部分flag</p>
+<p>所以完整flag为flag{2806105f-ec43-57f3-8cb4-1add2793f508}</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
+    
 </div>
 
                 <footer id="footer">
@@ -233,6 +242,22 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
         
     </body>
 </html>

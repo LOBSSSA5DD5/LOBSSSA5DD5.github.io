@@ -164,6 +164,72 @@
         
 
 <div class="post">
+    <a href="/2023/09/12/dier/">
+        <h2 class="post-title">极客巅峰2019misc</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目描述：</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912103319149.56wcvarfdg00.webp" alt="image-20230912103319149"></p>
+<p>题目附件给了一张PNG格式的图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912103934946.1o8vsrhmjgu8.webp" alt="image-20230912103934946"></p>
+<p>010查看发现藏着flag.xml（word文件）以及压缩包</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912104023645.89rsanrt7oo.webp" alt="image-20230912104023645"></p>
+<p>foremost 提取出文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912104429505.5g3amblv8i80.webp" alt="image-20230912104429505"></p>
+<p>打开压缩包发现有密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912104527126.4uz5i57k6fc0.webp" alt="image-20230912104527126"></p>
+<p>只能从word文档入手了打开word发现是base编码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912105537217.62ztz0j0mi80.webp" alt="image-20230912105537217"></p>
+<p>使用base隐写工具解出字符串</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912105615608.5t78dxmvgqo0.webp" alt="image-20230912105615608"></p>
+<p>盲猜是压缩包密码，使用此密码解压压缩包并打开</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912105825777.717f4r9qvyo0.webp" alt="image-20230912105825777"></p>
+<p>发现文件一打开闪退,试一试pyc隐写（stegosaurus）友情提示：此工具仅支持python3.6以下</p>
+<p>这里翻车了好几次</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912124137119.4i2zro676yg0.webp" alt="image-20230912124137119"></p>
+<p>获得第一部分flag</p>
+<p>第二部分估计在之前发现的flag.xml中，将flag.xml分离出来</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912124444475.6rx8eminyu40.webp" alt="image-20230912124444475"></p>
+<p>将文件打开发现什么都没有</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912124808258.21d7qt9igusg.webp" alt="image-20230912124808258"></p>
+<p>ctrl+a全选会发现有东西并将其复制到submit</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125119552.4uczy1ha06g0.webp" alt="image-20230912125119552"></p>
+<p>看起来像摩斯密码试一试解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125447288.6snmdxisgog0.webp" alt="image-20230912125447288"></p>
+<p>发现不是摩斯密码</p>
+<p>试一试点为0，横杠为1二进制数</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125712953.44sy8a2reiw0.webp" alt="image-20230912125712953"></p>
+<p>01100110011011000110000101100111011110110011001000111000001100000011011000110001001100000011010101100110001011010110010101100011001101000011001100101101</p>
+<p>二进制转字符串</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912125842929.33s544j324q0.webp" alt="image-20230912125842929"></p>
+<p>获得第二部分flag</p>
+<p>所以完整flag为flag{2806105f-ec43-57f3-8cb4-1add2793f508}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/09/12/dier/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/09/11/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91misc/">
         <h2 class="post-title">西湖论剑misc</h2>
     </a>
@@ -216,7 +282,7 @@
 <p><img src="https://s1.ax1x.com/2023/09/11/pPgdab4.png" alt="image-20230911192205389"></p>
 <p>发现flag.zip</p>
 <p>保存并打开发现需要密码</p>
-<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911192258441.png" alt="image-20230911192258441"></p>
+<p><img src="https://s1.ax1x.com/2023/09/12/pPgWzBn.png" alt="image-20230911192258441"></p>
 <p>打开文件追踪到关键部分，这是哥斯拉流量加密</p>
 <p><img src="https://s1.ax1x.com/2023/09/11/pPgdYvT.png" alt="image-20230911191449788"></p>
 <p>解密</p>
@@ -224,7 +290,7 @@
 <p>运行结果得到压缩包密码</p>
 <p><img src="https://s1.ax1x.com/2023/09/11/pPgdUrF.png" alt="image-20230911191919895"></p>
 <p>打开压缩包获得flag</p>
-<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230911192412312.png" alt="image-20230911192412312"></p>
+<p><img src="https://s1.ax1x.com/2023/09/12/pPgWXcQ.png" alt="image-20230911192412312"></p>
 
             
         </div>
