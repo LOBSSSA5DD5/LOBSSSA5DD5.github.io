@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>陕西大学生ctf2023 | 一清的博客</title>
+        <meta name="author" content="一清" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/avatar.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>一清的博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-类别 fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-标签 fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;一清的博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-类别 fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-标签 fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>陕西大学生ctf2023</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/12
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>云樱</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912191857410.12vhhb3avti8.webp" alt="image-20230912191857410"></p>
+<p>附件</p>
+<p>看题目名以及文件名都是云樱，盲猜谐音云影解密</p>
+<p>脚本：</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912192111532.3l4spu8be0y0.webp" alt="image-20230912192111532"></p>
+<p>解得出YUNYINGISEASY</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912192258294.19zz6v2xuch.webp" alt="image-20230912192258294"></p>
+<p>md5加密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912192436469.r754zty288g.webp" alt="image-20230912192436469"></p>
+<p>所以flag{9edabf1448871181eb0e7133b5b3d701}</p>
+<p>hack_dns</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912200114696.6kie9afa09s0.webp" alt="image-20230912200114696"></p>
+<p>附件解压需要密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912200801486.13ucb0n2wp40.webp" alt="image-20230912200801486"></p>
+<p>arch爆破密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912201100477.1g35y2pjrz9c.webp" alt="image-20230912201100477"></p>
+<p>打开wireshark</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912201302157.38pvb03el3e0.webp" alt="image-20230912201302157"></p>
+<p>过滤dns，发现test.com前面有字符，打印hex值转字符</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912201841124.1z0txlni5y68.webp" alt="image-20230912201841124"></p>
+<p>将key图片放到010，划到最后发现base编码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912202005098.184ty34v7nxc.webp" alt="image-20230912202005098"></p>
+<p>base64解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912202233400.v5mbq29x9ao.webp" alt="image-20230912202233400"></p>
+<p>获得一半key2，另一半右击图片查看属性</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912202337490.1xovnuje0csg.webp" alt="image-20230912202337490"></p>
+<p>发现是韩语，韩语解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912202824607.227xoxijhozk.webp" alt="image-20230912202824607"></p>
+<p>拿到剩下的key1</p>
+<p>维吉尼亚解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912203151724.38mmbw6r77e0.webp" alt="image-20230912203151724"></p>
+<h4 id="Eradicate-Moriarty"><a href="#Eradicate-Moriarty" class="headerlink" title="Eradicate_Moriarty"></a>Eradicate_Moriarty</h4><p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912203520163.7g67r49vy2o0.webp" alt="image-20230912203520163"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912203955672.14serup4vc80.webp" alt="image-20230912203955672"></p>
+<p>附件压缩包发现打不开</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912204305714.3znn3hgyna80.webp" alt="image-20230912204305714"></p>
+<p>先看看word文档</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912204327219.4etbuhzwo3k0.webp" alt="image-20230912204327219"></p>
+<p>一眼跳舞的小人</p>
+<p>对照图</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912204742464.5vfdry1snrc0.webp" alt="image-20230912204742464"></p>
+<p>ORUPELKCB</p>
+<p>移花接木（列位移解密）cap为密钥 在线解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912210417618.6fopeeapy1c0.webp" alt="image-20230912210417618"></p>
+<p>获得压缩包密码解压压缩包,发现打开lock2.zip发现有密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912210523099.5e24wkrm3t80.webp" alt="image-20230912210523099"></p>
+<p>打开图片放入010查看发现藏有pdf文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912210654716.367dq0dlxjy0.webp" alt="image-20230912210654716"></p>
+<p>复制代码导入新建文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912210814521.axvf0su2d8s.webp" alt="image-20230912210814521"></p>
+<p>保存并打开pdf</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912211041992.65fuxrvaj4o0.webp" alt="image-20230912211041992"></p>
+<p>移开图片，获得key2</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912211123488.174av0nx3kqo.webp" alt="image-20230912211123488"></p>
+<p>pdf隐写（websteg）</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912212851672.t2l9ee10dpc.webp" alt="image-20230912212851672"></p>
+<p>打开key.txt获得key3</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912212937847.3ev497l8zx00.webp" alt="image-20230912212937847"></p>
+<p>修改图片宽高</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912223851704.2r1oyzunz9y0.webp" alt="image-20230912223851704"></p>
+<p>保存并打开获得key1</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912223917560.6jbrefvw0q80.webp" alt="image-20230912223917560"></p>
+<p>key1+key2+key3&#x3D;a1532v5f256b压缩包密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912224345238.jb2o0srz9zc.webp" alt="image-20230912224345238"></p>
+<p>明文攻击</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912224345238.jb2o0srz9zc.webp" alt="image-20230912224659540"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912224659540.6gl6wolgrvs.webp" alt="image-20230913112342544"></p>
+<p>发现两个readme文件算法crc都一样直接明文破解，将第二个readme提取出来添加zip压缩包格式</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230912201100477.3m39d4197li0.webp" alt="image-20230913112528805"></p>
+<p>爆破出密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913112559463.6llz88xhrug0.webp" alt="image-20230913112559463"></p>
+<p>解压压缩包lock2</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913112731376.2ijgxx36jia0.webp" alt="image-20230913112731376"></p>
+<p>打开文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913112833331.4j4b7m69t5w0.webp" alt="image-20230913112833331"></p>
+<p>一眼十二宫杀手密码（之前在犯罪大师app见过）</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913113127530.5kp3wguh4b40.webp" alt="image-20230913113127530"></p>
+<p>第一行是PASSWORD</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913113443663.1g7ato1o3ops.webp" alt="image-20230913113428781"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913113428781.6gk7pe04o980.webp" alt="image-20230913113443663"></p>
+<p>第二行是IS</p>
+<p>第三行是??RIAR?Y</p>
+<p>对应题目</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913125420413.4rwrw2cbkay0.webp" alt="image-20230913125420413"></p>
+<p>所以是MORlARTY</p>
+<p>试一试解压lock3压缩包发现不行，肯定没这么简单。打开另一个文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913125942964.66m02kq3zes0.webp" alt="image-20230913125942964"></p>
+<p>ctrl+a全选发现有东西</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913130157807.46yu39y6cqk0.webp" alt="image-20230913130157807"></p>
+<p>snow隐写 密码：MORIARTY</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913130553447.50dbns6ml940.webp" alt="image-20230913130553447"></p>
+<p>获得压缩包密码，打开ppt文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913130859175.3a3w0jvl7dk0.webp" alt="image-20230913130859175"></p>
+<p>发现上面有东西</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913130919730.5m5alf8f3980.webp" alt="image-20230913130919730"></p>
+<p>字体颜色加深获得flag</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230913131035461.1xtzzj8o580w.webp" alt="image-20230913131035461"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 一清的博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;一清
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "",
+        region: "",
+        path: location.pathname,
+        lang: "",
+    })
+</script>
+
+
+        
+    </body>
+</html>
