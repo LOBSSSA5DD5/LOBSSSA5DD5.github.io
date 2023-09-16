@@ -164,6 +164,278 @@
         
 
 <div class="post">
+    <a href="/2023/09/16/%E7%BE%8A%E5%9F%8E%E6%9D%AF2022misc/">
+        <h2 class="post-title">羊城杯2022misc</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/16
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>寻宝</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230915204030683.27wg1jxap09w.webp" alt="image-20230915204030683"></p>
+<p>010查看文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230915210517260.3rdvwtdwps80.webp" alt="image-20230915210517260"></p>
+<p>发现文件按zip字节倒转了，脚本换回来</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230915211456408.2nj9klez8t40.webp" alt="image-20230915211456408"></p>
+<p>压缩包内容</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916123244582.5zcv9wx4xfs.webp" alt="image-20230916123244582"></p>
+<p>flag.zip 有密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916123326119.4hit3rcenm20.webp" alt="image-20230916123326119"></p>
+<p>先看文本文件，发现是小游戏介绍说明</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916123431100.6g7lze95ets0.webp" alt="image-20230916123431100"></p>
+<p>剩下那个可执行文件是个小游戏</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916123529121.53ccr5do4iw0.webp" alt="image-20230916123529121"></p>
+<p>三条生命通关不现实，使用CE修改器修改生命值打通关</p>
+<p>在刚开始游戏时，马上输入3并且扫描。然后马上输入2，但此时先别再次扫描。<br>在第一次死亡后马上按再次扫秒，可能扫到两三地址。这个时候选个最有把握的改。</p>
+<p><img src="F:\yc2022\WS]~U}@5FIN7A0PC2V6T`WP.jpg" alt="img"></p>
+<p>双击第一个地址，修改值</p>
+<p><img src="F:\yc2022\image-20230916130012487.png" alt="image-20230916130012487"></p>
+<p>发现生命值13333，剩下就通关可以</p>
+<p>前四个地图</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916123529121.4356leqrxrg0.webp" alt="img"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916132415588.40ukl5ybbug0.webp" alt="image-20230916132415588"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916123529121.6ehkti7ipi80.webp" alt="img"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916132447851.17dnlwrtar7g.webp" alt="image-20230916132447851"></p>
+<p>发现是变异猪圈密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916133032658.5cxdeb5m6tk0.webp" alt="image-20230916133032658"></p>
+<p>对照得OWOH，获得第一部分压缩包密码</p>
+<p>这道题给了hint得知</p>
+<p>1.在游戏声音中间掺杂琴声</p>
+<p>2.密码三部分组成</p>
+<p>3.地形为重要因素</p>
+<p>5-20关地图</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134005020.6qya1b7c7ik0.webp" alt="image-20230916134005020"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134026345.2c2st12z6ftw.webp" alt="image-20230916134026345"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134039943.z11mke6kr0g.webp" alt="image-20230916134039943"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134052064.1i2gb8xdn77k.webp" alt="image-20230916134052064"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134105004.6hbl4si7i380.webp" alt="image-20230916134105004"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134112528.3jddxf7giu80.webp" alt="image-20230916134112528"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134120328.1ied7z94e96o.webp" alt="image-20230916134120328"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134129796.6s5b2lhm7tc0.webp" alt="image-20230916134129796"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134140536.3i8wtb5gazq.webp" alt="image-20230916134140536"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134149001.324dh973phs0.webp" alt="image-20230916134149001"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134205939.7io42gi71ds0.webp" alt="image-20230916134205939"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134213996.4wnwl4922k80.webp" alt="image-20230916134213996"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134225593.6ubvquvorjk0.webp" alt="image-20230916134225593"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134233774.6ctijsw86t00.webp" alt="image-20230916134233774"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134250616.262o6iafhusg.webp" alt="image-20230916134250616"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134317497.7awytyaudso0.webp" alt="image-20230916134317497"></p>
+<p>将5-20地形画在纸上找规律</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916134934459.7978aw2cnjk0.webp" alt="image-20230916134934459"></p>
+<p>整个图形变化都是有高低起伏，是差分曼切斯特编码</p>
+<p>差分曼切斯特：</p>
+<p>差分曼切斯特编码遇到0则在起始位置处跳变，1则不变化。 因此，对于010，它将在第一个时钟周期的起始位置处跳变为0，第二个时钟周期保持不变，第三个时钟周期再次跳变为0。</p>
+<p>还是不太懂：</p>
+<p>简单记忆法：</p>
+<p>第一位是1：</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916142758869.1om9vn1aq7cw.webp" alt="image-20230916142758869"></p>
+<p>第一位是0：</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916142817655.hu75szl8tzk.webp" alt="image-20230916142817655"></p>
+<p>其余位：</p>
+<p>(1).如果是1</p>
+<p>就取相反</p>
+<p>(2).如果是零</p>
+<p>直接复制</p>
+<p>以一个例题为例</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916144009320.4rkkcic7vxq0.webp" alt="image-20230916144009320"></p>
+<p>所以5-20地图的差分曼切斯特码转换后为01011111011000010011000101011111</p>
+<p>二进制转字符串</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916144253559.4r6kzzcf6xo0.webp" alt="image-20230916144253559"></p>
+<p>获得第二部分压缩包密码</p>
+<p>根据hint：在游戏声音中间掺杂琴声</p>
+<p>得知琴声音高对应数字114514，获得第三部分flag</p>
+<p>完整压缩包密码：OWOH_a1_114514</p>
+<p>解压压缩包打开文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916144738265.3b3ttyv1i480.webp" alt="image-20230916144738265"></p>
+<p>发现flag明显被隐藏了，0宽隐写解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916145358016.3aywli173y40.webp" alt="image-20230916145358016"></p>
+<p>迷失幻境</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916145904748.5hdh34196180.webp" alt="image-20230916145904748"></p>
+<p>附件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916145940388.5x25yqbk2600.webp" alt="image-20230916145940388"></p>
+<p>改后缀7z打开</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916150042453.82adznglwws.webp" alt="image-20230916150042453"></p>
+<p>打开第一个文件夹</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916150320482.4u3n75obwb60.webp" alt="image-20230916150320482"></p>
+<p>在继续打开这个文件夹</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916150343854.4z91vk97q9w0.webp" alt="image-20230916150343854"></p>
+<p>发现这个文件大小很可疑</p>
+<p><img src="C:\Users\23831\AppData\Roaming\Typora\typora-user-images\image-20230916150434284.png" alt="image-20230916150434284"></p>
+<p>放入010查看</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916150519587.40qfpkm72xs0.webp" alt="image-20230916150519587"></p>
+<p>发现PNG文件组成部分IHDR以及IDAT关键词，补充文件头</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916150818056.7hcr2d0d33s0.webp" alt="image-20230916150818056"></p>
+<p>保存并打开是一张PNG图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151449255.zq92k5oxg2o.webp" alt="image-20230916150935988"></p>
+<p>查看迷失环境文件夹</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151050069.34cfbnmwuhk0.webp" alt="image-20230916151050069"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151143661.20o3uflv1o1s.webp" alt="image-20230916151143661"></p>
+<p>发现有一个文本，一张jpg图片和100张png图片</p>
+<p>先看文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151235469.4m8k6a0as7w0.webp" alt="image-20230916151235469"></p>
+<p>目前没什么信息</p>
+<p>查看jpg图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151323216.13ykq81pbk2k.webp" alt="image-20230916151323216"></p>
+<p>发现是可莉小可爱(尊都好可爱！)</p>
+<p>再看png图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151449255.5c1gwvpc4yc0.webp" alt="image-20230916151449255"></p>
+<p>发现这100张png格式大小都一样(这里拿99号和87号对比一下)</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151716093.omontile5j4.png" alt="image-20230916151716093"></p>
+<p>在对比一下010保存的那张png是否格式和他们俩一样？</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916151929437.6kchkqd28ts0.png" alt="image-20230916151929437"></p>
+<p>发现大小不太一样，试一试双图隐写(stegsolve工具)</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916152216513.gyzhn3bxza8.png" alt="image-20230916152216513"></p>
+<p>发现密钥</p>
+<p>发现另一个图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916150343854.2flbr1l5hjfo.png" alt="image-20230916150343854"></p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916160054857.46am3dolvko0.png" alt="image-20230916160054857"></p>
+<p>查看图片属性</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916161046024.3csvjrjhyei0.png" alt="image-20230916161046024"></p>
+<p>outguess隐写，guess就是猜的意思，而且这个隐写还需要密钥</p>
+<p>先试一试哒哒哒这个图outguess隐写</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916161238122.6i0w4e7fh4g0.png" alt="image-20230916161238122"></p>
+<p>发现不行，试一试$RE4UUGI.jpg的outguess隐写</p>
+<p>获得flag</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916161458674.3g9q8f4i14o0.png" alt="image-20230916161458674"></p>
+<p>躲猫猫</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916161702960.3eq3h4ygnz00.png" alt="image-20230916161702960"></p>
+<p>wireshark打开文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916162644351.70pzpwo0i180.png" alt="image-20230916162644351"></p>
+<p>tcp追踪到11后发现PNG图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916162741719.6ozdukv61r40.png" alt="image-20230916162741719"></p>
+<p>保存原始数据</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163107445.6mhs62kt2oo0.png" alt="image-20230916163107445"></p>
+<p>复制到txt中(把不必要的删除)</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163146236.omahdrpyh40.png" alt="image-20230916163146236"></p>
+<p>010导入十六进制文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163208626.50cqe4p3shc0.png" alt="image-20230916163208626"></p>
+<p>保存并打开图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163231671.3a90c8pn8tk0.png" alt="image-20230916163231671"></p>
+<p>像素png暂时不知道什么用</p>
+<p>ftp导出对象发现压缩包</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163512080.2igpouzvb100.png" alt="image-20230916163512080"></p>
+<p>打开后发现需要密码</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163604432.1z9oyg2t758g.png" alt="image-20230916163604432"></p>
+<p>py脚本和secret都需要密码，只有log文件可以拖出来查看</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916163648684.417gxzn7f8o0.png" alt="image-20230916163648684"></p>
+<p>tls解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916191546733.sk2uug0w4uo.png" alt="image-20230916191546733"></p>
+<p>过滤tcp 29</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916192444961.5pbt33lxdo00.png" alt="image-20230916192444961"></p>
+<p>追踪http流发现jpg格式图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916193043535.yys3juo6zrk.png" alt="image-20230916193043535"></p>
+<p>保存原始文件粘贴到010新建十六进制文本</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916193118004.1kkjpswatfz4.png" alt="image-20230916193118004"></p>
+<p>搜索ffde jpg文件头字符串，将其余部分删掉保存为完整图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916193253390.3wws7p9zjew0.png" alt="image-20230916193253390"></p>
+<p>获得压缩包密码，解压压缩包</p>
+<p>打开脚本文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916193656234.68gygxqd2ow0.png" alt="image-20230916193656234"></p>
+<p>编写脚本，恢复之前的那个像素png原图</p>
+<p>from PIL import Image</p>
+<p>from numpy import array, zeros, uint8</p>
+<p>import cv2</p>
+<p>import os</p>
+<p>image &#x3D; cv2.imread(“1.png”)</p>
+<p>imagearray &#x3D; array(image)</p>
+<p>x,y &#x3D; 5999540678407978169965856946811257903979429787575580150595711549672916183293763090704344230372835328,6310149030391323406342737832910952782997118359318834776480172449836047279615976753524231989362688</p>
+<p>h,w &#x3D; 1800,1800</p>
+<p>x1 &#x3D; round(x&#x2F;y*0.001, 16)</p>
+<p>u1 &#x3D; y*3650&#x2F;x</p>
+<p>x2 &#x3D; round(x&#x2F;y*0.00101, 16)</p>
+<p>u2 &#x3D; y*3675&#x2F;x</p>
+<p>x3 &#x3D; round(x&#x2F;y*0.00102, 16)</p>
+<p>u3 &#x3D; y*3680&#x2F;x</p>
+<p>kt &#x3D; [x1, x2, x3]</p>
+<p>temp_image &#x3D; zeros(shape&#x3D;[h, w, 3], dtype&#x3D;uint8)</p>
+<p>for k in range(0, 1):</p>
+<p>  for i in range(0, h):</p>
+<p>​    for j in range(0, w):</p>
+<p>​      x1 &#x3D; u1 * x1 * (1 - x1)</p>
+<p>​      x2 &#x3D; u2 * x2 * (1 - x2)</p>
+<p>​      x3 &#x3D; u3 * x3 * (1 - x3)</p>
+<p>​      r1 &#x3D; int(x1*255)</p>
+<p>​      r2 &#x3D; int(x2*255)</p>
+<p>​      r3 &#x3D; int(x3*255)</p>
+<p>​      for t in range(0, 3):</p>
+<p>​        temp_image[i][j][t] &#x3D; (imagearray[i][j][t] - ((r1+r2) ^ r3)) % 256</p>
+<p>  x1 &#x3D; kt[0]</p>
+<p>  x2 &#x3D; kt[1]</p>
+<p>  x3 &#x3D; kt[2]</p>
+<p>encflagarray &#x3D; Image.fromarray(temp_image)</p>
+<p>encflagarray.show()</p>
+<p>encflagarray.save(“flag.png”)</p>
+<p>生成一张图片</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916194207597.of06ago0pb4.png" alt="image-20230916194207597"></p>
+<p>谷歌识图</p>
+<p>MaxiCode</p>
+<p>在线网站解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916194737598.2sz3zl9tz0a0.png" alt="image-20230916194737598"></p>
+<p>发现不行</p>
+<p>猫猫替换成圆圈扫码我这里没替换成功，借用大佬的图</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916204732986.5yjmqlvt27k0.png" alt="image-20230916204732986"></p>
+<p>GWHT{ozqgVLoI1DvK8giNVdvGslr_aZKKwNuv_q-FzqB5N3hHHqn3}</p>
+<p>where_is_secret</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916205403388.v0ljnfhtmps.png" alt="image-20230916205403388"></p>
+<p>附件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916205508698.79sslc6bsvs0.png" alt="image-20230916205508698"></p>
+<p>发现压缩包需要密码，先打开txt查看</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916210127190.1lm93ighovn.png" alt="image-20230916210127190"></p>
+<p>维吉尼亚解密</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916210211531.2m5n1hdne4k0.png" alt="image-20230916210211531"></p>
+<p>解出压缩包密码：GWHT@R1nd0yyds</p>
+<p>解压压缩包得到一张bmp文件</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916210346185.3ct66lcmxrs0.png" alt="image-20230916210346185"></p>
+<p>还原文本 脚本：</p>
+<p>from PIL import Image</p>
+<p>import numpy as np</p>
+<p>def feng(num):</p>
+<p>​    return (‘\u{:0&gt;4}’.format(num)).encode().decode(‘unicode_escape’)</p>
+<p>with open(“flag.txt”, mode&#x3D;”wb”) as flag:</p>
+<p>​     a &#x3D; Image.open(“out.bmp”)</p>
+<p>​     b &#x3D; np.array(a)</p>
+<p>​     w &#x3D; h &#x3D; b.shape[0]</p>
+<p>​     p &#x3D; []</p>
+<p>​     for  i in range(w):</p>
+<p>​      for j in range(h):</p>
+<p>​        date &#x3D; b[i,j,:]</p>
+<p>​        d &#x3D; feng(str(hex(date[1])).replace(‘0x’,’’).rjust(2, ‘0’) +str(hex(date[2])).replace(‘0x’,’’).rjust(2, ‘0’))</p>
+<p>​        p.append(d)</p>
+<p>​     for d in p:</p>
+<p>​       flag.write(d.encode())</p>
+<p>打开txt</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916211345940.5eihbqddowc0.png" alt="image-20230916211345940"></p>
+<p>写个正则表达式提取文本中的字符串脚本</p>
+<p>import re</p>
+<p>f &#x3D; open(‘flag.txt’,’r’).read()</p>
+<p>a &#x3D; re.findall(‘[^a-z{}0-9][a-z{}0-9][^a-z{}0-9]’, f, re.M)</p>
+<p>for i in a:</p>
+<p>  print(i)</p>
+<p><img src="https://cdn.staticaly.com/gh/LOBSSSA5DD5/ctf@main/image-20230916213220116.xry5hftm65s.png" alt="image-20230916213220116"></p>
+<p>手动拼接flag为flag{h1d3_1n_th3_p1ctur3}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/09/16/%E7%BE%8A%E5%9F%8E%E6%9D%AF2022misc/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/09/12/dier/">
         <h2 class="post-title">极客巅峰2019misc</h2>
     </a>
