@@ -1,0 +1,1004 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    SHCTFmisc复现 |
+    
+    一清的博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="[WEEK1]签到题下载附件   base解密，赛博厨子一把梭   最后flag为flag{this_is_flag} [WEEK1]Jaeger lover题目描述:do you know Pacific Rim？提示环太平洋 下载附件     010查看图片，发现末尾有base编码   base解密   翻译一下   看图片是环太平洋风暴赤红，直接搜索风暴赤红操作系统   得到答案:Tri-S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SHCTFmisc复现">
+<meta property="og:url" content="http://example.com/2024/06/21/SHCTFmisc/index.html">
+<meta property="og:site_name" content="一清的博客">
+<meta property="og:description" content="[WEEK1]签到题下载附件   base解密，赛博厨子一把梭   最后flag为flag{this_is_flag} [WEEK1]Jaeger lover题目描述:do you know Pacific Rim？提示环太平洋 下载附件     010查看图片，发现末尾有base编码   base解密   翻译一下   看图片是环太平洋风暴赤红，直接搜索风暴赤红操作系统   得到答案:Tri-S">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621094403159.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621095229244.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621095606254.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621101637141.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621095818988.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621101134289.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621101417680.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621101753457.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621102311042.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621102437733.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621102756148.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621103846554.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621105954165.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621110508040.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621111032862.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621111739021.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621111903114.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621112342207.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621112934192.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621113525109.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621113742758.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621114136135.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621114320336.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621114633221.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621115329911.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621115817118.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621120135418.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621120449554.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621120553612.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621120646639.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621122640408.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621123058782.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621123306020.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621123606711.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621123947273.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621123947273.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621124848548.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621125113911.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621125238961.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621125509312.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621130030239.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621130332349.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621130444521.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621130631057.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621130838615.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621131358147.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621131552179.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621132722947.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621133409823.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621133508253.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621133706297.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621133949858.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621134221011.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621134432389.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621134754914.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621140158691.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621140446088.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621140812661.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621141235109.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621141521087.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621142157779.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621143503942.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621143547092.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621143840406.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621144215248.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621144842164.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621145618396.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621145841118.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621153346377.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621153758502.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621154235551.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621154507343.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621154859726.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621155652075.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621160115687.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621160402347.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621160608435.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621161538200.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621162133039.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621162709807.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621162841404.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621163128373.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621164158087.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621165002104.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621165524624.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621165613476.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621165851601.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621170010837.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240621170622708.png">
+<meta property="article:published_time" content="2024-06-21T08:43:38.000Z">
+<meta property="article:modified_time" content="2024-06-21T09:09:55.809Z">
+<meta property="article:author" content="yiqing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/shctf/image-20240621094403159.png">
+  
+    <link rel="alternate" href="/atom.xml" title="一清的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    const startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    const endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="display: none; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/banner.webp" alt="SHCTFmisc复现">
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>SHCTFmisc复现</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-SHCTFmisc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/06/21/SHCTFmisc/" class="article-date-link">
+    <time datetime="2024-06-21T08:43:38.000Z" itemprop="datePublished">2024-06-21</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="WEEK1-签到题"><a href="#WEEK1-签到题" class="headerlink" title="[WEEK1]签到题"></a>[WEEK1]签到题</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240621094403159.png" alt="图片" width="300" height="200">
+
+<p>base解密，赛博厨子一把梭</p>
+<img src="/images/shctf/image-20240621095229244.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{this_is_flag}</p>
+<h3 id="WEEK1-Jaeger-lover"><a href="#WEEK1-Jaeger-lover" class="headerlink" title="[WEEK1]Jaeger lover"></a>[WEEK1]Jaeger lover</h3><p>题目描述:do you know Pacific Rim？提示环太平洋</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621095606254.png" alt="图片" width="300" height="200">
+
+<img src="/images/shctf/image-20240621101637141.png" alt="图片" width="300" height="200">
+
+<p>010查看图片，发现末尾有base编码</p>
+<img src="/images/shctf/image-20240621095818988.png" alt="图片" width="300" height="200">
+
+<p>base解密</p>
+<img src="/images/shctf/image-20240621101134289.png" alt="图片" width="300" height="200">
+
+<p>翻译一下</p>
+<img src="/images/shctf/image-20240621101417680.png" alt="图片" width="300" height="200">
+
+<p>看图片是环太平洋风暴赤红，直接搜索风暴赤红操作系统</p>
+<img src="/images/shctf/image-20240621101753457.png" alt="图片" width="300" height="200">
+
+<p>得到答案:Tri-Sun Horizon Gate,steghide隐写</p>
+<p>steghide extract -sf Typhoon.jpg -p “Tri-Sun Horizon Gate” </p>
+<img src="/images/shctf/image-20240621102311042.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码:.*+#1Ao&#x2F;aeS</p>
+<p>解压压缩包</p>
+<img src="/images/shctf/image-20240621102437733.png" alt="图片" width="300" height="200">
+
+<p>一看图片就宽高有问题，宽高一把梭</p>
+<img src="/images/shctf/image-20240621102756148.png" alt="图片" width="300" height="200">
+
+<p>得到key:K34-759183-191 </p>
+<p>outsecret隐写</p>
+<img src="/images/shctf/image-20240621103846554.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{A1l_boys_aRe_Jaeger_L0ver!!}</p>
+<h3 id="WEEK1-message"><a href="#WEEK1-message" class="headerlink" title="[WEEK1]message"></a>[WEEK1]message</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240621105954165.png" alt="图片" width="300" height="200">
+
+<p>pdu解码</p>
+<img src="/images/shctf/image-20240621110508040.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{ba978405-b1c8-847c-8e69-f62177e4c087}</p>
+<h3 id="WEEK1-也许需要一些py"><a href="#WEEK1-也许需要一些py" class="headerlink" title="[WEEK1]也许需要一些py"></a>[WEEK1]也许需要一些py</h3><p>题目描述：这flag怎么没大没小的捏</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621111032862.png" alt="图片" width="300" height="200">
+
+<p>010先看无后缀文件，发现是png文件，补全文件头</p>
+<img src="/images/shctf/image-20240621111739021.png" alt="图片" width="300" height="200">
+
+<p>保存后再次查看图片</p>
+<img src="/images/shctf/image-20240621111903114.png" alt="图片" width="300" height="200">
+
+<p>得到flag的md5值：<strong>63e62fbce22f2757f99eb7da179551d2</strong></p>
+<p>压缩包有提示:- …. .. … .—- … -.– —– ..- -.- . -.–</p>
+<p>摩斯解码</p>
+<img src="/images/shctf/image-20240621112342207.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码:THIS1SY0UKEY</p>
+<p>解压压缩包</p>
+<p>根据题目要求改为小写：<strong>this1sy0ukey</strong></p>
+<img src="/images/shctf/image-20240621112934192.png" alt="图片" width="300" height="200">
+
+<p>写一个匹配字符爆破大小写碰撞脚本</p>
+<p>exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">md5</span>(<span class="params">s</span>):</span><br><span class="line">    md5 = hashlib.md5()</span><br><span class="line">    s = s.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    md5.update(s)</span><br><span class="line">    <span class="keyword">return</span> md5.hexdigest()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">k,s</span>):</span><br><span class="line">    ind = <span class="number">0</span></span><br><span class="line">    ss = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> i.isalpha():</span><br><span class="line">            <span class="keyword">if</span> k[ind] == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">                ss += i.upper()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line">                ss += i</span><br><span class="line">            ind += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            ss += i</span><br><span class="line">    <span class="keyword">return</span> ss</span><br><span class="line"></span><br><span class="line">ans = <span class="string">&#x27;63e62fbce22f2757f99eb7da179551d2&#x27;</span></span><br><span class="line">s = <span class="string">&#x27;pNg_and_Md5_SO_GreaT&#x27;</span>.lower()</span><br><span class="line"></span><br><span class="line">cnt = <span class="number">0</span> <span class="comment">#字母数量</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    <span class="keyword">if</span> i.isalpha():</span><br><span class="line">        cnt += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>**cnt):</span><br><span class="line">    k = <span class="built_in">bin</span>(i)[<span class="number">2</span>:].zfill(cnt)</span><br><span class="line">    out = check(k,s)</span><br><span class="line">    <span class="keyword">if</span> md5(out) == ans:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;flag&#123;&#x27;</span>+out+<span class="string">&#x27;&#125;&#x27;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<p>运行得到flag</p>
+<img src="/images/shctf/image-20240621113525109.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{Png_AnD_md5_so_GReAt}</p>
+<h3 id="WEEK1-ez-misc"><a href="#WEEK1-ez-misc" class="headerlink" title="[WEEK1]ez-misc"></a>[WEEK1]ez-misc</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240621113742758.png" alt="图片" width="300" height="200">
+
+<p>查看文本文件内容</p>
+<img src="/images/shctf/image-20240621114136135.png" alt="图片" width="300" height="200">
+
+<p>01转二维码</p>
+<img src="/images/shctf/image-20240621114320336.png" alt="图片" width="300" height="200">
+
+<p>扫描二维码</p>
+<img src="/images/shctf/image-20240621114633221.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码:hit_k1sme4_4_fun</p>
+<p>解压压缩包得到无后缀文件，010查看无后缀文件</p>
+<img src="/images/shctf/image-20240621115329911.png" alt="图片" width="300" height="200">
+
+<p>发现是压缩包，填加后缀.zip</p>
+<img src="/images/shctf/image-20240621115817118.png" alt="图片" width="300" height="200">
+
+<p>发现提示有二进制01数字，二进制转字符串</p>
+<img src="/images/shctf/image-20240621120135418.png" alt="图片" width="300" height="200">
+
+<p>Kali 有个字典叫 rockyou很出名,尝试字典爆破 </p>
+<img src="/images/shctf/image-20240621120449554.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码:palomino</p>
+<p>解压压缩包</p>
+<img src="/images/shctf/image-20240621120553612.png" alt="图片" width="300" height="200">
+
+<p>词频统计</p>
+<img src="/images/shctf/image-20240621120646639.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{SHyk1sme4}</p>
+<h3 id="WEEK1-请对我使用社工吧"><a href="#WEEK1-请对我使用社工吧" class="headerlink" title="[WEEK1]请对我使用社工吧"></a>[WEEK1]请对我使用社工吧</h3><p>题目描述：k1sme4的朋友考到了一所在k1sme4家附近的大学，一天，k1sme4的朋友去了学校对面的商场玩，并给k1sme4拍了一张照片，你能找到他的学校吗？</p>
+<p>flag格式：flag{xx省<em>xx市</em>xx区_xx大学}</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621122640408.png" alt="图片" width="300" height="200">
+
+<p>图片上一个qq号，在qq相册中看到一张b站的图片</p>
+<img src="/images/shctf/image-20240621123058782.png" alt="图片" width="300" height="200">
+
+<p>查看k1sme4的b站</p>
+<img src="/images/shctf/image-20240621123306020.png" alt="图片" width="300" height="200">
+
+<p>看到评论:黄河入海，k1sme4回家！！！！！</p>
+<p>百度搜索黄河入海口得知是山东东营</p>
+<img src="/images/shctf/image-20240621123606711.png" alt="图片" width="300" height="200">
+
+<p>图片上发现是在万达广场，百度搜索东营的万达广场</p>
+<img src="/images/shctf/image-20240621123947273.png" alt="图片" width="300" height="200">
+
+<p>对面就是中国石油大学</p>
+<p>最后flag为 flag{山东省_东营市_东营区_中国石油大学} </p>
+<h3 id="WEEK1-可爱的派蒙捏"><a href="#WEEK1-可爱的派蒙捏" class="headerlink" title="[WEEK1]可爱的派蒙捏"></a>[WEEK1]可爱的派蒙捏</h3><p>题目描述：派蒙藏了一些东西，你能找到他们吗</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621123947273.png" alt="图片" width="300" height="200">
+
+<p>binwalk试试</p>
+<img src="/images/shctf/image-20240621124848548.png" alt="图片" width="300" height="200">
+
+<p>发现藏有压缩包</p>
+<p>foremost提取</p>
+<img src="/images/shctf/image-20240621125113911.png" alt="图片" width="300" height="200">
+
+<p>查看两个文本文件内容</p>
+<img src="/images/shctf/image-20240621125238961.png" alt="图片" width="300" height="200">
+
+<p>文件对比</p>
+<p>在线网址:<a target="_blank" rel="noopener" href="https://text-compare.com/">https://text-compare.com/</a> </p>
+<img src="/images/shctf/image-20240621125509312.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{4ebf327905288fca947a}</p>
+<h3 id="WEEK1-steganography"><a href="#WEEK1-steganography" class="headerlink" title="[WEEK1]steganography"></a>[WEEK1]steganography</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240621130030239.png" alt="图片" width="300" height="200">
+
+<p>使用010editor打开图片careful.jpg末尾有base64编码</p>
+<img src="/images/shctf/image-20240621130332349.png" alt="图片" width="300" height="200">
+
+<p>base解码</p>
+<img src="/images/shctf/image-20240621130444521.png" alt="图片" width="300" height="200">
+
+<p>得到一部分压缩包密码:12ercs…..909jk</p>
+<p>查看careful1.jpg属性</p>
+<img src="/images/shctf/image-20240621130631057.png" alt="图片" width="300" height="200">
+
+<p>得到第二部分压缩包密码:xqwed</p>
+<p>组合得到压缩包密码:12ercsxqwed909jk</p>
+<p>解压压缩包得到flag</p>
+<img src="/images/shctf/image-20240621130838615.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{4d72e4f3-4d4f-4969-bc8c-a2f6f7a4292c}</p>
+<h3 id="WEEK2-远在天边近在眼前"><a href="#WEEK2-远在天边近在眼前" class="headerlink" title="[WEEK2]远在天边近在眼前"></a>[WEEK2]远在天边近在眼前</h3><p>下载附件</p>
+<p>linux解压压缩包得到flag</p>
+<img src="/images/shctf/image-20240621131358147.png" alt="图片" width="300" height="200">
+
+<p>倒序</p>
+<img src="/images/shctf/image-20240621131552179.png" alt="图片" width="300" height="200">
+
+<p>新学的方法:</p>
+<p>exp：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">__import__</span>(<span class="string">&#x27;zipfile&#x27;</span>).ZipFile(<span class="string">&#x27;yztb.zip&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) .infolist()[-<span class="number">1</span>].filename.replace(<span class="string">&#x27;/&#x27;</span>, <span class="string">&#x27;&#x27;</span>)[::-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p>最后flag为flag{TH15_l5_rE41ly_e45y_a1r1gH7?_a28415d80662}</p>
+<h3 id="WEEK2-可爱的洛琪希"><a href="#WEEK2-可爱的洛琪希" class="headerlink" title="[WEEK2]可爱的洛琪希"></a>[WEEK2]可爱的洛琪希</h3><p>题目描述：把你的详细信息都交出来！</p>
+<p>下载附件，解压压缩包发现有密码</p>
+<img src="/images/shctf/image-20240621132722947.png" alt="图片" width="300" height="200">
+
+<p>尝试伪加密</p>
+<img src="/images/shctf/image-20240621133409823.png" alt="图片" width="300" height="200">
+
+<p>查看文本文件内容</p>
+<img src="/images/shctf/image-20240621133508253.png" alt="图片" width="300" height="200">
+
+<p>base解码</p>
+<img src="/images/shctf/image-20240621133706297.png" alt="图片" width="300" height="200">
+
+<p>保存图片，查看图片属性</p>
+<img src="/images/shctf/image-20240621133949858.png" alt="图片" width="300" height="200">
+
+<p>010查看图片发现末尾有东西</p>
+<img src="/images/shctf/image-20240621134221011.png" alt="图片" width="300" height="200">
+
+<p>hex解码+维吉尼亚解码</p>
+<img src="/images/shctf/image-20240621134432389.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{Roxy_daisuki!}</p>
+<h3 id="WEEK2-奇怪的screenshot"><a href="#WEEK2-奇怪的screenshot" class="headerlink" title="[WEEK2]奇怪的screenshot"></a>[WEEK2]奇怪的screenshot</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240621134754914.png" alt="图片" width="300" height="200">
+
+<p>一眼 <em>CVE</em>-2023-28303 Win11截图漏洞</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/frankthetank-music/Acropalypse-Multi-Tool">https://github.com/frankthetank-music/Acropalypse-Multi-Tool</a></p>
+<p>使用前需要安装两个模块</p>
+<img src="/images/shctf/image-20240621140158691.png" alt="图片" width="300" height="200">
+
+<p>启动软件，点击恢复工具</p>
+<img src="/images/shctf/image-20240621140446088.png" alt="图片" width="300" height="200">
+
+<p>选择win11类型</p>
+<img src="/images/shctf/image-20240621140812661.png" alt="图片" width="300" height="200">
+
+<p>一通操作得到新图片</p>
+<img src="/images/shctf/image-20240621141235109.png" alt="图片" width="300" height="200">
+
+<p>保存图片重新打开，看到是百家姓编码</p>
+<img src="/images/shctf/image-20240621141521087.png" alt="图片" width="300" height="200">
+
+<p>百家姓解码</p>
+<img src="/images/shctf/image-20240621142157779.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{CVE-2023-28303-Win11-Snipping-t00l-is-n0t-Secure}</p>
+<h3 id="WEEK2-图片里的秘密"><a href="#WEEK2-图片里的秘密" class="headerlink" title="[WEEK2]图片里的秘密"></a>[WEEK2]图片里的秘密</h3><p>题目描述：盲僧能出水银鞋吗？</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621143503942.png" alt="图片" width="300" height="200">
+
+<p>binwalk试试</p>
+<img src="/images/shctf/image-20240621143547092.png" alt="图片" width="300" height="200">
+
+<p>发现藏有rar压缩包，binwalk -e 提取</p>
+<img src="/images/shctf/image-20240621143840406.png" alt="图片" width="300" height="200">
+
+<p>得到一张图片，根据题目提示猜测是盲水印</p>
+<img src="/images/shctf/image-20240621144215248.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{Blind_Water_Mark!}</p>
+<h3 id="WEEK2-表里的码"><a href="#WEEK2-表里的码" class="headerlink" title="[WEEK2]表里的码"></a>[WEEK2]表里的码</h3><p>题目描述：细狗配粗人,j_0k3r配我 )</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621144842164.png" alt="图片" width="300" height="200">
+
+<p>根据题目描述猜测是excel文件，改后缀.xlsx打开，全选发现是29x29的格子</p>
+<img src="/images/shctf/image-20240621145618396.png" alt="图片" width="300" height="200">
+
+<p>随机选择几个格子检查一下就可以发现有些格子的字体形式是加粗的，而有些未加粗</p>
+<img src="/images/shctf/image-20240621145841118.png" alt="图片" width="300" height="200">
+
+<p>粗的涂黑，得到二维码</p>
+<img src="/images/shctf/image-20240621153346377.png" alt="图片" width="300" height="200">
+
+<p>扫描二维码</p>
+<img src="/images/shctf/image-20240621153758502.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{j0k3r_1s_my_wif3}</p>
+<h3 id="WEEK2-喜帖街"><a href="#WEEK2-喜帖街" class="headerlink" title="[WEEK2]喜帖街"></a>[WEEK2]喜帖街</h3><p>题目描述：喜帖街里就得有“喜帖”，ok？</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621154235551.png" alt="图片" width="300" height="200">
+
+<p>查看音频频谱</p>
+<img src="/images/shctf/image-20240621154507343.png" alt="图片" width="300" height="200">
+
+<p>得到key，steghide隐写</p>
+<img src="/images/shctf/image-20240621154859726.png" alt="图片" width="300" height="200">
+
+<p>ook解码</p>
+<img src="/images/shctf/image-20240621155652075.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{w@v2txt_s0_Int3r3st1ng!}</p>
+<h3 id="WEEK3-ez-usb"><a href="#WEEK3-ez-usb" class="headerlink" title="[WEEK3]ez_usb"></a>[WEEK3]ez_usb</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240621160115687.png" alt="图片" width="300" height="200">
+
+<p>发现是usb流量</p>
+<p>工具一把梭</p>
+<img src="/images/shctf/image-20240621160402347.png" alt="图片" width="300" height="200">
+
+<p>得到两个东西</p>
+<p>第一个:</p>
+<p>526172211a0700cf907300000d000000008008002f507424943500200080002000000002a3021b4d577f06551d33080020080000666c61672e7478747CC34ada98dA7d0200f035680325f68663724792af0b91cE86c1b46ed4b180d5a8A7C626ADb5ceb2fF8CF24104c43d7b00400700</p>
+<p>发现是rar文件</p>
+<img src="/images/shctf/image-20240621160608435.png" alt="图片" width="300" height="200">
+
+<p>保存下来</p>
+<p>第二个:adabb04a5e9a6c33</p>
+<p>猜测是压缩包密码</p>
+<p>解压压缩包，查看文本找到flag</p>
+<img src="/images/shctf/image-20240621161538200.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{c6bd1c7bcfef89ffbf59d86ccaf97d3c}</p>
+<h3 id="WEEK3-请再次对我使用社工吧"><a href="#WEEK3-请再次对我使用社工吧" class="headerlink" title="[WEEK3]请再次对我使用社工吧"></a>[WEEK3]请再次对我使用社工吧</h3><p>题目描述：很好的城市，很大的水域，很美的山，有山有水但没有海，爱来自山东。</p>
+<p>你能找到我脚下这座山的名字吗？</p>
+<p>flag格式：flag{xx省<em>xx市&#x2F;区</em>xx市&#x2F;区_xx山}</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621162133039.png" alt="图片" width="300" height="200">
+
+<p>键线索是图片中有一座类似烈士陵园，题目描述说是山东省的  那直接百度搜索山东省烈士陵园，搜到这个的时候感觉挺像</p>
+<img src="/images/shctf/image-20240621162709807.png" alt="图片" width="300" height="200">
+
+<p>但百度地图发现旁边没有山</p>
+<img src="/images/shctf/image-20240621162841404.png" alt="图片" width="300" height="200">
+
+<p>因为我是土生土长的泰安人，对一些新闻也比较了解，忽然就把思路转变会不会是我们新泰 的，之前看新闻报道，李林雨烈士，房浩烈士都荣归故里，带着猜测，百度地图新泰市革命 烈士陵园</p>
+<img src="/images/shctf/image-20240621163128373.png" alt="图片" width="300" height="200">
+
+<p>发现附近是青云山  另一种思路,百度搜索房浩烈士 </p>
+<img src="/images/shctf/image-20240621164158087.png" alt="图片" width="300" height="200">
+
+<p>敖山指的是青云山</p>
+<p>最后flag为flag{山东省_泰安市_新泰市_青云山}</p>
+<h3 id="WEEK3-尓纬玛"><a href="#WEEK3-尓纬玛" class="headerlink" title="[WEEK3]尓纬玛"></a>[WEEK3]尓纬玛</h3><p>题目描述:恏渏怪哋②惟犸，芣確萣，侢看看，還湜恏渏怪</p>
+<blockquote>
+<p>hint:no steganography</p>
+</blockquote>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621165002104.png" alt="图片" width="300" height="200">
+
+<p>扫描二维码发现不行</p>
+<p>QRazyBox优先读纠错区，然而纠错区只有半个flag，完整flag在数据块里，涂掉纠错区，或者说涂掉错误的纠错区</p>
+<p>就读正确的部分了</p>
+<img src="/images/shctf/image-20240621165524624.png" alt="图片" width="300" height="200">
+
+<p>扫描二维码得到flag</p>
+<img src="/images/shctf/image-20240621165613476.png" alt="图片" width="300" height="200">
+
+<p>最后flag为<strong>flag{QRcOde_has_many_kindS_of_secre7s_NOw_y0U_knoW_l_De3b4e}</strong></p>
+<h3 id="WEEK3-strange-data"><a href="#WEEK3-strange-data" class="headerlink" title="[WEEK3]strange data"></a>[WEEK3]strange data</h3><p>题目描述:hint:</p>
+<blockquote>
+<p>android data</p>
+</blockquote>
+<blockquote>
+<p>adb shell getevent</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/v4.14/input/event-codes.html">https://www.kernel.org/doc/html/v4.14/input/event-codes.html</a></p>
+</blockquote>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240621165851601.png" alt="图片" width="300" height="200">
+
+<p>查看文件</p>
+<img src="/images/shctf/image-20240621170010837.png" alt="图片" width="300" height="200">
+
+<p>直接上脚本</p>
+<p>exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">#从getevent输出文件中读取原始数据</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data&quot;</span>,<span class="string">&quot;r&quot;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    data = f.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建两空列表用于存储X和y坐标</span></span><br><span class="line">x_coordinates = []</span><br><span class="line">y_coordinates = []</span><br><span class="line">is_touching = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> data:</span><br><span class="line">    <span class="comment">#使用正则表达式从每行中提取事件数据</span></span><br><span class="line">    <span class="keyword">match</span> = re.<span class="keyword">match</span>(<span class="string">r&quot;([0-9a-f]+) ([0-9a-f]+) ([0-9a-f]+)&quot;</span>,line)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">match</span>:</span><br><span class="line">        event_type,event_code,value = <span class="built_in">map</span>(</span><br><span class="line">            <span class="keyword">lambda</span> x:<span class="built_in">int</span>(x,<span class="number">16</span>),<span class="keyword">match</span>.groups())</span><br><span class="line">    <span class="keyword">if</span> event_type == <span class="number">3</span>:   <span class="comment">#事件类型 3 代表触摸事件</span></span><br><span class="line">        <span class="keyword">if</span> event_code == <span class="number">0</span>:   <span class="comment">#事件代码 0 代表 X 坐标</span></span><br><span class="line">            x = value</span><br><span class="line">        <span class="keyword">elif</span> event_code == <span class="number">1</span>:   <span class="comment">#事件代码 1代表y 坐标</span></span><br><span class="line">            y = value</span><br><span class="line">            <span class="keyword">if</span> x + y &gt; <span class="number">0</span> <span class="keyword">and</span> is_touching:</span><br><span class="line">                x_coordinates.append(x)</span><br><span class="line">                y_coordinates.append(y)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">len</span>(x_coordinates) &gt; <span class="number">0</span>:</span><br><span class="line">                plt.plot(y_coordinates,x_coordinates, marker=<span class="string">&#x27;o&#x27;</span>,linestyle=<span class="string">&#x27;-&#x27;</span>,markersize=<span class="number">2</span>)</span><br><span class="line">                x_coordinates =[]</span><br><span class="line">                y_coordinates =[]</span><br><span class="line">    <span class="keyword">elif</span> event_type == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> event_code == <span class="number">330</span>:   <span class="comment">#事件代码 330 代表按压和抬起事件</span></span><br><span class="line">            <span class="keyword">if</span> value == <span class="number">0</span>:   <span class="comment">#按压事件</span></span><br><span class="line">                is_touching = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">elif</span> value == <span class="number">1</span>: <span class="comment">#抬起事件</span></span><br><span class="line">                is_touching = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">elif</span> event_type == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(event_type,event_code,value)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>运行得到flag</p>
+<img src="/images/shctf/image-20240621170622708.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{miiii1_sm4rt_p3n_1s_So_Fun!}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      <a data-url="http://example.com/2024/06/21/SHCTFmisc/" data-id="clxoh2i2k00009sw3ax2m0j2l" data-title="SHCTFmisc复现" class="article-share-link">分享</a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="UNCTF2022misc复现" class="lazyload">
+        
+      
+      <a href="/2024/06/20/unctf2022misc/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          UNCTF2022misc复现
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E7%AD%BE%E5%88%B0%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">[WEEK1]签到题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-Jaeger-lover"><span class="toc-number">2.</span> <span class="toc-text">[WEEK1]Jaeger lover</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-message"><span class="toc-number">3.</span> <span class="toc-text">[WEEK1]message</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E4%B9%9F%E8%AE%B8%E9%9C%80%E8%A6%81%E4%B8%80%E4%BA%9Bpy"><span class="toc-number">4.</span> <span class="toc-text">[WEEK1]也许需要一些py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-ez-misc"><span class="toc-number">5.</span> <span class="toc-text">[WEEK1]ez-misc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E8%AF%B7%E5%AF%B9%E6%88%91%E4%BD%BF%E7%94%A8%E7%A4%BE%E5%B7%A5%E5%90%A7"><span class="toc-number">6.</span> <span class="toc-text">[WEEK1]请对我使用社工吧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E5%8F%AF%E7%88%B1%E7%9A%84%E6%B4%BE%E8%92%99%E6%8D%8F"><span class="toc-number">7.</span> <span class="toc-text">[WEEK1]可爱的派蒙捏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-steganography"><span class="toc-number">8.</span> <span class="toc-text">[WEEK1]steganography</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E8%BF%9C%E5%9C%A8%E5%A4%A9%E8%BE%B9%E8%BF%91%E5%9C%A8%E7%9C%BC%E5%89%8D"><span class="toc-number">9.</span> <span class="toc-text">[WEEK2]远在天边近在眼前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%8F%AF%E7%88%B1%E7%9A%84%E6%B4%9B%E7%90%AA%E5%B8%8C"><span class="toc-number">10.</span> <span class="toc-text">[WEEK2]可爱的洛琪希</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%A5%87%E6%80%AA%E7%9A%84screenshot"><span class="toc-number">11.</span> <span class="toc-text">[WEEK2]奇怪的screenshot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%9B%BE%E7%89%87%E9%87%8C%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">12.</span> <span class="toc-text">[WEEK2]图片里的秘密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E8%A1%A8%E9%87%8C%E7%9A%84%E7%A0%81"><span class="toc-number">13.</span> <span class="toc-text">[WEEK2]表里的码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%96%9C%E5%B8%96%E8%A1%97"><span class="toc-number">14.</span> <span class="toc-text">[WEEK2]喜帖街</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-ez-usb"><span class="toc-number">15.</span> <span class="toc-text">[WEEK3]ez_usb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-%E8%AF%B7%E5%86%8D%E6%AC%A1%E5%AF%B9%E6%88%91%E4%BD%BF%E7%94%A8%E7%A4%BE%E5%B7%A5%E5%90%A7"><span class="toc-number">16.</span> <span class="toc-text">[WEEK3]请再次对我使用社工吧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-%E5%B0%93%E7%BA%AC%E7%8E%9B"><span class="toc-number">17.</span> <span class="toc-text">[WEEK3]尓纬玛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-strange-data"><span class="toc-number">18.</span> <span class="toc-text">[WEEK3]strange data</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">9</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        yiqing
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          11.7k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          00:53
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E7%AD%BE%E5%88%B0%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">[WEEK1]签到题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-Jaeger-lover"><span class="toc-number">2.</span> <span class="toc-text">[WEEK1]Jaeger lover</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-message"><span class="toc-number">3.</span> <span class="toc-text">[WEEK1]message</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E4%B9%9F%E8%AE%B8%E9%9C%80%E8%A6%81%E4%B8%80%E4%BA%9Bpy"><span class="toc-number">4.</span> <span class="toc-text">[WEEK1]也许需要一些py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-ez-misc"><span class="toc-number">5.</span> <span class="toc-text">[WEEK1]ez-misc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E8%AF%B7%E5%AF%B9%E6%88%91%E4%BD%BF%E7%94%A8%E7%A4%BE%E5%B7%A5%E5%90%A7"><span class="toc-number">6.</span> <span class="toc-text">[WEEK1]请对我使用社工吧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-%E5%8F%AF%E7%88%B1%E7%9A%84%E6%B4%BE%E8%92%99%E6%8D%8F"><span class="toc-number">7.</span> <span class="toc-text">[WEEK1]可爱的派蒙捏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK1-steganography"><span class="toc-number">8.</span> <span class="toc-text">[WEEK1]steganography</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E8%BF%9C%E5%9C%A8%E5%A4%A9%E8%BE%B9%E8%BF%91%E5%9C%A8%E7%9C%BC%E5%89%8D"><span class="toc-number">9.</span> <span class="toc-text">[WEEK2]远在天边近在眼前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%8F%AF%E7%88%B1%E7%9A%84%E6%B4%9B%E7%90%AA%E5%B8%8C"><span class="toc-number">10.</span> <span class="toc-text">[WEEK2]可爱的洛琪希</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%A5%87%E6%80%AA%E7%9A%84screenshot"><span class="toc-number">11.</span> <span class="toc-text">[WEEK2]奇怪的screenshot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%9B%BE%E7%89%87%E9%87%8C%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">12.</span> <span class="toc-text">[WEEK2]图片里的秘密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E8%A1%A8%E9%87%8C%E7%9A%84%E7%A0%81"><span class="toc-number">13.</span> <span class="toc-text">[WEEK2]表里的码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK2-%E5%96%9C%E5%B8%96%E8%A1%97"><span class="toc-number">14.</span> <span class="toc-text">[WEEK2]喜帖街</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-ez-usb"><span class="toc-number">15.</span> <span class="toc-text">[WEEK3]ez_usb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-%E8%AF%B7%E5%86%8D%E6%AC%A1%E5%AF%B9%E6%88%91%E4%BD%BF%E7%94%A8%E7%A4%BE%E5%B7%A5%E5%90%A7"><span class="toc-number">16.</span> <span class="toc-text">[WEEK3]请再次对我使用社工吧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-%E5%B0%93%E7%BA%AC%E7%8E%9B"><span class="toc-number">17.</span> <span class="toc-text">[WEEK3]尓纬玛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEEK3-strange-data"><span class="toc-number">18.</span> <span class="toc-text">[WEEK3]strange data</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">9</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (document.querySelectorAll('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(document.querySelectorAll('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0-beta.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
