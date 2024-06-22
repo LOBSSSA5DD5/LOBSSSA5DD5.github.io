@@ -1,0 +1,935 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    H&amp;NCTFmisc复现 |
+    
+    一清的博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="secret题目描述: 薛学姐有一只好看的小猫咪，一起来撸猫吧！ 下载附件   binwalk发现压缩包   foremost提取   解压压缩包，查看文本内容   发现是假flag，在虚拟机查看文本发现是零宽   零宽解密   得到key：Snow White 一看就是snow隐写的密码，但是目前没发现snow隐写的痕迹，考虑题目名称secret对应oursecret隐写（无密码）   打开文本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H&amp;NCTFmisc复现">
+<meta property="og:url" content="http://example.com/2024/06/22/HNCTFmisc/index.html">
+<meta property="og:site_name" content="一清的博客">
+<meta property="og:description" content="secret题目描述: 薛学姐有一只好看的小猫咪，一起来撸猫吧！ 下载附件   binwalk发现压缩包   foremost提取   解压压缩包，查看文本内容   发现是假flag，在虚拟机查看文本发现是零宽   零宽解密   得到key：Snow White 一看就是snow隐写的密码，但是目前没发现snow隐写的痕迹，考虑题目名称secret对应oursecret隐写（无密码）   打开文本">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622221513381.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622221924521.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622222048221.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622222150630.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622222958802.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622222827042.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622223508217.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622224033066.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622225153403.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622231341016.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622231806561.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622232921809.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622233339160.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622233659616.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622234910671.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240622235448842.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623000004901.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623000124126.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623000556552.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623000939143.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623030345587.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623003730353.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623004716736.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623010220323.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623010509204.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623011949881.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623012140060.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623012615706.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623012821912.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623014013986.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623015000284.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623015157063.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623021026438.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623021459821.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623022923898.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623023259389.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623023938514.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623024048603.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623024315915.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623024819244.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623025138113.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623025820546.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623030034106.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623032813354.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623033524016.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623033900589.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623034352449.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623034935655.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623035340211.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623035657544.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623035856859.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623040524043.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623040744029.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623041357211.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623041737697.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623045431785.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623045520225.png">
+<meta property="og:image" content="http://example.com/images/shctf/image-20240623045638687.png">
+<meta property="article:published_time" content="2024-06-22T08:43:38.000Z">
+<meta property="article:modified_time" content="2024-06-22T20:57:57.869Z">
+<meta property="article:author" content="yiqing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/shctf/image-20240622221513381.png">
+  
+    <link rel="alternate" href="/atom.xml" title="一清的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    const startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    const endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="display: none; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/banner.webp" alt="H&amp;NCTFmisc复现">
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>H&amp;NCTFmisc复现</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-HNCTFmisc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/06/22/HNCTFmisc/" class="article-date-link">
+    <time datetime="2024-06-22T08:43:38.000Z" itemprop="datePublished">2024-06-22</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="secret"><a href="#secret" class="headerlink" title="secret"></a>secret</h3><p>题目描述:</p>
+<p>薛学姐有一只好看的小猫咪，一起来撸猫吧！</p>
+<p>下载附件</p>
+<img src="/images/shctf/image-20240622221513381.png" alt="图片" width="300" height="200">
+
+<p>binwalk发现压缩包</p>
+<img src="/images/shctf/image-20240622221924521.png" alt="图片" width="300" height="200">
+
+<p>foremost提取</p>
+<img src="/images/shctf/image-20240622222048221.png" alt="图片" width="300" height="200">
+
+<p>解压压缩包，查看文本内容</p>
+<img src="/images/shctf/image-20240622222150630.png" alt="图片" width="300" height="200">
+
+<p>发现是假flag，在虚拟机查看文本发现是零宽</p>
+<img src="/images/shctf/image-20240622222958802.png" alt="图片" width="300" height="200">
+
+<p>零宽解密</p>
+<img src="/images/shctf/image-20240622222827042.png" alt="图片" width="300" height="200">
+
+<p>得到key：Snow White</p>
+<p>一看就是snow隐写的密码，但是目前没发现snow隐写的痕迹，考虑题目名称secret对应oursecret隐写（无密码）</p>
+<img src="/images/shctf/image-20240622223508217.png" alt="图片" width="300" height="200">
+
+<p>打开文本内容，存在snow隐写</p>
+<img src="/images/shctf/image-20240622224033066.png" alt="图片" width="300" height="200">
+
+<p>snow隐写</p>
+<img src="/images/shctf/image-20240622225153403.png" alt="图片" width="300" height="200">
+
+<p>解得</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">兑震乾兑乾坤乾艮乾兑兑艮兑乾震兑乾坎兑艮乾兑乾艮乾艮巽兑离震兑坎坤兑乾艮兑坎离兑兑巽兑艮离兑震兑兑坎震兑离离兑兑离兑坤乾兑艮离兑兑坎兑兑震兑艮巽兑坎坤兑兑巽兑艮兑兑艮乾兑离艮兑兑坤兑坎艮兑乾离兑离巽兑兑坎兑兑离兑艮坤兑艮乾兑离乾兑巽兑兑坤乾兑艮离兑兑巽兑艮兑兑艮乾兑离艮兑离乾兑巽离兑坎坤乾坎震</span><br></pre></td></tr></table></figure>
+
+<p>八卦解密</p>
+<img src="/images/shctf/image-20240622231341016.png" alt="图片" width="300" height="200">
+
+<p>xxencode解密</p>
+<img src="/images/shctf/image-20240622231806561.png" alt="图片" width="300" height="200">
+
+<p>最后flag为H&amp;NCTF{Do_y0u_want_mak3_a_5now_man}</p>
+<h3 id="帮帮我-图灵先生！"><a href="#帮帮我-图灵先生！" class="headerlink" title="帮帮我 图灵先生！"></a>帮帮我 图灵先生！</h3><p>下载附件</p>
+<img src="/images/shctf/image-20240622232921809.png" alt="图片" width="300" height="200">
+
+<p>010查看附件，发现末尾有base编码</p>
+<img src="/images/shctf/image-20240622233339160.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QWxhbiBNYXRoaXNvbiBUdXJpbmcgKEp1bmUgMjMsIDE5MTItMTk1NCwgSnVuZSA3KSB3YXMgYSBmYW1vdXMgQnJpdGlzaCBtYXRoZW1hdGljaWFuIGFuZCBsb2dpY2lhbiwga25vd24gYXMgdGhlIGZhdGhlciBvZiBjb21wdXRlciBzY2llbmNlIGFuZCBhcnRpZmljaWFsIGludGVsbGlnZW5jZS4gSGUgd2FzIHRoZSBmb3VuZGVyIG9mIGNvbXB1dGVyIGxvZ2ljIGFuZCBwcm9wb3NlZCBpbXBvcnRhbnQgY29uY2VwdHMgc3VjaCBhcyB0aGUgIlR1cmluZyBtYWNoaW5lIiBhbmQgIlR1cmluZyB0ZXN0LiIuIEFzc2lzdGVkIHRoZSBCcml0aXNoIG1pbGl0YXJ5IGluIGRlY2lwaGVyaW5nIHRoZSBmYW1vdXMgcGFzc3dvcmQgc3lzdGVtIGFuZCBoZWxwZWQgdGhlIEFsbGllcyBhY2hpZXZlIHZpY3RvcnkgaW4gV29ybGQgV2FyIElJLiBOb3cgcGxlYXNlIGZpZ2h0IGFsb25nc2lkZSBoaW0sIGNyYWNraW5nIGNvZGVzIGFuZCBwdXp6bGVzIG9mIGNoYW9zLiBTUUZDREFKSlJNUFpSQ0dVR1RZTkFNUVhBWkROV0JHT05KV0ZCQURIUUpWU1lSWkdPSkhMUlFSWkhTVVZLT0lWTg==</span><br></pre></td></tr></table></figure>
+
+<p>base解密</p>
+<img src="/images/shctf/image-20240622233659616.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alan Mathison Turing (June 23, 1912-1954, June 7) was a famous British mathematician and logician, known as the father of computer science and artificial intelligence. He was the founder of computer logic and proposed important concepts such as the &quot;Turing machine&quot; and &quot;Turing test.&quot;. Assisted the British military in deciphering the famous password system and helped the Allies achieve victory in World War II. Now please fight alongside him, cracking codes and puzzles of chaos. SQFCDAJJRMPZRCGUGTYNAMQXAZDNWBGONJWFBADHQJVSYRZGOJHLRQRZHSUVKOIVN</span><br></pre></td></tr></table></figure>
+
+<p>翻译:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">艾伦·马蒂森·图灵（Alan Mathison Turing，1912年6月23日-1954年6月7日）是英国著名的数学家和逻辑学家，被誉为计算机科学和人工智能之父。他是计算机逻辑学的创始人，提出了“图灵机”和“图灵测试”等重要概念。协助英国军方破译著名的密码系统，并帮助盟军在第二次世界大战中取得胜利。现在请与他并肩作战，破解混沌的密码和谜题。SQFCDAJJRMPZRCGUGTYNAMQXAZDNWBGONJWFBADHQJJVSYRZGOJHLRQRZHSUVKOIVN</span><br></pre></td></tr></table></figure>
+
+<p>文章中还有一些关键字：第二次世界大战、破解混乱的密码和谜题、破译著名的密码系统</p>
+<p>百度一下这些信息：图灵在第二次世界大战期间破译著名的密码系统，可以知道是恩尼格玛 加密</p>
+<p>在线网址：<a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=993&ac=csdn">http://www.atoolbox.net/Tool.php?Id=993&amp;ac=csdn</a></p>
+<p>解码的话需要知道恩尼格玛的转子和转速,文件是png图片，尝试lsb隐写，zsteg一把梭</p>
+<img src="/images/shctf/image-20240622234910671.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;now you get your hint1(slow) hint2&#123;5 2 1&#125; and hint3(1 1 4) m&quot;</span><br></pre></td></tr></table></figure>
+
+<p>得到转子和轮速</p>
+<p>恩格尔码解密</p>
+<img src="/images/shctf/image-20240622235448842.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZEROPOINTONEONEFOURFIVEONEFOURTHREEPOINTONEFOURONEFIVEFIVEHUNDRED</span><br></pre></td></tr></table></figure>
+
+<p>翻译一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.114514 3.1415 500</span><br></pre></td></tr></table></figure>
+
+<p>看一下图片属性 这里注意到是48位的图片位深度</p>
+<img src="/images/shctf/image-20240623000004901.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">位深度：存储图片一个像素需要消耗多少个bit位。</span><br><span class="line">图像色深：图像的一个像素可以表示多少个bit的颜色。</span><br><span class="line">通道：不同格式图片存储像素的方式，RGB图像的通道为3，的通道为1.</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623000124126.png" alt="图片" width="300" height="200">
+
+<p>当24位深度时，使用24bit显示一个像素点， 由8bit Red 8bit Green 8bit Blue组合颜色而成，每一个原始颜色（R&#x2F;G&#x2F;B）都可以完全显示（0~0xff），所以24位及以上，我们就叫做真彩色</p>
+<p>这张图片位深度为48 又有R G B三个通道 所以每个通道占16bit  但是我们只能看到8bit的信息 所以我们需要将低位的数据提取出来</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line">import numpy as np</span><br><span class="line">img = cv2.imread(&quot;turing.png&quot;, cv2.IMREAD_UNCHANGED)</span><br><span class="line">img2 = img &amp; 0xFF</span><br><span class="line">img2 = img2.astype(np.uint8)</span><br><span class="line">cv2.imwrite(&quot;turing1.png&quot;, img2)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到图片</p>
+<img src="/images/shctf/image-20240623000556552.png" alt="图片" width="300" height="200">
+
+<p>可以在中间部分依稀看到一些字符 但是并不清楚，结合上面提到的混沌之谜 可知这是Logistic混沌变换加密 ，</p>
+<p>混沌加密:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">图片的混沌加密是先把所有像素点平坦化了，按照一位数组处理的，然后再重组为图片</span><br></pre></td></tr></table></figure>
+
+<p>恢复脚本exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line">import numpy as np</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">def logistic(Img, x, u,times):</span><br><span class="line">    M = Img.shape[0]</span><br><span class="line">    N = Img.shape[1]</span><br><span class="line">    for i in range(1, times):</span><br><span class="line">        x = u * x * (1 - x)</span><br><span class="line">    array = np.zeros(M * N)</span><br><span class="line">    array[1] = x</span><br><span class="line">    for i in range(1, M * N - 1):</span><br><span class="line">        array[i + 1] = u * array[i] * (1 - array[i])</span><br><span class="line">    array = np.array(array * 255, dtype=&#x27;uint8&#x27;)</span><br><span class="line">    code = np.reshape(array, (M, N))</span><br><span class="line">    xor = Img ^ code</span><br><span class="line">    v = xor</span><br><span class="line">    return v</span><br><span class="line"></span><br><span class="line">x = 0.114514</span><br><span class="line">u = 3.1415</span><br><span class="line">times = 500</span><br><span class="line"></span><br><span class="line">Img = cv2.imread(&#x27;turing1.png&#x27;)</span><br><span class="line">Img = Img[:, :, [2, 1, 0]]</span><br><span class="line">(r, g, b) = cv2.split(Img)</span><br><span class="line">R = logistic(r, x, u, times)</span><br><span class="line">G = logistic(g, x, u, times)</span><br><span class="line">B = logistic(b, x, u, times)</span><br><span class="line">merged = np.ones(Img.shape, dtype=np.uint8)</span><br><span class="line">merged[:, :, 2] = B</span><br><span class="line">merged[:, :, 1] = G</span><br><span class="line">merged[:, :, 0] = R</span><br><span class="line"></span><br><span class="line">Img = Image.fromarray(merged)</span><br><span class="line">Img.save(&#x27;turing1_logistic.png&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到图片，看到flag</p>
+<img src="/images/shctf/image-20240623000939143.png" alt="图片" width="300" height="200">
+
+<p>得到字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R&lt;TYN\a_t+&#125;wZE&#123;t~EV*&#125;sin+yg</span><br></pre></td></tr></table></figure>
+
+<p>赛博厨子一把梭</p>
+<img src="/images/shctf/image-20240623030345587.png" alt="图片" width="300" height="200">
+
+<p>最后flag为H&amp;NCTF{En1gm@_and_L0gist1c}</p>
+<h3 id="onist"><a href="#onist" class="headerlink" title="onist"></a>onist</h3><p>题目描述:</p>
+<p>模糊的城市一座模糊的夜景，模糊的雨点，落在不知名街亭。</p>
+<p>hint:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.左下角的建筑在卫星地图上显示为建筑地基</span><br><span class="line">2.图片拍摄的日期为4月22日</span><br><span class="line">3.航线查询网站:https://flightadsb.variflight.com/</span><br><span class="line">4.第三空没有格式，如XX大厦/XX公路/XX高速等等</span><br></pre></td></tr></table></figure>
+
+
+
+<p>下载附件</p>
+<img src="/images/shctf/image-20240623003730353.png" alt="图片" width="300" height="200">
+
+<p>一个三个问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.目的地（例如长沙黄花国际机场）</span><br><span class="line">2.航班号（英文大写）</span><br><span class="line">3.黄色灯光处</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623004716736.png" alt="图片" width="300" height="200">
+
+<p>百度识图，确定是海南航空</p>
+<p>根据飞机机翼标识，发现后面涂装改了，改成全红机翼尖尖</p>
+<p>发现这个和图片中的很相似</p>
+<img src="/images/shctf/image-20240623010220323.png" alt="图片" width="300" height="200">
+
+<p>搜索海南机场</p>
+<img src="/images/shctf/image-20240623010509204.png" alt="图片" width="300" height="200">
+
+<p>最后确定是海口美兰国际机场</p>
+<p>通过飞机机翼上的注册号提示可知B-22xx，进行注册号搜索</p>
+<p>根据图片创建时间为23日，可推测图片拍摄于23日前</p>
+<img src="/images/shctf/image-20240623011949881.png" alt="图片" width="300" height="200">
+
+<p><a target="_blank" rel="noopener" href="https://flightadsb.variflight.com/%EF%BC%8C%E5%88%A9%E7%94%A8%E7%BD%91%E7%AB%99%E6%90%9C%E7%B4%A2HU7006%EF%BC%8823%E5%8F%B7%E7%9A%84%EF%BC%89">https://flightadsb.variflight.com/，利用网站搜索HU7006（23号的）</a></p>
+<img src="/images/shctf/image-20240623012140060.png" alt="图片" width="300" height="200">
+
+<p>查看回放</p>
+<p>根据提示1：  左下角的建筑在卫星地图上显示为建筑地基</p>
+<p>确定是海南大学（观澜湖校区）体育馆地基</p>
+<img src="/images/shctf/image-20240623012615706.png" alt="图片" width="300" height="200">
+
+<p>下面那条道就是说的黄色灯光处，但放大看不了，百度地图海南大学（观澜湖校区）</p>
+<img src="/images/shctf/image-20240623012821912.png" alt="图片" width="300" height="200">
+
+<p>确定是羊山大道</p>
+<h3 id="onist-pro"><a href="#onist-pro" class="headerlink" title="onist_pro"></a>onist_pro</h3><p>题目描述:</p>
+<p>SWDD结束了长城杯的赛程登上了进京的飞机，沿途拍下了一张照片。下机后发现图片损坏了，你能找到</p>
+<p>他途中拍摄的地点吗？</p>
+<p>hint：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.什么？！坐飞机也能赚钱，也算是给SWDD赚到辣</span><br><span class="line">2. 奇怪？SWDD上午的飞机，下午才到北京，为什么中午就把照片发给余了？</span><br></pre></td></tr></table></figure>
+
+<p>下载附件</p>
+<img src="/images/shctf/image-20240623014013986.png" alt="图片" width="300" height="200">
+
+<p>问题:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.航班号（英文大写）</span><br><span class="line">2.框出的地址</span><br></pre></td></tr></table></figure>
+
+<p>转机</p>
+<p>通过描述查找到SWDD，为出题人，再结合主办方，湖南人文或中北大学得到出发地为贵阳或陕西</p>
+<p>利用浅显的地理知识判断应该为黄河沿岸</p>
+<p>通过图片左下角模糊的高铁线这一特征沿黄河沿岸狂找，在百度卫星地图上找到山西圣天湖景区</p>
+<img src="/images/shctf/image-20240623015000284.png" alt="图片" width="300" height="200">
+
+<p>通过飞机姿态高度与地理位置判断，飞机处于降落过程，通过搜索附近机场发现运城机场</p>
+<img src="/images/shctf/image-20240623015157063.png" alt="图片" width="300" height="200">
+
+<p>通过搜索西安，贵阳到运城的飞机（飞机上有国航的标志）</p>
+<p>可寻得两班航班</p>
+<img src="/images/shctf/image-20240623021026438.png" alt="图片" width="300" height="200">
+
+<p>确定是CA4069</p>
+<img src="/images/shctf/image-20240623021459821.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="小明是个猴子"><a href="#小明是个猴子" class="headerlink" title="小明是个猴子"></a>小明是个猴子</h3><p>R-STUDIO扫描文件发现有个zip归档，里面两个文件，分别是flag.txt.zip和</p>
+<p>xiaoming.txt.zip，给它拿下来</p>
+<img src="/images/shctf/image-20240623022923898.png" alt="图片" width="300" height="200">
+
+<p>两个文件解压都需要密码,小明是伪加密，010修改</p>
+<img src="/images/shctf/image-20240623023259389.png" alt="图片" width="300" height="200">
+
+<p>解压压缩包得到文本</p>
+<img src="/images/shctf/image-20240623023938514.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">其实也没啥事‍‍﻿‌‌‌﻿﻿‍‬‍‬‌‌﻿‬‍‍‍﻿‌‬‬‌‍﻿‍‍‌‬‬‌‍﻿‍‍‌﻿‍‍‬‌‌‍‌‍‌‍，‍﻿‍‍‌﻿‬﻿不就是上学吗‍﻿‍‍‌﻿‬﻿，不就是生活吗，‍﻿‍‬‬‌‍‌‍‬‍‍﻿﻿‍‬人活着哪有不疯的时候，‍‍‌‌‌‍‬‍‍‬‌‬‍‌﻿‍不疯的人还活着吗‍‬‍‬‌‬﻿﻿。‍‌﻿‬‌‌﻿‍人又不是葱姜蒜西瓜茄子萝芒果猕猴桃。可能我是猴子呢‍﻿‍‍‬‬﻿﻿‍﻿‍‬‬‌‍‌‍‬‍‍﻿﻿‍‬‍‍‌‌‌‍‬‍﻿﻿﻿﻿‌‌﻿‌‍‍‌﻿﻿‬‬‬‍‬‍﻿‌‌‬‍!我是猴子!‍﻿‍‍‌﻿‬﻿哈‍﻿‍‍‌﻿‬﻿!‍﻿‍‬‬‌‍‌‍‬‍‍﻿﻿‍‬‍‍‌‌‌‍‬‍‍‍﻿‌‌‌﻿﻿嘿!‍‬‍‬‌‌﻿‬吼‍‬‌‬‍‌﻿‍‬‌‌‌﻿﻿﻿‍‍‬‌‌﻿﻿‌﻿‍‍‌‬‌﻿‌‌!哈哈哈哈哈哈哈哈哈哈哈哈哈我是猴子‬‌‌‍﻿‬‬‬，我不用学习的‍‍﻿‍﻿﻿‌‍(‌‌‌‌‍﻿‌﻿‌‌‌‌‍‬‍‍变成猿猴‌‌‌‌‍‬‌﻿‌‌‌‌‍﻿‌‬)(‌‌‌‌‍‬‍‍‌‌‌‌‍﻿‍‌抢夺路人的香蕉)‍﻿‍‬‬‌‍‌(飞入丛林‍‍‬﻿﻿‌‍‬‍﻿‬‌‌‌‌‍﻿﻿﻿﻿‌‌﻿‌‍‍﻿‌‌‌﻿﻿) (‍‬‍‬‌‌﻿‬在藤蔓中荡来荡去)‍‍‌﻿﻿‌‬‌(在藤蔓中荡来荡去‍‌﻿‬‌‌﻿‍‍‬‍‬‌‬﻿﻿)‬‌‍‌‍﻿‌‍(‍‍‬‍﻿‍﻿‌‬‌‍‌‬‍﻿‌‬‌‬‍‍﻿﻿﻿在藤蔓中荡来荡去)‍﻿‍‌﻿‍﻿‌(‬‌‌﻿‌‌‍‌在藤蔓中荡来荡去)‍‍‬﻿‍‍‌‌‬‌‍‌‌‍﻿‍‬‌‌‬‬‍‌‬‍‬‍﻿‬‍﻿‌‍﻿‌﻿‌‍‍‍(‍﻿‌﻿‌﻿‍‌‍‬‬‌‍‌‌﻿高声吼叫﻿﻿﻿﻿‌‌﻿‌‍‍﻿‌‌‌﻿﻿‍‬‍‬‌‌﻿‬)(‍‬‍‬‌‬﻿﻿‍﻿‌﻿‌﻿‍‌高声吼叫)‍‍‬﻿‍‍‌‌(‌‌‌‌‌‬‌‍‍‍‍‌﻿‌‬‌‌‌‌‌‌‬‌‍‍‍‍‬‌﻿﻿﻿在藤蔓中荡来荡去)‌‌‌‌‌‬‌‍‍‍‍‌‌﻿﻿‌‌‌‌‌‌‬‌‍‍‍‍‌﻿‌‬‌(‍‍‍‌﻿‌‬‌‍‍‍‌﻿‌‬‌高声吼叫‍‍‍‌﻿‌‬‌‍‍‍‌﻿‌‬‌)(‍‍‍‌﻿‌‬‌‍‍‍‌﻿‌‬‌在藤蔓中荡来荡去‍‍‍‌﻿‌‬‌‍‍‍‌﻿‌‬‌)‍‍‍‌﻿‌‬‌‍‍‍‌﻿‌‬‌(‍‍‍‌﻿‌‬‌高声吼叫‍‍‍‌﻿‌‬‌‍‬‍‬‌‬﻿﻿)‍﻿‌﻿‌﻿‍‌‍‍‬﻿‍‍‌‌﻿﻿﻿﻿‌‌‌‍(在藤蔓中荡来荡去)</span><br></pre></td></tr></table></figure>
+
+<p>一眼零宽</p>
+<img src="/images/shctf/image-20240623024048603.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明在用电脑画画的时候才是不疯的时候，只有画画的时候小明才能想到自己secret的密码，小明又不是葱姜蒜西瓜茄子萝芒果猕猴桃，小明是猴子!哈!嘿!吼!哈哈哈哈哈哈哈哈哈哈哈哈哈是猴子！</span><br></pre></td></tr></table></figure>
+
+<p>明文中提示了：只有画画的时候小明才能想到自己secret的密码，我们还会发现源文件里还 有一个secret.zip</p>
+<img src="/images/shctf/image-20240623024315915.png" alt="图片" width="300" height="200">
+
+<p>跟画画有关？提取一下进程看看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vol.py -f xiaoming.raw --profile=Win7SP1x64 pslist </span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623024819244.png" alt="图片" width="300" height="200">
+
+<p>提取进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vol.py -f xiaoming.raw --profile=Win7SP1x64 memdump -p 2980 -D ./</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623025138113.png" alt="图片" width="300" height="200">
+
+<p>然后改后缀名为.data，gimp打开如下：（调试数据在图里面）</p>
+<img src="/images/shctf/image-20240623025820546.png" alt="图片" width="300" height="200">
+
+<p>拿到key: #2a92ak@dz7e</p>
+<p>解压secret.zip得到flag</p>
+<img src="/images/shctf/image-20240623030034106.png" alt="图片" width="300" height="200">
+
+<p>最后flag为H&amp;NCTF{U_r_a_f0rensic_m4s7er}</p>
+<h3 id="ice的秘密"><a href="#ice的秘密" class="headerlink" title="ice的秘密"></a>ice的秘密</h3><p>题目描述:</p>
+<p>注意项目文档，ccx的第一层密码格式为user_domain_password</p>
+<p>获取user_domain_password</p>
+<p>vol使用mimikatz直接破解哈希值（需要装插件）获取第一层密码：ice_CTF_CFRS[]</p>
+<img src="/images/shctf/image-20240623032813354.png" alt="图片" width="300" height="200">
+
+<p>然后使用Cncrypt进行挂载，输入第一层密码ice_CTF_CFRS[]</p>
+<p>获得一个tips.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key分为三段，拼接起来才是真密码哦，key3的第一位是_</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623033524016.png" alt="图片" width="300" height="200">
+
+<p>R-STUDIO扫描文件发现Users—ice—Desktop下存在main.py和key2.txt</p>
+<img src="/images/shctf/image-20240623033900589.png" alt="图片" width="300" height="200">
+
+<p>main.py</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">def encode (OO0OOO0O0OOO00000):</span><br><span class="line">    O0O0000000O0OOO00 =[]</span><br><span class="line">    for O0O0OO00O00OOO0OO in OO0OOO0O0OOO00000:</span><br><span class="line">        O000OOOO000O000O0 =(ord (O0O0OO00O00OOO0OO )^0x114000 ^0x514)+114000-514</span><br><span class="line">OO       O0O0000000O0OOO00 .append (O000OOOO000O000O0 &amp;0xff)</span><br><span class="line">    return O0O0000000O0OOO00</span><br><span class="line">def decode (OOOOOOOOO0OOO0O00):</span><br><span class="line">    O0O00O00O000OOOOO =&#x27;&#x27;</span><br><span class="line">    for O00OO00000OOOO00O in OOOOOOOOO0OOO0O00:</span><br><span class="line">        OO0OO0O0OO0O0O00O = ?</span><br><span class="line">        O0O00O00O000OOOOO += ?</span><br><span class="line">    return O0O00O00O000OOOOO </span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">&gt;&gt;&gt;encode(&quot;key1&quot;)</span><br><span class="line">[205, 191, 187, 115, 124, 117, 110, 181, 187, 153, 199, 110, 174, 202, 153]</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>写个逆过程先拿到key1，exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def decode(OOOOOOOOO0OOO0O00):</span><br><span class="line">    O0O00O00O000OOOOO = &#x27;&#x27;</span><br><span class="line">    for O00OO00000OOOO00O in OOOOOOOOO0OOO0O00:</span><br><span class="line">        # 撤销编码过程中执行的操作</span><br><span class="line">        OO0OO0O0OO0O0O00O = (O00OO00000OOOO00O - 114000 + 514) ^ 0x114000 ^ 0x514</span><br><span class="line">        # 确保结果是一个有效的 ASCII 字符（0-255）</span><br><span class="line">        OO0OO0O0OO0O0O00O &amp;= 0xff</span><br><span class="line">        # 将整数转换回字符</span><br><span class="line">        O0O00O00O000OOOOO += chr(OO0OO0O0OO0O0O00O)</span><br><span class="line">    return O0O00O00O000OOOOO</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 测试 decode 函数</span><br><span class="line">print(decode([205, 191, 187, 115, 124, 117, 110, 181, 187, 153, 199, 110, 174, 202, 153]))  # 应该输出 &quot;key1&quot;</span><br></pre></td></tr></table></figure>
+
+<p>运行得到key1:34sy_m4th_</p>
+<img src="/images/shctf/image-20240623034352449.png" alt="图片" width="300" height="200">
+
+<p>查看key2.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RSCRC[[[FCCSFCF]]]RSR[[[FCSCF]]]CRR[[[FCFF]]][CRRCR][[[FCSSSCCCSFF]]][RCSRR][[[FCFFSSS]]]CF[[[[FC]]]][RRR][[[[FCCF]]]][FFF][R][[[[FCC]]]][R][[[FCF]]]RR[[FCFCF]]FFFFRR[RR][[FCFCF]][[[]]]]]FF[RCCRR][[[F]]][[[FF]]][RRCR][[[FF]]][FFCF]RRCRCRRCRCFFCFFFCFCF[FFCF]FFCFCF</span><br></pre></td></tr></table></figure>
+
+<p>一眼丁真为cfrs[]语言</p>
+<p>参考网址:<a target="_blank" rel="noopener" href="https://www.thepaper.cn/newsDetail_forward_25026499">仅5个字符的新绘图语言火了，ChatGPT都学会了_澎湃号·湃客_澎湃新闻-The Paper</a></p>
+<p>在线编译器只能执行256bytes，阅读项目文件可知c,s都是可删去的，删去后发现网站报错信息变为‘]’，观察一下删去多余的‘]’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RSR[[[FSFF]]]RSR[[[FSF]]]RR[[[FFF]]][RRR][[[FSSSSFF]]][RSRR][[[FFFSSS]]]F[[[[F]]]]</span><br><span class="line">[RRR][[[[FF]]]][FFF][R][[[[F]]]][R][[[FF]]]RR[[FFF]]FFFFRR[RR][[FFF]]FF[RRR][[[F]]]</span><br><span class="line">[[[FF]]][RRR][[[FF]]][FFF]RRRRRRFFFFFFF[FFF]FFFF</span><br></pre></td></tr></table></figure>
+
+<p>运行得到2b</p>
+<img src="/images/shctf/image-20240623034935655.png" alt="图片" width="300" height="200">
+
+<p>查看进程发现画图软件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.6_win64_standalone.exe -f ice_secret.raw --profile=Win7SP1x64 pslist</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623035340211.png" alt="图片" width="300" height="200">
+
+<p>导出进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.6_win64_standalone.exe -f ice_secret.raw --profile=Win7SP1x64 memdump -p 2920 -D ./</span><br></pre></td></tr></table></figure>
+
+<p>改后缀为data文件，gimp打开，如下（参数在下图中）：</p>
+<img src="/images/shctf/image-20240623035657544.png" alt="图片" width="300" height="200">
+
+<p>得到key3:_pic</p>
+<p>组合一下就是：34sy_m4th_2b_pic</p>
+<p>拿到真正的密码后删除上次加载后的盘，再选择一个新的盘挂载，输入此密码即可得到</p>
+<p>flag.txt</p>
+<img src="/images/shctf/image-20240623035856859.png" alt="图片" width="300" height="200">
+
+<p>最后flag为H&amp;NCTF{F0rensics_1s_1nt3r3st1ng}</p>
+<h3 id="ez-pcap"><a href="#ez-pcap" class="headerlink" title="ez_pcap"></a>ez_pcap</h3><p>分析题目给的两个流量包，我们可以在第二个流量包中导出http对象里可以看到一个</p>
+<p>Secret.zip，然后保存下来。</p>
+<img src="/images/shctf/image-20240623040524043.png" alt="图片" width="300" height="200">
+
+<p>里面有个带密码的dmp文件，密码只能通过流量来找了。 寻找发现TCP流16的地方存在冰蝎4.x的xor加密</p>
+<img src="/images/shctf/image-20240623040744029.png" alt="图片" width="300" height="200">
+
+<p>通过明文来反推一下key</p>
+<img src="/images/shctf/image-20240623041357211.png" alt="图片" width="300" height="200">
+
+<p>流量一把梭</p>
+<img src="/images/shctf/image-20240623041737697.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码 HNctf14789（测试出来的）</p>
+<p>解压成功后进行密文碰撞，参考：<a target="_blank" rel="noopener" href="https://github.com/minhangxiaohui/CSthing">https://github.com/minhangxiaohui/CSthing</a></p>
+<p>首先先提取出密文：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 cs-parse-http-traffic.py -k unknown ctf1.pcapng</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623045431785.png" alt="图片" width="300" height="200">
+
+<p>拿这段长度为80的密文进行碰撞</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 ./cs-extract-key.py -t 8e98a938c83fb8beeadfc9f521342c49b25e2b3570fc39634cd8524e6a41c34dd9038058135076f40ff1947bc49e1cff5f064cf0a4d87312b4ac2ef72f38ddac593aae5a253c02dccaf6f8f5d1d0e74c dmp.dmp</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623045520225.png" alt="图片" width="300" height="200">
+
+<p>成功碰撞出SHA256 raw key，再用raw key对整个流量包的通讯密文进行解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 ./cs-parse-http-traffic.py -k 3e2c8bd57d043ae78caa33c1f76fb3de:0406b3801de60f1fd4d7391d618eec81 ctf1.pcapng</span><br></pre></td></tr></table></figure>
+
+<img src="/images/shctf/image-20240623045638687.png" alt="图片" width="300" height="200">
+
+<p>最终flag为H&amp;NCTF{29d5c78b-4367-49ff-807f-dd204341f225}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      <a data-url="http://example.com/2024/06/22/HNCTFmisc/" data-id="clxqlrc760000pgw353p64aoq" data-title="H&amp;NCTFmisc复现" class="article-share-link">分享</a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="/images/banner.webp" data-sizes="auto" alt="科来杯第十届山东省大学生网络安全技能大赛复现" class="lazyload">
+          
+        
+        <a href="/2024/06/22/kelai/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            科来杯第十届山东省大学生网络安全技能大赛复现
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="SHCTFmisc复现" class="lazyload">
+        
+      
+      <a href="/2024/06/21/SHCTFmisc/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          SHCTFmisc复现
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#secret"><span class="toc-number">1.</span> <span class="toc-text">secret</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%AE%E5%B8%AE%E6%88%91-%E5%9B%BE%E7%81%B5%E5%85%88%E7%94%9F%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">帮帮我 图灵先生！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onist"><span class="toc-number">3.</span> <span class="toc-text">onist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onist-pro"><span class="toc-number">4.</span> <span class="toc-text">onist_pro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%98%8E%E6%98%AF%E4%B8%AA%E7%8C%B4%E5%AD%90"><span class="toc-number">5.</span> <span class="toc-text">小明是个猴子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ice%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">6.</span> <span class="toc-text">ice的秘密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-pcap"><span class="toc-number">7.</span> <span class="toc-text">ez_pcap</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">12</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        yiqing
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          21.5k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          01:37
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#secret"><span class="toc-number">1.</span> <span class="toc-text">secret</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%AE%E5%B8%AE%E6%88%91-%E5%9B%BE%E7%81%B5%E5%85%88%E7%94%9F%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">帮帮我 图灵先生！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onist"><span class="toc-number">3.</span> <span class="toc-text">onist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onist-pro"><span class="toc-number">4.</span> <span class="toc-text">onist_pro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%98%8E%E6%98%AF%E4%B8%AA%E7%8C%B4%E5%AD%90"><span class="toc-number">5.</span> <span class="toc-text">小明是个猴子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ice%E7%9A%84%E7%A7%98%E5%AF%86"><span class="toc-number">6.</span> <span class="toc-text">ice的秘密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-pcap"><span class="toc-number">7.</span> <span class="toc-text">ez_pcap</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">12</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (document.querySelectorAll('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(document.querySelectorAll('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0-beta.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
