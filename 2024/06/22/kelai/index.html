@@ -1,0 +1,822 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    科来杯第十届山东省大学生网络安全技能大赛复现 |
+    
+    一清的博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="Misc简单编码题目描述: 二八二八，咔咔就是发！ 10122 110001 0153 0172 1010010 1000101 061 1011010 1010111 1101100 1100100 1001000 0122 0124 1001110 0105 0124 110000 064 1111010 0121 060 0144 1011010 1001101 1101100 101001">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科来杯第十届山东省大学生网络安全技能大赛复现">
+<meta property="og:url" content="http://example.com/2024/06/22/kelai/index.html">
+<meta property="og:site_name" content="一清的博客">
+<meta property="og:description" content="Misc简单编码题目描述: 二八二八，咔咔就是发！ 10122 110001 0153 0172 1010010 1000101 061 1011010 1010111 1101100 1100100 1001000 0122 0124 1001110 0105 0124 110000 064 1111010 0121 060 0144 1011010 1001101 1101100 101001">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622135921432.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622140437470.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622141128844.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622142018343.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622142602144.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622143224456.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622143630737.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622143733657.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622143956676.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622144229036.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622145750053.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622145853126.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622150141317.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622165857838.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622170522596.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622170632720.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622170738702.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622170851361.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622150141317.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622171505209.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622172159377.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622172338677.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622181845185.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622182126798.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622182435916.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622182618129.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622184011259.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622184210697.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622184547652.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622185246686.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622185343657.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622193311026.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622193526445.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622193804562.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622194153033.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622194553040.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622200419492.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622200905603.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622201244602.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622201504353.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622202030430.png">
+<meta property="og:image" content="http://example.com/images/isctf/image-20240622202524919.png">
+<meta property="article:published_time" content="2024-06-22T08:43:38.000Z">
+<meta property="article:modified_time" content="2024-06-22T12:26:48.443Z">
+<meta property="article:author" content="yiqing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/isctf/image-20240622135921432.png">
+  
+    <link rel="alternate" href="/atom.xml" title="一清的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    const startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    const endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="display: none; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/banner.webp" alt="科来杯第十届山东省大学生网络安全技能大赛复现">
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>科来杯第十届山东省大学生网络安全技能大赛复现</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-kelai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/06/22/kelai/" class="article-date-link">
+    <time datetime="2024-06-22T08:43:38.000Z" itemprop="datePublished">2024-06-22</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="简单编码"><a href="#简单编码" class="headerlink" title="简单编码"></a>简单编码</h3><p>题目描述:</p>
+<p>二八二八，咔咔就是发！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0122 110001 0153 0172 1010010 1000101 061 1011010 1010111 1101100 1100100 1001000 0122 0124 1001110 0105 0124 110000 064 1111010 0121 060 0144 1011010 1001101 1101100 1010010 0110 0124 1010110 1110000 1010101 1010010 060 1000110 0141 0126 0105 1101100 0117 1010101 1101100 1100100 1001000 0127 0126 0154 1010101 0124 0125 065 0123 0126 1000101 1100011 060 1001101 110000 0122 0110 0124 1010110 1110000 1010111 1010010 110000 110000 0171 1010110 0105 0144 1001110 1010101 1101100 1100100 1001000 0127 0126 1110000 0125 1010101 1010101 061 0141 1010101 110000 1100100 1001110 1010111 1101011 1010010 1001000 0124 0153 0112 0125 1010010 110000 1101011 0172 0122 0105 110001 0117 1010101 0154 0132 1001000 1010111 0124 1001010 0105 0124 1010101 065 1001011 1010110 1000101 0143 110000 1010111 1101100 1010010 0124 0124 0154 0112 0127 1010010 110000 060 0171 1010010 0105 1100100 0117 0125 1101100 0144 1001000 1010100 0124 0116 1000101 1010010 110000 110101 1010011 1010101 060 0144 1001110 1001110 1000110 0122 1001000 1010100 1101100 1110000 1011001 0124 0126 0105 111001 1010000 1010100 060 071 1010000 1010100 060 111101 </span><br></pre></td></tr></table></figure>
+
+<p>二进制，八进制</p>
+<p>写一个二进制，八进制转为字符串</p>
+<p>exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">a = [<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;110001&#x27;</span>,<span class="string">&#x27;1101011&#x27;</span>,<span class="string">&#x27;0172&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;1000101&#x27;</span>,<span class="string">&#x27;061&#x27;</span>,<span class="string">&#x27;0132&#x27;</span>,<span class="string">&#x27;0127&#x27;</span>,<span class="string">&#x27;1101100&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;1001000&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;0116&#x27;</span>,<span class="string">&#x27;0105&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;110100&#x27;</span>,<span class="string">&#x27;0172&#x27;</span>,<span class="string">&#x27;1010001&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;1001101&#x27;</span>,<span class="string">&#x27;110001&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;0110&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;0154&#x27;</span>,<span class="string">&#x27;1110000&#x27;</span>,<span class="string">&#x27;1011000&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;060&#x27;</span>,<span class="string">&#x27;110001&#x27;</span>,<span class="string">&#x27;0141&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;0105&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;0127&#x27;</span>,<span class="string">&#x27;1101100&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;1001000&#x27;</span>,<span class="string">&#x27;1010111&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;0112&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;110101&#x27;</span>,<span class="string">&#x27;0113&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;1000101&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;0116&#x27;</span>,<span class="string">&#x27;0127&#x27;</span>,<span class="string">&#x27;0154&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;1000010&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;0154&#x27;</span>,<span class="string">&#x27;1001010&#x27;</span>,<span class="string">&#x27;1010111&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;061&#x27;</span>,<span class="string">&#x27;0141&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;1000101&#x27;</span>,<span class="string">&#x27;110001&#x27;</span>,<span class="string">&#x27;0117&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;1101100&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;0110&#x27;</span>,<span class="string">&#x27;0123&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;0116&#x27;</span>,<span class="string">&#x27;0105&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;065&#x27;</span>,<span class="string">&#x27;1010011&#x27;</span>,<span class="string">&#x27;0126&#x27;</span>,<span class="string">&#x27;060&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;0132&#x27;</span>,<span class="string">&#x27;1010111&#x27;</span>,<span class="string">&#x27;1101011&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;1001000&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;0154&#x27;</span>,<span class="string">&#x27;0112&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;1010011&#x27;</span>,<span class="string">&#x27;1000101&#x27;</span>,<span class="string">&#x27;0126&#x27;</span>,<span class="string">&#x27;0141&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;1000110&#x27;</span>,<span class="string">&#x27;1000110&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;0127&#x27;</span>,<span class="string">&#x27;1101100&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;0110&#x27;</span>,<span class="string">&#x27;0127&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;1000101&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;110101&#x27;</span>,<span class="string">&#x27;1001011&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;0105&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;0102&#x27;</span>,<span class="string">&#x27;1010111&#x27;</span>,<span class="string">&#x27;1101100&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;0126&#x27;</span>,<span class="string">&#x27;0160&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;060&#x27;</span>,<span class="string">&#x27;0126&#x27;</span>,<span class="string">&#x27;1000101&#x27;</span>,<span class="string">&#x27;061&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;0154&#x27;</span>,<span class="string">&#x27;1010010&#x27;</span>,<span class="string">&#x27;0110&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;0126&#x27;</span>,<span class="string">&#x27;1110000&#x27;</span>,<span class="string">&#x27;0125&#x27;</span>,<span class="string">&#x27;0123&#x27;</span>,<span class="string">&#x27;060&#x27;</span>,<span class="string">&#x27;110001&#x27;</span>,<span class="string">&#x27;1100001&#x27;</span>,<span class="string">&#x27;1010111&#x27;</span>,<span class="string">&#x27;1101011&#x27;</span>,<span class="string">&#x27;0144&#x27;</span>,<span class="string">&#x27;1001110&#x27;</span>,<span class="string">&#x27;1010111&#x27;</span>,<span class="string">&#x27;0154&#x27;</span>,<span class="string">&#x27;0122&#x27;</span>,<span class="string">&#x27;0116&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;1010110&#x27;</span>,<span class="string">&#x27;0112&#x27;</span>,<span class="string">&#x27;0131&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;0126&#x27;</span>,<span class="string">&#x27;0105&#x27;</span>,<span class="string">&#x27;071&#x27;</span>,<span class="string">&#x27;1010000&#x27;</span>,<span class="string">&#x27;0124&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;111001&#x27;</span>,<span class="string">&#x27;0120&#x27;</span>,<span class="string">&#x27;1010100&#x27;</span>,<span class="string">&#x27;110000&#x27;</span>,<span class="string">&#x27;075&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(a)):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(a[i]))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(a[i])==<span class="number">4</span> <span class="keyword">or</span> <span class="built_in">len</span>(a[i])==<span class="number">3</span>:</span><br><span class="line">        flag+=<span class="built_in">chr</span>(<span class="built_in">int</span>(a[i], <span class="number">8</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag += <span class="built_in">chr</span>(<span class="built_in">int</span>(a[i],<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到base编码</p>
+<img src="/images/isctf/image-20240622135921432.png" alt="图片" width="300" height="200">
+
+<p>赛博厨子一把梭</p>
+<img src="/images/isctf/image-20240622140437470.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{77c34e530e3f2ffb6982f50939b3593b}</p>
+<h3 id="神秘的base"><a href="#神秘的base" class="headerlink" title="神秘的base"></a>神秘的base</h3><p>题目描述:</p>
+<p>神奇密码在哪里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">EvAzEwo6E9RO4qSAHq42E9KvEv5zHDt34GtdHGJaHD7NHG42bwd=</span><br><span class="line"></span><br><span class="line">神奇密码：</span><br><span class="line">xbQTZqjN8ERuwlzVfUIrPkeHd******LK697o2pSsGD+ncgm3CBh/Xy1MF4JAWta</span><br></pre></td></tr></table></figure>
+
+<p>base换表爆破</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">string1 = <span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span>  <span class="comment">#标准base64编码表</span></span><br><span class="line"></span><br><span class="line">strings = <span class="string">&quot;ivOY50&quot;</span></span><br><span class="line">all_colors = (itertools.permutations(strings, <span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> all_colors:</span><br><span class="line">    tmp = <span class="string">&#x27;&#x27;</span>.join(i)</span><br><span class="line">    string2 = <span class="string">f&#x27;xbQTZqjN8ERuwlzVfUIrPkeHd<span class="subst">&#123;tmp&#125;</span>LK697o2pSsGD+ncgm3CBh/Xy1MF4JAWta&#x27;</span>  <span class="comment"># 换表后base64编码表</span></span><br><span class="line">    encode = <span class="string">&#x27;EvAzEwo6E9RO4qSAHq42E9KvEv5zHDt34GtdHGJaHD7NHG42bwd=&#x27;</span></span><br><span class="line">    decode = base64.b64decode(encode.translate(<span class="built_in">str</span>.maketrans(string1, string2)))</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;flag&#123;&#x27;</span> <span class="keyword">in</span> <span class="built_in">str</span>(decode) <span class="keyword">and</span> <span class="string">&#x27;&#125;&#x27;</span> <span class="keyword">in</span> <span class="built_in">str</span>(decode):</span><br><span class="line">        <span class="built_in">print</span>(decode)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到flag</p>
+<img src="/images/isctf/image-20240622141128844.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{8ee3021432edffaa57527461952e632c}</p>
+<h2 id="Stego"><a href="#Stego" class="headerlink" title="Stego"></a>Stego</h2><h3 id="我应该去爱你"><a href="#我应该去爱你" class="headerlink" title="我应该去爱你"></a>我应该去爱你</h3><p>题目描述:</p>
+<p>全世界还有谁，比我们能绝配~</p>
+<p>下载附件，用AU打开文件，查看频谱</p>
+<img src="/images/isctf/image-20240622142018343.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{dfcba866efb361d89b7240c49653a782}</p>
+<h3 id="数独"><a href="#数独" class="headerlink" title="数独"></a>数独</h3><p>题目描述:</p>
+<p>闲来无事，做个数独吧（tips：将数独的结果横向排列，即可得到一组16位的神奇密码)</p>
+<p>下载附件</p>
+<img src="/images/isctf/image-20240622142602144.png" alt="图片" width="300" height="200">
+
+<p>画图做数独</p>
+<img src="/images/isctf/image-20240622143224456.png" alt="图片" width="300" height="200">
+
+<p>密码为4132234132141423</p>
+<p>带密码的png隐写优先考虑cloacked-pixel</p>
+<p>b神工具一把梭</p>
+<img src="/images/isctf/image-20240622143630737.png" alt="图片" width="300" height="200">
+
+<p>获得flag</p>
+<img src="/images/isctf/image-20240622143733657.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{7d692a3c795478b16631eb9b43677075}</p>
+<h3 id="莫生气"><a href="#莫生气" class="headerlink" title="莫生气"></a>莫生气</h3><p>题目描述:</p>
+<p>他人生气我不气，气出病来无人替</p>
+<p>下载附件</p>
+<img src="/images/isctf/image-20240622143956676.png" alt="图片" width="300" height="200">
+
+<p>010查看文件</p>
+<img src="/images/isctf/image-20240622144229036.png" alt="图片" width="300" height="200">
+
+<p>发现藏有png，缺少文件头，补全</p>
+<img src="/images/isctf/image-20240622145750053.png" alt="图片" width="300" height="200">
+
+<p>保存得到png文件</p>
+<img src="/images/isctf/image-20240622145853126.png" alt="图片" width="300" height="200">
+
+<p>发现两张图都一样，猜测双图盲水印，b神工具一把梭</p>
+<img src="/images/isctf/image-20240622150141317.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{c6d8bc4276f2a26eo7d8178253456b92}</p>
+<h2 id="Forenisc"><a href="#Forenisc" class="headerlink" title="Forenisc"></a>Forenisc</h2><h3 id="金刚大战哥斯拉"><a href="#金刚大战哥斯拉" class="headerlink" title="金刚大战哥斯拉"></a>金刚大战哥斯拉</h3><p>题目描述:</p>
+<p>哥斯拉大战金刚，到底谁会获胜呢？</p>
+<p>下载附件</p>
+<img src="/images/isctf/image-20240622165857838.png" alt="图片" width="300" height="200">
+
+<p>过滤http</p>
+<img src="/images/isctf/image-20240622170522596.png" alt="图片" width="300" height="200">
+
+<p>追踪流发现是哥斯拉流量（其实题目就告诉了）</p>
+<img src="/images/isctf/image-20240622170632720.png" alt="图片" width="300" height="200">
+
+<p>url解码得到哥斯拉流量密文</p>
+<img src="/images/isctf/image-20240622170738702.png" alt="图片" width="300" height="200">
+
+<p>导出http对象</p>
+<img src="/images/isctf/image-20240622170851361.png" alt="图片" width="300" height="200">
+
+<p>查看shell(1).php，发现哥斯拉流量的key</p>
+<img src="/images/isctf/image-20240622150141317.png" alt="图片" width="300" height="200">
+
+<p>方法一:</p>
+<p>哥斯拉流量解密exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function encode($D,$K)&#123;</span><br><span class="line">    for($i=0;$i&lt;strlen($D);$i++)&#123;</span><br><span class="line">        $c = $K[$i+1&amp;15];</span><br><span class="line">        $D[$i] = $D[$i]^$c;</span><br><span class="line">    &#125;</span><br><span class="line">    return $D;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$pass=&#x27;DASCTF&#x27;;</span><br><span class="line">$payloadName=&#x27;payload&#x27;;</span><br><span class="line">$key=&#x27;9c2ffaf6a14493bf&#x27;;</span><br><span class="line">$data = &#x27;fLluZmFmNmExNJEhWBG1b1XhCY%2BtGO2uCp6t3zK69FxYTKJQssNT1y5Cf45Hu3u%2Fivq08xw%2FbzMVDb2iVURKKXEgFjxjZzQ6kQjmUHpg8t9m09mKOdTLyE5V%2B%2Bzw83kQjtK%2Bl9yBKvzGCdNluDokRoC4jvtek8KVLXnlU3K366szlCn4XS%2BxolAu%2FzspbXO1wRZkj15en%2BXvDcX%2BrfySQnxMFJKl2bgedSVozzyNwPBUFxcUX3V2E%2FGyFHezDWxnihBUXutJRvu%2FuHjZwHGhu%2BpybShnSwTgYLjybXZRZC3M%2BmD04BA6ancVF5lirsWZ3gsqB3h9rvKzDvtwG3FoCM6ObODAYOcpOLtSO8xuGMciws40NV81hhXQV7ViZG9At06ypufihH4bSJ0xy1aL1T6WCPL6fcRbCaVn%2F7BYmCuoy3LzMlI3CHA0OXbds4Itwg7X0dQnKp7eiJKtV0MjJAMqAN50O9LVDaJnbQg%2Bgz2iJLLoMSCnR3v%2BbLMZAid5ESm8JoIgZk5BNpVZ5xOdquNNWFz%2BpLOR9W%2Fe%2BhjwxCiwdtfdaQj0QiC18L6TbTSMhl2qQWqZrd97KZDOI4gJ6ar1QWIgDk3D%2BO5oRFYMWRthsKfGFB38Hcn%2BqMDyOLrLqBFJXaw0Yv1YQaHyn9ycRJ7DEoWfsdCyOuH5HtW4MNp2Y72ptdqCI4RHgZryK142ucH2BCmN0oxVZr4zcMISfKEwXmyzwrX27r%2BZoYUqTwN%2FJ2NCE1%2FWNgPkChD08LLZKbS0dzIlZ3xFL2h7kbP%2FOHn8ceocxTV3q%2F%2BPjOrpsORuwQOj6pMoYB%2FSD5rUGN0KGeerrZQhUaw2u5%2FiZMj9rnlFiF3gyOtb3mTLt%2FN09poaFr9TidOFisTtU%2FnryDLT2GnIfIveQwKcwliQhVGLvWiEgIweDe3OmDeFYT8U68LU09%2BMrxGD2lYdh4tlvx9h2IttzPAc3yZna5tP%2BiZJJruPGgY40GVc9p%2Fw1%2Bixk%2F68RoLtOscCL%2FERCXz22P8xWmk9utDwSA8dyeCgj3hBQsr24nSbWJFu0%2FOSM5dOK00yD%2F8GE4fyxQ7U0IVVZ1rjdccA44j0Tt7ArMzs4d1a6k3SK2GiKM2X3dqqysh9oJ96r2iJA2R0jHvYwbKTSSLyhDT%2BpZc5Hl%2Fp6e6L5wTKuRZnhKxIDqpzpw%2BwQe6pVq0BuI5FoXQ%2F3mPydT2nkEjcLnLaxBDoVQSUd6Ba92MYcesUpZ13yAAgi%2F79ZKgithRVuwhrTCtNXAp5j6p7%2BBJdzJGV%2Bl2s33UnBjVeKqrAUATX9yY7NIql2E4SOWp4loycxh2nwR3Qe9Zi%2BKBaSmBHVy5liSgUFGOlmsWgM%2FstzXc%2F9SNQyUXALbOxa7s17A%2BDOkgUGLIBM7M6Va0Aa8A2xTnyr0SHwyQpUjE5E1x1t24X4MSADqqMIkQSEHPkgttSbALFUOd32Gko8djwakoi7rmXWAEKojSlDZffyPLwMJQjI%2B5%2FiXFfSasJP1zCbr5nl%2FKFBcomDDFy8gnLMG2zwvLRIrfDquVIhlTgF6Giq4JqWmI9ZSJG8ATh2y%2F9uXExyhdQ33b4O%2B4a9OJv%2F1MWz%2BYQqCLu9DhObYTQQThBtUcxAyF3hOD9B1Q0DWQNPu7UDMuLX57ThBw8CulWsahG7QBGOamGf23KVji%2FaQdKeXYGQohkA1oN%2FSOleQWuIJvSk1KrBDtQRU6AWG6WNqnl33Z%2B0cgBYUcg8noLHMByMkRefpLMqm%2BGH2zrdGpNgEcaCzk5ulYd9pHMdiYDfTp3sFjdsR%2FxplFSP4VfnbWpF7WsiT7WGZoPXtv%2F4gWI60ftEnJ1peYtXUlLDuv2tYt2wmpafCClt1Y0tfB51iBFGhUy7Bw%2FdbjtVxZJHB8FvsEzEGj5BWp45LAGFxpOUsKuUVdioTfyjp01%2F%2FIAsu%2FUG%2FxSpHdfR5TlGRLw0WNef7CnYxLURPTbp0ZF9MglFQGkN58Iq7RR4EFt4s4fP32AmuTUgyz7WNgqv0nswP0mPzMHiZwxBSIZTitjQ5QYbd1BlOX1cAM0TZRE2bOiDQnPjhvEC3jEp9L3ktZ1A%2BVcuXnAhInoy4Dq1%2F0%2FO5KITcyi0NR1ftNMsjzMwUZETqEcCyxr1d23lSNBEFTf4A4FJaCIfcvD0tbHoceynhSdHkRJBiUu8DULyBdcTeFFRq9jA3jwpjrbBmvYfvSBoNqYKbbPq2tErzqOA2fiPYHJkMiAPVsamUIDG4%2FzMD4SqKu6Uoj836CsY%2Fz7znvX5zh6LzB7vPoL8QUGmEd5E0SXk4vKieQkHX4vlQM%2FToQKpQRkdaMrOIs0LQFIp0D4vvEhdwJ7eK%2FmClCgCOPEpU%2F3zJhVfIZfUHgDrkUK4HOfT4piF4STR7SZCleaGDwHUkYRiLWNGrEiiNqwNPJhQ63gStGcBVIYFk%2B3F1neK32xH506xzsqjhFJnDHAbMPC47x6hXmMsm%2BTMBQNfgYyzmDyxERG3o9IuLB%2B3vzTJfaLv9bZ4aNTef%2BMwQDLojDSIiEK%2FDvw%2BuOHt5%2Fwk7cNiXWBhKCjULlR8Daukh7MFlCklEs3srvkifaW4VbF85SckpUhIjOTVTYZ4EgK1VYQ%2BK52O7kKt%2BT2kOkLDDE5JiDXApezQtbnw5yPM8WDh5c1DTaRqLsWxUTPWtVlcbzyge5D4VYWXJ0ICPpVfbeEQXutk0tMKBfY0q20%2Bo8CD6oHnm3wy5ELMeLsmXrspAmhwk2wr8d64CHizraARwvNAAX71VCPIUukAvgtEBblKi9EsFr4Or6s%2Fz1RtnxlaufSdlTCCwWTAe%2FeBK%2FKdehF4gIQ91hCWyrI6jJchH%2F5VA0sXxqVe1sBsZulTMJJJo3VZsFutboAetPCdcmEzqqIYUEuSuJf%2F5tXJm5hujq6EJ6rZbBXqnCeLDVWyhhZvy4kL9jKcF2Hp9ItvRBHP6hI%2FAEzBH%2B89XwS07WJsmlYkiQmHDYavnLbbm8sEAbGwbxCbTUJU7qKgTZff%2BWEBuQ%2BTg4mRab4%2B8SpRklCHU3QCeS1nIHPuJrdyOwMMGQ%2B%2BWEG0hDsiReJbkcG9f9mORbZpLegR5HDbiT0oYJG6GcvKxTNS6voIrE94nva0%2FeQvEgokgbBQQQoejcj1h7oStaWk5OdeWhBJaAgnFmtfGW6lyA0OQ%3D%3D&#x27;;</span><br><span class="line">echo base64_encode(gzdecode(encode(base64_decode(urldecode($data)),$key)));</span><br></pre></td></tr></table></figure>
+
+<p>运行得到</p>
+<img src="/images/isctf/image-20240622171505209.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZmlsZU5hbWUCHgAAAEM6L3BocHN0dWR5L1dXVy8xMTEvaW5kZXguaHRtbGZpbGVWYWx1ZQJUFAAAPCFET0NUWVBFIGh0bWw+DQo8aHRtbCBsYW5nPSJlbiI+DQo8aGVhZD4NCiAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+DQogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPg0KICAgIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iaWU9ZWRnZSI+DQogICAgPHRpdGxlPkRvY3VtZW50PC90aXRsZT4NCiAgICA8c3R5bGU+DQogICAgICAgICp7Ym94LXNpemluZzogYm9yZGVyLWJveDt9DQogICAgICAgIGJvZHl7DQogICAgICAgICAgICBiYWNrZ3JvdW5kOiAjMDAwOw0KICAgICAgICAgICAgbWFyZ2luOiAwOw0KICAgICAgICAgICAgcGFkZGluZzogMDsNCiAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47DQogICAgICAgICAgICB0ZXh0LXNoYWRvdzogMHB4IDBweCA4MHB4Ow0KICAgICAgICB9DQogICAgICAgIGgxew0KICAgICAgICAgICAgbWFyZ2luOiAwOw0KICAgICAgICAgICAgcGFkZGluZzogMDsNCiAgICAgICAgICAgIGNvbG9yOiAjMGZmOw0KICAgICAgICB9DQogICAgICAgIGF7Y29sb3I6ICNmZmY7fQ0KICAgICAgICAvKiDnm5LlrZDihpMgKi8NCiAgICAgICAgcHsNCiAgICAgICAgICAgIG1hcmdpbjogMDsNCiAgICAgICAgfQ0KICAgICAgICAuYm94ew0KICAgICAgICAgICAgLyog55uS5a2Q5a695bqm4oaTIC0tLeacgOWlveWIq+aUuSovDQogICAgICAgICAgICB3aWR0aDogNzAwcHg7DQogICAgICAgICAgICAvKiDorqnop4bpopHlsYXkuK3lr7npvZDihpMtLS3mnIDlpb3liKvliqggKi8NCiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsNCiAgICAgICAgICAgIC8qIGJvcmRlcjogMXB4IHNvbGlkICNmMDA7ICovDQogICAgICAgICAgICBjb2xvcjogI2ZmZjsNCiAgICAgICAgICAgIA0KICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlOw0KICAgICAgICAgICAgbWFyZ2luOiAyMHB4IGF1dG8gMDsNCiAgICAgICAgICAgIHRvcDogMjBweDsNCiAgICAgICAgICAgIGxlZnQ6IDA7DQogICAgICAgICAgICByaWdodDogMDsNCiAgICAgICAgfQ0KICAgICAgICAvKiDlm77niYfmoLflvI/ihpMgKi8NCg0KICAgICAgICBpbWd7DQogICAgICAgICAgICAvKiDop4bpopHlrr3luqbihpMgLS0t5pyA5aW95LiN6KaB5aSn5LqO5LiK6Z2i55uS5a2Q55qE5a695bqmKi8NCiAgICAgICAgICAgIHdpZHRoOiA3MDBweDsNCiAgICAgICAgICAgIGhlaWdodDogMzkwcHg7DQogICAgICAgICAgICAvKiDngbDoibLnmoTmj4/ovrnihpMgLS0tcHjmmK/nspfnu4Ygc29saWTmmK/lrp7nur8gIzU1NeaYr+minOiJsuS7o+eggSDlj6/ku6Xnmb7luqZodG1s6aKc6Imy5Luj56CB5L+u5pS5Ki8NCiAgICAgICAgICAgIGJvcmRlcjogMnB4IHNvbGlkICMyMjI7DQogICAgICAgICAgICAvKiDlm77niYfnmoTlnIbop5IgKi8NCiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDsNCiAgICAgICAgICAgIC8qIOWKqOeUu+aXtumXtCAqLw0KICAgICAgICAgICAgdHJhbnNpdGlvbjogMC44czsNCiAgICAgICAgfQ0KICAgICAgICAuaW1nMjpob3Zlcntib3JkZXI6IDJweCBzb2xpZCAjOTgwYjE4fQ0KDQogICAgICAgIC5ib3g+ZGl2ew0KICAgICAgICAgICAgcGFkZGluZzogMjBweDsNCiAgICAgICAgICAgIC8qIGJvcmRlcjogMXB4IHNvbGlkICNmMDA7ICovDQogICAgICAgIH0NCiAgICAgICAgLnN6ansNCiAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsNCiAgICAgICAgICAgIHRvcDogMDsNCiAgICAgICAgICAgIGxlZnQ6IDA7DQogICAgICAgICAgICBjb2xvcjogI2ZmZjsNCiAgICAgICAgICAgIHBhZGRpbmc6IDVweDsNCiAgICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNlZWU7DQogICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDAsMC43KQ0KICAgICAgICB9DQogICAgICAgIC55bHsNCiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZTsNCiAgICAgICAgICAgIGJvcmRlci1ib3R0b206MXB4IGRvdHRlZCAjMGZmOw0KICAgICAgICB9DQogICAgICAgIC55bCBhew0KICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KICAgICAgICAgICAgY29sb3I6I2M2ZDQ5MTsNCiAgICAgICAgICAgIA0KICAgICAgICB9DQogICAgICAgIC55bCBzcGFuew0KICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiA4cHg7DQogICAgICAgIH0NCiAgICA8L3N0eWxlPg0KPC9oZWFkPg0KPGJvZHk+DQogICAgPGNhbnZhcyBpZD0iY2FudmFzIj48L2NhbnZhcz4NCiAgICA8ZGl2IGNsYXNzPSJib3giPg0KICAgICAgICA8IS0tIOWbvueJh+mDqOWIhiAtLT4NCiAgICAgICAgPGltZyBjbGFzcz0iaW1nMiIgc3JjPSJodHRwczovL3RpbWdzYS5iYWlkdS5jb20vdGltZz9pbWFnZSZxdWFsaXR5PTgwJnNpemU9Yjk5OTlfMTAwMDAmc2VjPTE1Njg2NDE0NzImZGk9OWRiYWNiNzVjZjI0NWQwZWI1N2U3NTdlMGQyMjQ3ZjcmaW1ndHlwZT1qcGcmZXI9MSZzcmM9aHR0cCUzQSUyRiUyRmltZzEuZG91YmFuaW8uY29tJTJGdmlldyUyRnBob3RvJTJGbCUyRnB1YmxpYyUyRnAyMjkwMDU5MTU3LmpwZyIgYWx0PSIiPg0KICAgICAgICA8ZGl2IGNsYXNzPSJ0ZXh0Ij4NCiAgICAgICAgICAgIDxoMT7mn5Dmn5Dlronlhajnu4Q8L2gxPg0KDQogICAgICAgICAgICA8YnI+DQoNCiAgICAgICAgICAgIDxzcGFuIHN0eWxlPSJjb2xvcjogIzBmMCI+5a6Y5pa5Uee+pO+8mjwvc3Bhbj48c3Bhbj48YSB0YXJnZXQ9InZpZXdfd2luZG93IiBocmVmPSJodHRwczovL3d3dy5iYWlkdS5jb20vIj4xMjM0NTY8L2E+PC9zcGFuPg0KPGJyPjxicj4NCg0KICAgICAgICAgICAgPHAgY2xhc3M9Imdsb3ciIHN0eWxlPSJjb2xvcjogI2YwMDsgZm9udC1zaXplOjIxcHg7Ij7lj4vmg4Xmo4DmtYvvvIzor7flj4rml7bkv67lpI08L3A+DQogICAgICAgICAgICA8cCBjbGFzcz0iZ2xvdyIgc3R5bGU9ImNvbG9yOiAjZjAwOyBmb250LXNpemU6MTBweDsiPuaIluiBlOezu+acrOS6uuS/ruWkjTwvcD4NCiAgICAgICAgICAgIDxicj4NCiAgICAgICAgICAgIDxzcGFuIHN0eWxlPSJjb2xvcjogIzNlZTVkZiI+5p+Q5p+Q5p+QUXHvvJo8L3NwYW4+PHNwYW4+PGEgIHN0eWxlPSJjb2xvcjogI2U1NzQzZTsiIHRhcmdldD0idmlld193aW5kb3ciIGhyZWY9Imh0dHA6Ly93cGEucXEuY29tL21zZ3JkP3Y9MyZ1aW49Mjc2ODc3Njg5NSZzaXRlPXFxJm1lbnU9eWVzIj5mbGFnezIyN2FkMjQyZmM4MDEzYzhmZThmZjhmNDY3OTMzN2U0fTwvYT48L3NwYW4+DQogICAgICAgICAgICA8YnI+PGJyPg0KICAgICAgICAgICAgPFAgY2xhc3M9Imdsb3ciPuWuieWFqOS5i+i3r++8jOawuOS4jeWmpeWNjzwvUD4NCjxicj48YnI+PGJyPjxicj4NCiAgICAgICAgICAgIDxkaXYgY2xhc3M9InlsIj48c3BhbiBzdHlsZT0iY29sb3I6ICNmMGYiPuWPi+aDhemTvuaOpe+8mjwvc3Bhbj48c3Bhbj48YSBocmVmPSJodHRwczovL3d3dy5iYWlkdS5jb20vIj7mn5DnvZHnq5k8L2E+PC9zcGFuPiA8c3Bhbj48YSBocmVmPSJodHRwczovL3d3dy5iYWlkdS5jb20vIj7mn5DnvZHnq5k8L2E+PC9zcGFuPjxzcGFuPjxhIGhyZWY9Imh0dHBzOi8vd3d3LmJhaWR1LmNvbS8iPuafkOe9keermTwvYT48L3NwYW4+PC9kaXY+DQoNCiAgICAgICAgPC9kaXY+DQogICAgPC9kaXY+DQogICAgPGRpdiBjbGFzcz0ic3pqIj4NCjxwcmU+DQogIOWFpeS+teS4ieWtl+e7jw0KDQrov5vosLfmrYwg5om+5rOo5YWlDQoNCuayoeazqOWFpSDlsLHml4Hms6gNCg0K5rKh5peB5rOoIOeUqE9kYXkNCg0K5rKhT2RheSDnjJznm67lvZUNCg0K5rKh55uu5b2VIOWwseWXheaOog0KDQrniIbotKbmiLcg5om+5ZCO5Y+wDQoNCuS8oOWwj+mprCDmlL7lpKfpqawNCg0K5ou/5p2D6ZmQIOaMgumhtemdog0KDQo8L3ByZT4NCg0KICAgIA0KDQoNCiAgICA8IS0tIOmfs+S5kOmDqOWIhiAtLT4NCiAgICA8ZW1iZWQgaGVpZ2h0PSIwIiB3aWR0aD0iMCIgc3JjPSJodHRwczovL211c2ljLjE2My5jb20vb3V0Y2hhaW4vcGxheWVyP3R5cGU9MiZpZD0yOTQwMDkyNiZhdXRvPTEmaGVpZ2h0PTY2Ij48L2VtYmVkPg0KDQogICAgDQoNCg0KICAgIDwhLS0g5Lul5LiLanMgLS0+DQoNCg0KICAgIDxzY3JpcHQ+DQogICAgdmFyIGNhbnZhcyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjYW52YXMnKTsNCgkJdmFyIGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpOw0KDQoNCgkJY2FudmFzLmhlaWdodCA9IHdpbmRvdy5pbm5lckhlaWdodDsNCgkJY2FudmFzLndpZHRoID0gd2luZG93LmlubmVyV2lkdGg7DQogICAgICAgIC8vIOS4i+mdoueahOmbt+WGm+WwseaYr+S7o+eggembqOeahOaWh+Wtlw0KCQl2YXIgdGV4dHMgPSAn6Zu35YabJy5zcGxpdCgnJyk7DQoNCgkJdmFyIGZvbnRTaXplID0gMTY7DQoJCXZhciBjb2x1bW5zID0gY2FudmFzLndpZHRoL2ZvbnRTaXplOw0KCQkvLyDnlKjkuo7orqHnrpfovpPlh7rmloflrZfml7blnZDmoIfvvIzmiYDku6Xplb/luqbljbPkuLrliJfmlbANCgkJdmFyIGRyb3BzID0gW107DQoJCS8v5Yid5aeL5YC8DQoJCWZvcih2YXIgeCA9IDA7IHggPCBjb2x1bW5zOyB4Kyspew0KCQkJZHJvcHNbeF0gPSAxOw0KCQl9DQoNCgkJZnVuY3Rpb24gZHJhdygpew0KCQkJLy/orqnog4zmma/pgJDmuJDnlLHpgI/mmI7liLDkuI3pgI/mmI4NCgkJCWN0eC5maWxsU3R5bGUgPSAncmdiYSgwLCAwLCAwLCAwLjA1KSc7DQoJCQljdHguZmlsbFJlY3QoMCwgMCwgY2FudmFzLndpZHRoLCBjYW52YXMuaGVpZ2h0KTsNCgkJCS8v5paH5a2X6aKc6ImyDQoJCQljdHguZmlsbFN0eWxlID0gJyMwRjAnOw0KCQkJY3R4LmZvbnQgPSBmb250U2l6ZSArICdweCBhcmlhbCc7DQoJCQkvL+mAkOihjOi+k+WHuuaWh+Wtlw0KCQkJZm9yKHZhciBpID0gMDsgaSA8IGRyb3BzLmxlbmd0aDsgaSsrKXsNCgkJCQl2YXIgdGV4dCA9IHRleHRzW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSp0ZXh0cy5sZW5ndGgpXTsNCgkJCQljdHguZmlsbFRleHQodGV4dCwgaSpmb250U2l6ZSwgZHJvcHNbaV0qZm9udFNpemUpOw0KDQoJCQkJaWYoZHJvcHNbaV0qZm9udFNpemUgPiBjYW52YXMuaGVpZ2h0IHx8IE1hdGgucmFuZG9tKCkgPiAwLjk1KXsNCgkJCQkJZHJvcHNbaV0gPSAwOw0KCQkJCX0NCg0KCQkJCWRyb3BzW2ldKys7DQoJCQl9DQoJCX0NCglzZXRJbnRlcnZhbChkcmF3LCAzMyk7DQo8L3NjcmlwdD4NCjwvYm9keT4NCjwvaHRtbD5tZXRob2ROYW1lAgoAAAB1cGxvYWRGaWxl</span><br></pre></td></tr></table></figure>
+
+<p>base解码得到flag</p>
+<img src="/images/isctf/image-20240622172159377.png" alt="图片" width="300" height="200">
+
+
+
+<p>方法二:</p>
+<p>流量一把梭</p>
+<img src="/images/isctf/image-20240622172338677.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{227ad242fc8013c8fe8ff8f4679337e4}</p>
+<h3 id="啊吧啊吧的数据包"><a href="#啊吧啊吧的数据包" class="headerlink" title="啊吧啊吧的数据包"></a>啊吧啊吧的数据包</h3><p>题目描述:</p>
+<p>一打开数据包我就，啊吧啊吧啊吧。</p>
+<p>下载附件</p>
+<img src="/images/isctf/image-20240622181845185.png" alt="图片" width="300" height="200">
+
+<p>过滤http</p>
+<img src="/images/isctf/image-20240622182126798.png" alt="图片" width="300" height="200">
+
+<p><strong>http.request.method &#x3D;&#x3D; POST</strong></p>
+<img src="/images/isctf/image-20240622182435916.png" alt="图片" width="300" height="200">
+
+<p>导出特定分组，筛选c38流量文件</p>
+<img src="/images/isctf/image-20240622182618129.png" alt="图片" width="300" height="200">
+
+<p>查看文本手撕得到flag</p>
+<p>最后flag为flag{3563bd1a59309e1a4e93b65152bfbba}</p>
+<h3 id="小刘的硬盘"><a href="#小刘的硬盘" class="headerlink" title="小刘的硬盘"></a>小刘的硬盘</h3><p>题目描述:</p>
+<p>小刘有一块硬盘误删了一些文件，你能帮帮他么？</p>
+<p>下载附件，使用diskgenius挂载磁盘</p>
+<img src="/images/isctf/image-20240622184011259.png" alt="图片" width="300" height="200">
+
+<p>使用diskgenius恢复文件</p>
+<img src="/images/isctf/image-20240622184210697.png" alt="图片" width="300" height="200">
+
+<p>得到一个假flag，一个jpg图片，一个压缩包</p>
+<p>jpg文件不存在隐写，考虑压缩包，导出压缩包，发现有密码</p>
+<img src="/images/isctf/image-20240622184547652.png" alt="图片" width="300" height="200">
+
+<p>旁边有提示:小刘喜欢用自己的名字+生日当密码</p>
+<p>掩码爆破</p>
+<img src="/images/isctf/image-20240622185246686.png" alt="图片" width="300" height="200">
+
+<p>解压压缩包得到flag</p>
+<img src="/images/isctf/image-20240622185343657.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{8ddeed0126f2523ae14a8a492528c9a0}</p>
+<h3 id="考古2-0"><a href="#考古2-0" class="headerlink" title="考古2.0"></a>考古2.0</h3><p>下载附件</p>
+<p>内存取证（vol）</p>
+<p>vol.py -f 考古 –profile&#x3D;WinXPSP2x86 cmdline</p>
+<img src="/images/isctf/image-20240622193311026.png" alt="图片" width="300" height="200">
+
+<p>发现virus，搜索文件</p>
+<p>vol.py -f 考古 –profile&#x3D;WinXPSP2x86 filescan | grep virus </p>
+<img src="/images/isctf/image-20240622193526445.png" alt="图片" width="300" height="200">
+
+<p>提取文件</p>
+<p>vol.py -f 考古 –profile&#x3D;WinXPSP2x86 dumpfiles  -Q 0x00000000064e7490 -D .&#x2F;</p>
+<img src="/images/isctf/image-20240622193804562.png" alt="图片" width="300" height="200">
+
+<p>强制异或</p>
+<img src="/images/isctf/image-20240622194153033.png" alt="图片" width="300" height="200">
+
+<p>导出，搜索关键字flag</p>
+<img src="/images/isctf/image-20240622194553040.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{w0rd_v1ru4_i5_v3ry_e45y}</p>
+<h2 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h2><h3 id="easyRSA"><a href="#easyRSA" class="headerlink" title="easyRSA"></a>easyRSA</h3><p>题目描述:</p>
+<p>简单的RSA，你能做出来吗？</p>
+<p>题目源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import getPrime,bytes_to_long</span><br><span class="line">from random import randint</span><br><span class="line">from gmpy2 import *</span><br><span class="line"></span><br><span class="line">m = bytes_to_long(b&#x27;flag&#123;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#125;&#x27;)</span><br><span class="line"></span><br><span class="line">p=getPrime(1024)</span><br><span class="line">q=getPrime(1024)</span><br><span class="line">n = p*q</span><br><span class="line">e = 65537</span><br><span class="line">c = pow(m,e,n)</span><br><span class="line">p_2=((p&gt;&gt;128)&lt;&lt;128)</span><br><span class="line">Result = []</span><br><span class="line">Divisor = []</span><br><span class="line">for i in range(12):</span><br><span class="line">    Divisor.append(getPrime(128))</span><br><span class="line">for i in range(12):</span><br><span class="line">    Result.append(p_2%Divisor[i])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(c,n,Divisor,Result)</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">output:</span><br><span class="line">16054555662735670936425135698617301522625617352711974775378018085049483927967003651984471094732778961987450487617897728621852600854484345808663403696158512839904349191158022682563472901550087364635161575687912122526167493016086640630984613666435283288866353681947903590213628040144325577647998437848946344633931992937352271399463078785332327186730871953277243410407484552901470691555490488556712819559438892801124838585002715833795502134862884856111394708824371654105577036165303992624642434847390330091288622115829512503199938437184013818346991753782044986977442761410847328002370819763626424000475687615269970113178 </span><br><span class="line">23074300182218382842779838577755109134388231150042184365611196591882774842971145020868462509225850035185591216330538437377664511529214453059884932721754946462163672971091954096063580346591058058915705177143170741930264725419790244574761160599364476900422586525460981150535489695841064696962982002670256800489965431894477338710190086446895596651842542202922745215496409772520899845435760416159521297579623368414347408762466625792978844177386450506030983725234361868749543549687052221290158286459657697717436496769811720945731143244062649181615815707417418929020541958587698982776940334577355474770096580775243142909913</span><br><span class="line">[205329935991133380974880368934928321273, 274334866497850560640212079966358515253, 264739757264805981824344553014559883169, 314495359937742744429284762852853819407, 197513216256198287285250395397676269263, 194633662721082002304170457215979299327, 320085578355926571635267449373645191637, 310701821184698431287158634968374845899, 198238777199475748910296932106553167589, 292201037703513010563101692415826269513, 332238634715339876614712914152080415649, 334257376383174624240445796871873866383]</span><br><span class="line">[108968951841202413783269876008807200083, 29053101048844108651205043858001307413, 243503157837867321277650314313173163504, 160933173053376016589301282259056101279, 53063624128824890885455759542416407733, 34980025050049118752362228613379556692, 132553045879744579114934351230906284133, 160998336275894702559853722723725889989, 87211131829406574118795685545402094661, 36445723649693757315689763759472880579, 11133325919940126818459098315213891415, 1404668567372986395904813351317555162]</span><br><span class="line">&#x27;&#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>中国剩余定理+coppersmith</p>
+<p>先通过CRT求出p_2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">from gmpy2 import *</span><br><span class="line">from functools import reduce</span><br><span class="line"></span><br><span class="line">c=16054555662735670936425135698617301522625617352711974775378018085049483927967003651984471094732778961987450487617897728621852600854484345808663403696158512839904349191158022682563472901550087364635161575687912122526167493016086640630984613666435283288866353681947903590213628040144325577647998437848946344633931992937352271399463078785332327186730871953277243410407484552901470691555490488556712819559438892801124838585002715833795502134862884856111394708824371654105577036165303992624642434847390330091288622115829512503199938437184013818346991753782044986977442761410847328002370819763626424000475687615269970113178</span><br><span class="line">n=23074300182218382842779838577755109134388231150042184365611196591882774842971145020868462509225850035185591216330538437377664511529214453059884932721754946462163672971091954096063580346591058058915705177143170741930264725419790244574761160599364476900422586525460981150535489695841064696962982002670256800489965431894477338710190086446895596651842542202922745215496409772520899845435760416159521297579623368414347408762466625792978844177386450506030983725234361868749543549687052221290158286459657697717436496769811720945731143244062649181615815707417418929020541958587698982776940334577355474770096580775243142909913</span><br><span class="line">Divisor=[205329935991133380974880368934928321273, 274334866497850560640212079966358515253, 264739757264805981824344553014559883169, 314495359937742744429284762852853819407, 197513216256198287285250395397676269263, 194633662721082002304170457215979299327, 320085578355926571635267449373645191637, 310701821184698431287158634968374845899, 198238777199475748910296932106553167589, 292201037703513010563101692415826269513, 332238634715339876614712914152080415649, 334257376383174624240445796871873866383]</span><br><span class="line">Result=[108968951841202413783269876008807200083, 29053101048844108651205043858001307413, 243503157837867321277650314313173163504, 160933173053376016589301282259056101279, 53063624128824890885455759542416407733, 34980025050049118752362228613379556692, 132553045879744579114934351230906284133, 160998336275894702559853722723725889989, 87211131829406574118795685545402094661, 36445723649693757315689763759472880579, 11133325919940126818459098315213891415, 1404668567372986395904813351317555162]</span><br><span class="line"></span><br><span class="line">def basic_CRT(ai,mi):</span><br><span class="line">    assert reduce(gmpy2.gcd,mi) == 1</span><br><span class="line">    assert len(ai) == len(mi)</span><br><span class="line">    N = reduce(lambda x,y:x * y,mi)</span><br><span class="line">    ans = 0</span><br><span class="line">    for a,m in zip(ai,mi):</span><br><span class="line">        t = N // m</span><br><span class="line">        ans += a * t * gmpy2.invert(t,m)</span><br><span class="line">    return ans % N,N</span><br><span class="line">result = basic_CRT(Result,Divisor)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<p>得到p_2</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(mpz(157397749849472741302651922559110947585741898399548366071672772026799823577871183957882637829089669634665699886533302712057712796808672023827078956556745522749244570015492585747076324258912525658578733402979835176037760966294532155059241756382643278063578661030876735794467422919824463419065126688059515994112), 115343256339804438488541860602807499768350592243111732022419431132087583829952557330993478731619075521301706171847716910739807488266701790937805652553244788024534230754162298101105496772540567818850570512144853594488579606954797182360716688344137783051055690460297099575344944650143959946929880492674974780957995559861235099499367407389543136733028684627735422306472504011232051138891022767098404805311381687759832357323075065923241564165806258181141497530683119)</span><br></pre></td></tr></table></figure>
+
+<p>然后再梭个coppersmith</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p_high=157397749849472741302651922559110947585741898399548366071672772026799823577871183957882637829089669634665699886533302712057712796808672023827078956556745522749244570015492585747076324258912525658578733402979835176037760966294532155059241756382643278063578661030876735794467422919824463419065126688059515994112</span><br><span class="line"></span><br><span class="line">PR.&lt;x&gt; = PolynomialRing(Zmod(n))</span><br><span class="line">f = x + p_high</span><br><span class="line">roots = f.small_roots(X=2^128, beta=0.4)</span><br><span class="line">if roots:</span><br><span class="line"> p = p_high+int(roots[0])</span><br><span class="line"> print(&quot;n=&quot;+str(n))</span><br><span class="line"> print(&quot;p=&quot;+str(p))</span><br><span class="line"> print(&quot;q=&quot;+str(n//p))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#n = 23074300182218382842779838577755109134388231150042184365611196591882774842971145020868462509225850035185591216330538437377664511529214453059884932721754946462163672971091954096063580346591058058915705177143170741930264725419790244574761160599364476900422586525460981150535489695841064696962982002670256800489965431894477338710190086446895596651842542202922745215496409772520899845435760416159521297579623368414347408762466625792978844177386450506030983725234361868749543549687052221290158286459657697717436496769811720945731143244062649181615815707417418929020541958587698982776940334577355474770096580775243142909913</span><br><span class="line">#p = 157397749849472741302651922559110947585741898399548366071672772026799823577871183957882637829089669634665699886533302712057712796808672023827078956556745522749244570015492585747076324258912525658578733402979835176037760966294532155059241756382643278063578661030876735794708282102407491782299777228899079176117</span><br><span class="line">#q = 146598666145389487374076474702380241089893944436923994466470555513748278755568038863819188404588602962888679358728628069490879689376996830110571995521814075973422513105805715524894550773219606972944401957227665252279176873209924236114228003156706532596699592716796867748104565680326123749660658940264843181589</span><br></pre></td></tr></table></figure>
+
+<p>最后正常解RSA</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">from Crypto.Util.number import long_to_bytes</span><br><span class="line">c=16054555662735670936425135698617301522625617352711974775378018085049483927967003651984471094732778961987450487617897728621852600854484345808663403696158512839904349191158022682563472901550087364635161575687912122526167493016086640630984613666435283288866353681947903590213628040144325577647998437848946344633931992937352271399463078785332327186730871953277243410407484552901470691555490488556712819559438892801124838585002715833795502134862884856111394708824371654105577036165303992624642434847390330091288622115829512503199938437184013818346991753782044986977442761410847328002370819763626424000475687615269970113178</span><br><span class="line">n=23074300182218382842779838577755109134388231150042184365611196591882774842971145020868462509225850035185591216330538437377664511529214453059884932721754946462163672971091954096063580346591058058915705177143170741930264725419790244574761160599364476900422586525460981150535489695841064696962982002670256800489965431894477338710190086446895596651842542202922745215496409772520899845435760416159521297579623368414347408762466625792978844177386450506030983725234361868749543549687052221290158286459657697717436496769811720945731143244062649181615815707417418929020541958587698982776940334577355474770096580775243142909913</span><br><span class="line">p=157397749849472741302651922559110947585741898399548366071672772026799823577871183957882637829089669634665699886533302712057712796808672023827078956556745522749244570015492585747076324258912525658578733402979835176037760966294532155059241756382643278063578661030876735794708282102407491782299777228899079176117</span><br><span class="line">q=146598666145389487374076474702380241089893944436923994466470555513748278755568038863819188404588602962888679358728628069490879689376996830110571995521814075973422513105805715524894550773219606972944401957227665252279176873209924236114228003156706532596699592716796867748104565680326123749660658940264843181589</span><br><span class="line">e=65537</span><br><span class="line"></span><br><span class="line">phi = (p-1) * (q-1)</span><br><span class="line">n = p * q</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line">m = pow(c, d, n)</span><br><span class="line">print(long_to_bytes(m))</span><br></pre></td></tr></table></figure>
+
+<p>运行得到flag</p>
+<img src="/images/isctf/image-20240622200419492.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{2233747d3bf06f070048e80300dac75f}</p>
+<h3 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h3><p>题目描述：</p>
+<p>一个很简单的密码学题目</p>
+<p>题目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipfm\x82Kj]p~l?\x82ogw\x85mt[K\x8br\x97</span><br></pre></td></tr></table></figure>
+
+<p>变异凯撒</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">c=b&#x27;ipfm\x82Kj]p~l?\x82ogw\x85mt[K\x8br\x97&#x27;</span><br><span class="line">a=3</span><br><span class="line">flag=&#x27;&#x27;</span><br><span class="line">for i in c:</span><br><span class="line">    flag+=chr(i-a)</span><br><span class="line">    a+=1</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到flag</p>
+<img src="/images/isctf/image-20240622200905603.png" alt="图片" width="300" height="200">
+
+<p>最后flag为flag{CaSer_1s_VerY_E4sY}</p>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><h3 id="人生模拟"><a href="#人生模拟" class="headerlink" title="人生模拟"></a>人生模拟</h3><p>查壳</p>
+<img src="/images/isctf/image-20240622201244602.png" alt="图片" width="300" height="200">
+
+<p>ida64载入</p>
+<img src="/images/isctf/image-20240622201504353.png" alt="图片" width="300" height="200">
+
+<p>查看关键代码</p>
+<img src="/images/isctf/image-20240622202030430.png" alt="图片" width="300" height="200">
+
+<p>完整代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">unsigned __int64 __fastcall sub_40350F(int a1, int a2, int a3, int a4, int a5)</span><br><span class="line">&#123;</span><br><span class="line">  __int64 v5; // rbx</span><br><span class="line">  int *v6; // rdx</span><br><span class="line">  int v11; // [rsp+20h] [rbp-F0h]</span><br><span class="line">  int i; // [rsp+24h] [rbp-ECh]</span><br><span class="line">  __int64 v13; // [rsp+28h] [rbp-E8h]</span><br><span class="line">  int v14[8]; // [rsp+30h] [rbp-E0h]</span><br><span class="line">  int v15[42]; // [rsp+50h] [rbp-C0h] BYREF</span><br><span class="line">  unsigned __int64 v16; // [rsp+F8h] [rbp-18h]</span><br><span class="line"></span><br><span class="line">  v16 = __readfsqword(0x28u);</span><br><span class="line">  v13 = a1;</span><br><span class="line">  v11 = 0;</span><br><span class="line">  v14[0] = a2;</span><br><span class="line">  v14[1] = a3;</span><br><span class="line">  v14[2] = a4;</span><br><span class="line">  v14[3] = a5;</span><br><span class="line">  while ( v11 &lt;= 3 )</span><br><span class="line">  &#123;</span><br><span class="line">    v5 = v13 * v14[v11];</span><br><span class="line">    v13 = v5 / (int)sub_4034E1((unsigned int)v13, (unsigned int)v14[v11++]);</span><br><span class="line">  &#125;</span><br><span class="line">  if ( a2 &gt; 0 &amp;&amp; a3 &gt; 0 &amp;&amp; a4 &gt; 0 &amp;&amp; a5 &gt; 0 &amp;&amp; a1 == 60 &amp;&amp; v13 == 286395540 )</span><br><span class="line">  &#123;</span><br><span class="line">    v6 = v15;</span><br><span class="line">    memset(v15, 0, 0xA0uLL);</span><br><span class="line">    v15[0] = 432;</span><br><span class="line">    v15[1] = 408;</span><br><span class="line">    v15[2] = 429;</span><br><span class="line">    v15[3] = 438;</span><br><span class="line">    v15[4] = 452;</span><br><span class="line">    v15[5] = 246;</span><br><span class="line">    v15[6] = 243;</span><br><span class="line">    v15[7] = 417;</span><br><span class="line">    v15[8] = 423;</span><br><span class="line">    v15[9] = 444;</span><br><span class="line">    v15[10] = 236;</span><br><span class="line">    v15[11] = 231;</span><br><span class="line">    v15[12] = 203;</span><br><span class="line">    v15[13] = 447;</span><br><span class="line">    v15[14] = 207;</span><br><span class="line">    v15[15] = 435;</span><br><span class="line">    v15[16] = 253;</span><br><span class="line">    v15[17] = 224;</span><br><span class="line">    v15[18] = 204;</span><br><span class="line">    v15[19] = 443;</span><br><span class="line">    v15[20] = 419;</span><br><span class="line">    v15[21] = 248;</span><br><span class="line">    v15[22] = 442;</span><br><span class="line">    v15[23] = 241;</span><br><span class="line">    v15[24] = 203;</span><br><span class="line">    v15[25] = 251;</span><br><span class="line">    v15[26] = 445;</span><br><span class="line">    v15[27] = 239;</span><br><span class="line">    v15[28] = 441;</span><br><span class="line">    v15[29] = 254;</span><br><span class="line">    v15[30] = 444;</span><br><span class="line">    v15[31] = 246;</span><br><span class="line">    v15[32] = 203;</span><br><span class="line">    v15[33] = 245;</span><br><span class="line">    v15[34] = 255;</span><br><span class="line">    v15[35] = 445;</span><br><span class="line">    v15[36] = 248;</span><br><span class="line">    v15[37] = 478;</span><br><span class="line">    for ( i = 0; v15[i]; ++i )</span><br><span class="line">      std::operator&lt;&lt;&lt;std::char_traits&lt;char&gt;&gt;(&amp;std::cout, (unsigned int)(char)((v15[i] &gt;&gt; 2) ^ 0xA), v6);</span><br><span class="line">  &#125;</span><br><span class="line">  return __readfsqword(0x28u) ^ v16;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>跟着这个加密代码写出解密脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">v15=[0]*38</span><br><span class="line">v15[0] = 432;</span><br><span class="line">v15[1] = 408;</span><br><span class="line">v15[2] = 429;</span><br><span class="line">v15[3] = 438;</span><br><span class="line">v15[4] = 452;</span><br><span class="line">v15[5] = 246;</span><br><span class="line">v15[6] = 243;</span><br><span class="line">v15[7] = 417;</span><br><span class="line">v15[8] = 423;</span><br><span class="line">v15[9] = 444;</span><br><span class="line">v15[10] = 240;</span><br><span class="line">v15[11] = 231;</span><br><span class="line">v15[12] = 203;</span><br><span class="line">v15[13] = 447;</span><br><span class="line">v15[14] = 207;</span><br><span class="line">v15[15] = 435;</span><br><span class="line">v15[16] = 253;</span><br><span class="line">v15[17] = 224;</span><br><span class="line">v15[18] = 204;</span><br><span class="line">v15[19] = 443;</span><br><span class="line">v15[20] = 419;</span><br><span class="line">v15[21] = 248;</span><br><span class="line">v15[22] = 442;</span><br><span class="line">v15[23] = 241;</span><br><span class="line">v15[24] = 203;</span><br><span class="line">v15[25] = 251;</span><br><span class="line">v15[26] = 445;</span><br><span class="line">v15[27] = 239;</span><br><span class="line">v15[28] = 441;</span><br><span class="line">v15[29] = 254;</span><br><span class="line">v15[30] = 417;</span><br><span class="line">v15[31] = 246;</span><br><span class="line">v15[32] = 203;</span><br><span class="line">v15[33] = 245;</span><br><span class="line">v15[34] = 255;</span><br><span class="line">v15[35] = 445;</span><br><span class="line">v15[36] = 248;</span><br><span class="line">v15[37] = 478;</span><br><span class="line">for i in range(len(v15)):</span><br><span class="line">    print(chr((v15[i]&gt;&gt;2)^0xa),end=&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到flag</p>
+<img src="/images/isctf/image-20240622202524919.png" alt="图片" width="300" height="200">
+      
+    </div>
+    <footer class="article-footer">
+      
+      <a data-url="http://example.com/2024/06/22/kelai/" data-id="clxq3i6hr0000fgw31acb0ymg" data-title="科来杯第十届山东省大学生网络安全技能大赛复现" class="article-share-link">分享</a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="SHCTFmisc复现" class="lazyload">
+        
+      
+      <a href="/2024/06/21/SHCTFmisc/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          SHCTFmisc复现
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%BC%96%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">简单编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%A7%98%E7%9A%84base"><span class="toc-number">1.2.</span> <span class="toc-text">神秘的base</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stego"><span class="toc-number">2.</span> <span class="toc-text">Stego</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%BA%94%E8%AF%A5%E5%8E%BB%E7%88%B1%E4%BD%A0"><span class="toc-number">2.1.</span> <span class="toc-text">我应该去爱你</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%8B%AC"><span class="toc-number">2.2.</span> <span class="toc-text">数独</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%AB%E7%94%9F%E6%B0%94"><span class="toc-number">2.3.</span> <span class="toc-text">莫生气</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forenisc"><span class="toc-number">3.</span> <span class="toc-text">Forenisc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%91%E5%88%9A%E5%A4%A7%E6%88%98%E5%93%A5%E6%96%AF%E6%8B%89"><span class="toc-number">3.1.</span> <span class="toc-text">金刚大战哥斯拉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%95%8A%E5%90%A7%E5%95%8A%E5%90%A7%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-number">3.2.</span> <span class="toc-text">啊吧啊吧的数据包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E5%88%98%E7%9A%84%E7%A1%AC%E7%9B%98"><span class="toc-number">3.3.</span> <span class="toc-text">小刘的硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E5%8F%A42-0"><span class="toc-number">3.4.</span> <span class="toc-text">考古2.0</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crypto"><span class="toc-number">4.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#easyRSA"><span class="toc-number">4.1.</span> <span class="toc-text">easyRSA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80"><span class="toc-number">4.2.</span> <span class="toc-text">小试牛刀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reverse"><span class="toc-number">5.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%94%9F%E6%A8%A1%E6%8B%9F"><span class="toc-number">5.1.</span> <span class="toc-text">人生模拟</span></a></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        yiqing
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          18.4k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          01:25
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%BC%96%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">简单编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%A7%98%E7%9A%84base"><span class="toc-number">1.2.</span> <span class="toc-text">神秘的base</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stego"><span class="toc-number">2.</span> <span class="toc-text">Stego</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%BA%94%E8%AF%A5%E5%8E%BB%E7%88%B1%E4%BD%A0"><span class="toc-number">2.1.</span> <span class="toc-text">我应该去爱你</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%8B%AC"><span class="toc-number">2.2.</span> <span class="toc-text">数独</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%AB%E7%94%9F%E6%B0%94"><span class="toc-number">2.3.</span> <span class="toc-text">莫生气</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forenisc"><span class="toc-number">3.</span> <span class="toc-text">Forenisc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%91%E5%88%9A%E5%A4%A7%E6%88%98%E5%93%A5%E6%96%AF%E6%8B%89"><span class="toc-number">3.1.</span> <span class="toc-text">金刚大战哥斯拉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%95%8A%E5%90%A7%E5%95%8A%E5%90%A7%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-number">3.2.</span> <span class="toc-text">啊吧啊吧的数据包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E5%88%98%E7%9A%84%E7%A1%AC%E7%9B%98"><span class="toc-number">3.3.</span> <span class="toc-text">小刘的硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E5%8F%A42-0"><span class="toc-number">3.4.</span> <span class="toc-text">考古2.0</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crypto"><span class="toc-number">4.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#easyRSA"><span class="toc-number">4.1.</span> <span class="toc-text">easyRSA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80"><span class="toc-number">4.2.</span> <span class="toc-text">小试牛刀</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reverse"><span class="toc-number">5.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%94%9F%E6%A8%A1%E6%8B%9F"><span class="toc-number">5.1.</span> <span class="toc-text">人生模拟</span></a></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (document.querySelectorAll('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(document.querySelectorAll('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0-beta.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
