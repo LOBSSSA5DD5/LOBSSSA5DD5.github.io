@@ -1,0 +1,1048 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    XYCTFmisc复现 |
+    
+    一清的博客
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="game下载附件   谷歌识图   最后flag为XYCTF{Papers Please} ez_隐写下载附件   伪加密   查看png文件发现不对，估计是宽高错误   宽高一把梭   得到压缩包密码:20240401 又一次伪加密   得到图片   盲水印   最后flag为XYCTF{159-WSX-IJN-852} EZ_Base1024*2下载附件查看内容 1מಥൎࢺଳɫअΥٻଯԢڥիɺ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XYCTFmisc复现">
+<meta property="og:url" content="http://example.com/2024/06/24/XYCTFmisc/index.html">
+<meta property="og:site_name" content="一清的博客">
+<meta property="og:description" content="game下载附件   谷歌识图   最后flag为XYCTF{Papers Please} ez_隐写下载附件   伪加密   查看png文件发现不对，估计是宽高错误   宽高一把梭   得到压缩包密码:20240401 又一次伪加密   得到图片   盲水印   最后flag为XYCTF{159-WSX-IJN-852} EZ_Base1024*2下载附件查看内容 1מಥൎࢺଳɫअΥٻଯԢڥիɺ">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624112603254.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624114952685.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624123415836.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624123939336.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624124111243.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624124359634.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624124707948.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624125925316.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624130038456.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624130935964.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624131140880.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624131245575.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624131429208.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624131633474.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624132109615.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624132405022.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624133526797.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624134235081.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624134822542.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624135224619.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624135557044.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624135732897.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624135909041.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624140047229.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624140738349.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624164149604.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624164834816.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624165221581.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624165552570.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624165922537.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624170112827.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624170338012.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624170705075.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624171010553.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624171218535.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624171433504.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624171550984.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624171708472.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624173059729.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624173409337.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624174120358.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624174435770.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624174615760.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624174738276.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624174911205.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624175028385.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624175202294.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624175536824.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624175638095.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624175907776.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624180057371.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624180220023.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624180735345.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624183819053.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624185436746.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624192151841.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624192801689.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624192909025.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624194214527.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624194406279.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624194547255.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624194658005.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624200900864.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624201006016.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624201214067.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624201524919.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624202213789.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624202543883.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624203039374.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624203517525.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624203859107.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624204028979.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624204229708.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624204700462.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624204845310.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624205023077.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624205130508.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624205240999.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624210005168.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624210219918.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624210512831.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624211103295.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624211429328.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624211559804.png">
+<meta property="og:image" content="http://example.com/images/unctf/image-20240624211837032.png">
+<meta property="article:published_time" content="2024-06-24T08:43:38.000Z">
+<meta property="article:modified_time" content="2024-06-24T13:19:33.797Z">
+<meta property="article:author" content="yiqing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/unctf/image-20240624112603254.png">
+  
+    <link rel="alternate" href="/atom.xml" title="一清的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg"></div>
+    <div class="loading-right-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    const startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    const endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="display: none; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <img fetchpriority="high" src="/images/banner.webp" alt="XYCTFmisc复现">
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>XYCTFmisc复现</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-XYCTFmisc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/06/24/XYCTFmisc/" class="article-date-link">
+    <time datetime="2024-06-24T08:43:38.000Z" itemprop="datePublished">2024-06-24</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="game"><a href="#game" class="headerlink" title="game"></a>game</h3><p>下载附件</p>
+<img src="/images/unctf/image-20240624112603254.png" alt="图片" width="300" height="200">
+
+<p>谷歌识图</p>
+<img src="/images/unctf/image-20240624114952685.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{Papers Please}</p>
+<h3 id="ez-隐写"><a href="#ez-隐写" class="headerlink" title="ez_隐写"></a>ez_隐写</h3><p>下载附件</p>
+<img src="/images/unctf/image-20240624123415836.png" alt="图片" width="300" height="200">
+
+<p>伪加密</p>
+<img src="/images/unctf/image-20240624123939336.png" alt="图片" width="300" height="200">
+
+<p>查看png文件发现不对，估计是宽高错误</p>
+<img src="/images/unctf/image-20240624124111243.png" alt="图片" width="300" height="200">
+
+<p>宽高一把梭</p>
+<img src="/images/unctf/image-20240624124359634.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码:20240401</p>
+<p>又一次伪加密</p>
+<img src="/images/unctf/image-20240624124707948.png" alt="图片" width="300" height="200">
+
+<p>得到图片</p>
+<img src="/images/unctf/image-20240624125925316.png" alt="图片" width="300" height="200">
+
+<p>盲水印</p>
+<img src="/images/unctf/image-20240624130038456.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{159-WSX-IJN-852}</p>
+<h3 id="EZ-Base1024-2"><a href="#EZ-Base1024-2" class="headerlink" title="EZ_Base1024*2"></a>EZ_Base1024*2</h3><p>下载附件查看内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">מಥൎࢺଳɫअΥٻଯԢڥիɺ୦ࢸЭਘמۊիɎඥࡆڣߣಷܤҾয౽5</span><br></pre></td></tr></table></figure>
+
+<p>base2048解码</p>
+<img src="/images/unctf/image-20240624130935964.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{84ca3a6e-3508-4e34-a5e0-7d0f03084181}</p>
+<h3 id="真-签到"><a href="#真-签到" class="headerlink" title="真&gt;签到"></a>真&gt;签到</h3><p>下载附件得到一个带锁的zip</p>
+<img src="/images/unctf/image-20240624131140880.png" alt="图片" width="300" height="200">
+
+<p>010查看压缩包发现flag</p>
+<img src="/images/unctf/image-20240624131245575.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{59bd0e77d13c_1406b23219e_f91cf3a_153e8ea4_77508ba}</p>
+<h3 id="熊博士"><a href="#熊博士" class="headerlink" title="熊博士"></a>熊博士</h3><p>下载附件</p>
+<img src="/images/unctf/image-20240624131429208.png" alt="图片" width="300" height="200">
+
+<p>随波逐流一把梭，得知是埃特巴什码</p>
+<img src="/images/unctf/image-20240624131633474.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{liu_ye_mei_you_xioa_jj}</p>
+<h3 id="网线追踪"><a href="#网线追踪" class="headerlink" title="网线追踪"></a>网线追踪</h3><p>题目描述:</p>
+<p>名为JFTQ的黑客使用某种不为人知的手段渗透进了一个不太安全的系统里 聪明的ctfer 你知道他是怎么做到的吗</p>
+<p>打开流量包追踪tcp流,在最后的一个流中发现了xxencode编码</p>
+<img src="/images/unctf/image-20240624132109615.png" alt="图片" width="300" height="200">
+
+<p>xxencode解码</p>
+<img src="/images/unctf/image-20240624132405022.png" alt="图片" width="300" height="200">
+
+<p>应该是针对Windowsxp的cve漏洞，这里看到流量中还有smb协议</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip.dst==192.168.204.131&amp;&amp; ip.src==192.168.204.133</span><br></pre></td></tr></table></figure>
+
+<p>找到几个打开的端口为1065,445,139,135</p>
+<p>结合windows XP系统和在攻击行为中大量对445端口的连接 我们可以判断这是windows XP系统 中最常见的漏洞 ms08_067  搜一下这个漏洞的CVE号 为 CVE-2008-4250 </p>
+<p>最后flag为XYCTF{192.168.204.133_445_139_135_CVE-2008-4250}</p>
+<h3 id="TCPL"><a href="#TCPL" class="headerlink" title="TCPL"></a>TCPL</h3><p>题目描述:</p>
+<p>都坤吧是兄弟，运行就有flag</p>
+<p>我肯定不信这能直接运行，果然发现kali运行不了，于是使用readelf看了一下，发现是risc-v架 构的，也就是说需要qemu跑</p>
+<p>安装quem：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libc6-riscv64-cross</span><br><span class="line">sudo apt install binutils-riscv64-linux-gnu</span><br><span class="line">sudo apt install gcc-riscv64-linux-gnu</span><br><span class="line">sudo apt install binutils-riscv64-unknown-elf</span><br><span class="line">sudo apt install gcc-riscv64-unknown-elf</span><br><span class="line">sudo apt install qemu-system-misc</span><br><span class="line">sudo apt install qemu-user</span><br></pre></td></tr></table></figure>
+
+<p>运行文件得到flag:FLAG{PLCT_An4_r1SCv_x1huann1}</p>
+<img src="/images/unctf/image-20240624133526797.png" alt="图片" width="300" height="200">
+
+<p>1替换0</p>
+<p>最后flag为XYCTF{PLCT_An4_r0SCv_x0huann0}</p>
+<h3 id="osint1"><a href="#osint1" class="headerlink" title="osint1"></a>osint1</h3><p>下载附件</p>
+<img src="/images/unctf/image-20240624134235081.png" alt="图片" width="300" height="200">
+
+<p>百度识图，小红书获得答案</p>
+<img src="/images/unctf/image-20240624134822542.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{江苏省|南通市|滨海东路|黄海}</p>
+<h3 id="Osint2"><a href="#Osint2" class="headerlink" title="Osint2"></a>Osint2</h3><p>题目描述:</p>
+<p>可恶的zhaowu居然把车次信息挡住了</p>
+<p>下载附件</p>
+<img src="/images/unctf/image-20240624135224619.png" alt="图片" width="300" height="200">
+
+<p>看图的话，能看出来是洛阳龙门开往泸州的列车，网上查到的有G3292&#x2F;G3293</p>
+<p>（这两辆车的奇偶数关系挺好玩，我记得从南京西站开始从3292变更为3293，因为途径北京，入京单数出京双数）</p>
+<p>省份自然是河南省</p>
+<p>搜索河南著名景点，多试几个发现老君山是最后答案</p>
+<p>最后flag为XYCTF{xyctf{G3293|河南省|老君山}}</p>
+<h3 id="Ez-osint"><a href="#Ez-osint" class="headerlink" title="Ez_osint"></a>Ez_osint</h3><p>下载附件得到一张图片</p>
+<img src="/images/unctf/image-20240624135557044.png" alt="图片" width="300" height="200">
+
+<p>想继续社工，但是发现这题有点不一样，查看属性，发现深度有点不对</p>
+<img src="/images/unctf/image-20240624135732897.png" alt="图片" width="300" height="200">
+
+<p>使用Stegsolve查看一下通道</p>
+<img src="/images/unctf/image-20240624135909041.png" alt="图片" width="300" height="200">
+
+<p>发现链接，跟进看看</p>
+<img src="/images/unctf/image-20240624140047229.png" alt="图片" width="300" height="200">
+
+<p>找到对应时间的信查看评论找到flag</p>
+<img src="/images/unctf/image-20240624140738349.png" alt="图片" width="300" height="200">
+
+
+
+<h3 id="疯狂大杂烩！九转功成"><a href="#疯狂大杂烩！九转功成" class="headerlink" title="疯狂大杂烩！九转功成"></a>疯狂大杂烩！九转功成</h3><p>题目描述:</p>
+<p>你能突破九大关卡修成神仙吗？</p>
+<p>hint:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.压缩包密码为比赛名称+8位什么来着？忘了。哈哈哈！</span><br><span class="line">2.flag格式：XYCTF&#123;md5(flag)&#125;</span><br><span class="line">3.第三层非夏多，看看交点</span><br><span class="line">4.第六层键盘画图，狼蛛键盘最新版你值得拥有！</span><br></pre></td></tr></table></figure>
+
+<p>一看就是flag分成好几半的题，一步步来吧</p>
+<p>下载附件</p>
+<img src="/images/unctf/image-20240624164149604.png" alt="图片" width="300" height="200">
+
+<p>好家伙，还真是修仙 压缩包密码提示比赛名称+八位什么东西 还用想吗一看就知道是比赛日期 20240401</p>
+<p>所以压缩包密码为XYCTF20240401</p>
+<p>解压成功</p>
+<p>先看一下故事背景</p>
+<img src="/images/unctf/image-20240624164834816.png" alt="图片" width="300" height="200">
+
+<p>意思很明确，从第一层到第九层，意思是flag被分成了九份</p>
+<h4 id="第一层-炼气"><a href="#第一层-炼气" class="headerlink" title="第一层:炼气"></a>第一层:炼气</h4><p>下载附件</p>
+<img src="/images/unctf/image-20240624165221581.png" alt="图片" width="300" height="200">
+
+<p>先看提示文本</p>
+<img src="/images/unctf/image-20240624165552570.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">曰：玉魔命灵天观罗炁观神冥西道地真象茫华茫空吉清荡罗命色玉凶北莽人鬼乐量西北灵色净魂地魂莽玉凶阿人梵莽西量魄周界</span><br></pre></td></tr></table></figure>
+
+<p>天书解密</p>
+<img src="/images/unctf/image-20240624165922537.png" alt="图片" width="300" height="200">
+
+<p>得到压缩包密码:First_layer_simple</p>
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624170112827.png" alt="图片" width="300" height="200">
+
+<p>一看就是图片宽高有问题，直接宽高一把梭</p>
+<img src="/images/unctf/image-20240624170338012.png" alt="图片" width="300" height="200">
+
+<p>第一部分flag:XYCTF{T3e_c0mb1nation_</p>
+<h4 id="第二层-筑基"><a href="#第二层-筑基" class="headerlink" title="第二层 :筑基"></a>第二层 :筑基</h4><p>解压附件</p>
+<img src="/images/unctf/image-20240624170705075.png" alt="图片" width="300" height="200">
+
+<p>先看提示</p>
+<img src="/images/unctf/image-20240624171010553.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xihak-minoh-zusok-humak-zurok-gulyk-somul-nenel-dalek-nusyh-zumek-sysuk-zelil-fepak-tysok-senax</span><br></pre></td></tr></table></figure>
+
+<p>随波逐流一把梭</p>
+<img src="/images/unctf/image-20240624171218535.png" alt="图片" width="300" height="200">
+
+<p>BubbleBabble解码: The_second_layer_is_also_simple</p>
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624171433504.png" alt="图片" width="300" height="200">
+
+<p>png图片，直接zsteg一把梭</p>
+<img src="/images/unctf/image-20240624171550984.png" alt="图片" width="300" height="200">
+
+<p>发现base64编码，解密</p>
+<p>ZmxhZzLvvJowZl9jcnlwdDBfYW5kXw&#x3D;&#x3D;</p>
+<img src="/images/unctf/image-20240624171708472.png" alt="图片" width="300" height="200">
+
+<p>第二部分flag：0f_crypt0_and_</p>
+<h4 id="第三层-结丹"><a href="#第三层-结丹" class="headerlink" title="第三层:结丹"></a>第三层:结丹</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624173059729.png" alt="图片" width="300" height="200">
+
+<p>先看提示图片</p>
+<img src="/images/unctf/image-20240624173409337.png" alt="图片" width="300" height="200">
+
+<p>第一反应是夏多密码，但根据提示不是</p>
+<p>看交点的话，有两个交点，三个交点，四个交点的 这种情况只有摩斯密码 四个交点代表”-” 三个交点代表空格 两个交点代表”.”</p>
+<p>摩斯解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- .... . ..--.- - .... .. .-. -..</span><br></pre></td></tr></table></figure>
+
+<img src="/images/unctf/image-20240624174120358.png" alt="图片" width="300" height="200">
+全小写: the_third
+
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624174435770.png" alt="图片" width="300" height="200">
+
+<p>先看flag.txt</p>
+<img src="/images/unctf/image-20240624174615760.png" alt="图片" width="300" height="200">
+
+<p>再看压缩包</p>
+<img src="/images/unctf/image-20240624174738276.png" alt="图片" width="300" height="200">
+
+<p>010查看压缩包</p>
+<img src="/images/unctf/image-20240624174911205.png" alt="图片" width="300" height="200">
+
+<p>发现编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5a+G56CB57uZ5L2g5Y+I5oCO5qC377yaMTIzNDU2</span><br></pre></td></tr></table></figure>
+
+<p>base解密</p>
+<img src="/images/unctf/image-20240624175028385.png" alt="图片" width="300" height="200">
+
+<p>解压压缩包得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MZWGCZZT566JU3LJONRV6MLTL5ZGKNTMNR4V6ZTVNYQSC===</span><br></pre></td></tr></table></figure>
+
+<p>base解密</p>
+<img src="/images/unctf/image-20240624175202294.png" alt="图片" width="300" height="200">
+
+<p>第三部分flag:misc_1s_re6lly_fun!!</p>
+<h4 id="第四层-元婴"><a href="#第四层-元婴" class="headerlink" title="第四层:元婴"></a>第四层:元婴</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624175536824.png" alt="图片" width="300" height="200">
+
+<p>先看提示</p>
+<img src="/images/unctf/image-20240624175638095.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">都2024年了不会还有人解不出U2FsdGVkX1+y2rlJZlJCMnvyDwHwzkgHvNsG2TF6sFlBlxBs0w4EmyXdDe6s7viL吧</span><br></pre></td></tr></table></figure>
+
+<p>有四种。rabbit编码，des，3des，aes</p>
+<p>密钥是2024</p>
+<p>最后测试是3des</p>
+<img src="/images/unctf/image-20240624175907776.png" alt="图片" width="300" height="200">
+
+<p>解密得到:The_fourth_floor_is_okay</p>
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624180057371.png" alt="图片" width="300" height="200">
+
+<p>先看提示</p>
+<img src="/images/unctf/image-20240624180220023.png" alt="图片" width="300" height="200">
+
+<p>凯撒解密</p>
+<img src="/images/unctf/image-20240624180735345.png" alt="图片" width="300" height="200">
+
+<p>解得：1a813cbb17c040358d772e37fa137edbeddedb38bf704a56b2a9e22dc7f05f77 db文件，数据库文件</p>
+<img src="/images/unctf/image-20240624183819053.png" alt="图片" width="300" height="200">
+
+<p>解密脚本</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">input_pass = &#x27;1a813cbb17c040358d772e37fa137edbeddedb38bf704a56b2a9e22dc7f05f77&#x27;</span><br><span class="line">input_dir = r&#x27;C:\\Users\\23831\\Desktop\\xyctf\\修仙传\\第四层\\第四层&#x27;</span><br><span class="line">import ctypes</span><br><span class="line">import hashlib</span><br><span class="line">import hmac</span><br><span class="line">from pathlib import Path</span><br><span class="line">from Crypto.Cipher import AES</span><br><span class="line">SQLITE_FILE_HEADER = bytes(&#x27;SQLite format 3&#x27;, encoding=&#x27;ASCII&#x27;) + bytes(1)</span><br><span class="line">IV_SIZE = 16</span><br><span class="line">HMAC_SHA1_SIZE = 20</span><br><span class="line">KEY_SIZE = 32</span><br><span class="line">DEFAULT_PAGESIZE = 4096</span><br><span class="line">DEFAULT_ITER = 64000</span><br><span class="line">password = bytes.fromhex(input_pass.replace(&#x27; &#x27;, &#x27;&#x27;))</span><br><span class="line">def decode_one(input_file):</span><br><span class="line">    input_file = Path(input_file)</span><br><span class="line">    with open(input_file, &#x27;rb&#x27;) as (f):</span><br><span class="line">       blist = f.read()</span><br><span class="line">    print(len(blist))</span><br><span class="line">    salt = blist[:16]</span><br><span class="line">    key = hashlib.pbkdf2_hmac(&#x27;sha1&#x27;, password, salt, DEFAULT_ITER, KEY_SIZE)</span><br><span class="line">    first = blist[16:DEFAULT_PAGESIZE]</span><br><span class="line">    mac_salt = bytes([x ^ 58 for x in salt])</span><br><span class="line">    mac_key = hashlib.pbkdf2_hmac(&#x27;sha1&#x27;, key, mac_salt, 2, KEY_SIZE)</span><br><span class="line">    hash_mac = hmac.new(mac_key, digestmod=&#x27;sha1&#x27;)</span><br><span class="line">    hash_mac.update(first[:-32])</span><br><span class="line">    hash_mac.update(bytes(ctypes.c_int(1)))</span><br><span class="line">    if hash_mac.digest() == first[-32:-12]:</span><br><span class="line">       print(&#x27;Decryption Success&#x27;)</span><br><span class="line">    else:</span><br><span class="line">       print(&#x27;Password Error&#x27;)</span><br><span class="line">    blist = [</span><br><span class="line">       blist[i:i + DEFAULT_PAGESIZE]</span><br><span class="line">       for i in range(DEFAULT_PAGESIZE, len(blist), DEFAULT_PAGESIZE)</span><br><span class="line">    ]</span><br><span class="line">    with open(input_file.parent / f&#x27;decoded_&#123;input_file.name&#125;&#x27;, &#x27;wb&#x27;) as (f):</span><br><span class="line">       f.write(SQLITE_FILE_HEADER)</span><br><span class="line">       t = AES.new(key, AES.MODE_CBC, first[-48:-32])</span><br><span class="line">       f.write(t.decrypt(first[:-48]))</span><br><span class="line">       f.write(first[-48:])</span><br><span class="line">       for i in blist:</span><br><span class="line">          t = AES.new(key, AES.MODE_CBC, i[-48:-32])</span><br><span class="line">          f.write(t.decrypt(i[:-48]))</span><br><span class="line">          f.write(i[-48:])</span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    input_dir = Path(input_dir)</span><br><span class="line">    for f in input_dir.glob(&#x27;*.db&#x27;):</span><br><span class="line">       decode_one(f)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到一个文件</p>
+<img src="/images/unctf/image-20240624185436746.png" alt="图片" width="300" height="200">
+
+<p>生成数据库文件 用db browser查看找到flag</p>
+<img src="/images/unctf/image-20240624192151841.png" alt="图片" width="300" height="200">
+
+<p>第四部分flag:L1u_and_K1cky_Mu</p>
+<h4 id="第五层-化神"><a href="#第五层-化神" class="headerlink" title="第五层:化神"></a>第五层:化神</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624192801689.png" alt="图片" width="300" height="200">
+
+<p>先看提示</p>
+<img src="/images/unctf/image-20240624192909025.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">enc = &#x27;key&#123;liu*****&#x27;</span><br><span class="line">md5 = &#x27;87145027d8664fca1413e6a24ae2fbe7&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>要根据 md5 去得到明文，可以爆破，猜测最后一个 * 为}，之后我们进行爆破</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line">enc = &#x27;key&#123;liu&#x27;</span><br><span class="line">md5 = &#x27;87145027d8664fca1413e6a24ae2fbe7&#x27;</span><br><span class="line"> </span><br><span class="line">for x in range(0,127):</span><br><span class="line">    for y in range(0,127):</span><br><span class="line">        for z in range(0,127):</span><br><span class="line">            for k in range(0,127):</span><br><span class="line">                temp1 = hashlib.md5(str(enc + chr(x) + chr(y) + chr(z) + chr(k) + &quot;&#125;&quot;).encode(&quot;utf-8&quot;))</span><br><span class="line">                temp2 = temp1.hexdigest()</span><br><span class="line">                if(md5 == temp2):</span><br><span class="line">                    print(enc + chr(x) + chr(y) + chr(z) + chr(k) + &quot;&#125;&quot;) </span><br><span class="line">#key&#123;liuyyds&#125;</span><br></pre></td></tr></table></figure>
+
+<p>得到压缩包密码:liuyyds</p>
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624194214527.png" alt="图片" width="300" height="200">
+
+<p>serpent解密,密钥:liuyyds</p>
+<img src="/images/unctf/image-20240624194406279.png" alt="图片" width="300" height="200">
+
+<p>下载附件并打开</p>
+<img src="/images/unctf/image-20240624194547255.png" alt="图片" width="300" height="200">
+
+<p>零宽解密</p>
+<img src="/images/unctf/image-20240624194658005.png" alt="图片" width="300" height="200">
+
+<p>第五部分flag:_3re_so_sm4rt!</p>
+<h4 id="第六层-炼虚"><a href="#第六层-炼虚" class="headerlink" title="第六层:炼虚"></a>第六层:炼虚</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624200900864.png" alt="图片" width="300" height="200">
+
+<p>先看提示</p>
+<img src="/images/unctf/image-20240624201006016.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wszrdc </span><br><span class="line">fgtrfvb </span><br><span class="line">ghytgbn </span><br><span class="line">rfctg </span><br><span class="line">yhju</span><br><span class="line">frtg</span><br><span class="line">uyhbghj</span><br><span class="line">6yhn</span><br><span class="line">uyhjujmn</span><br><span class="line">tgvvghb</span><br><span class="line">yhnmghj</span><br><span class="line">4rfv</span><br><span class="line">derf</span><br><span class="line">iujkikmn</span><br></pre></td></tr></table></figure>
+
+<p>一眼键盘密码 画出来为:keeponfighting</p>
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624201214067.png" alt="图片" width="300" height="200">
+
+<p>前面一个个文件分析，发现都是假flag，只有那个图片估计藏flag jpg隐写先考虑steghide</p>
+<p>密码考虑，发现前面几个文件都有数字，考虑顺序或者逆序 14689或者98641</p>
+<p>最后测试是98641</p>
+<img src="/images/unctf/image-20240624201524919.png" alt="图片" width="300" height="200">
+
+<p>查看文本内容</p>
+<img src="/images/unctf/image-20240624202213789.png" alt="图片" width="300" height="200">
+
+<p>第六部分flag:In_just_a_few_m1nutes_</p>
+<h4 id="第七层-合体"><a href="#第七层-合体" class="headerlink" title="第七层:合体"></a>第七层:合体</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624202543883.png" alt="图片" width="300" height="200">
+
+<p>先看提示</p>
+<img src="/images/unctf/image-20240624203039374.png" alt="图片" width="300" height="200">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">密文：Tig+AF8-viakubq+AF8-vphrz+AF8-xi+AF8-uayzdyrjs</span><br><span class="line">听说维吉尼亚key大残</span><br></pre></td></tr></table></figure>
+
+<p>赛博厨子一把梭</p>
+<img src="/images/unctf/image-20240624203517525.png" alt="图片" width="300" height="200">
+
+<p>获得压缩包密码:The_seventh_level_is_difficult</p>
+<p>解压压缩包</p>
+<img src="/images/unctf/image-20240624203859107.png" alt="图片" width="300" height="200">
+
+<p>根据颜色表示的数值，拼成数字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">164 150 145 171 137 167 145 162 145 137 164 150 162 60 165 147 150 41</span><br></pre></td></tr></table></figure>
+
+<p>八进制转字符串</p>
+<img src="/images/unctf/image-20240624204028979.png" alt="图片" width="300" height="200">
+
+<p>第七部分flag:they_were_thr0ugh!</p>
+<h4 id="第八层-大乘"><a href="#第八层-大乘" class="headerlink" title="第八层:大乘"></a>第八层:大乘</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624204229708.png" alt="图片" width="300" height="200">
+
+<p>先看提示脚本</p>
+<p>源码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># hint8.py</span><br><span class="line"></span><br><span class="line">from Crypto.Util.number import bytes_to_long, getPrime</span><br><span class="line">flag=b&quot;password&#123;xxxxx&#125;&quot;</span><br><span class="line">p,q= getPrime(1024),getPrime(1024)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">c = pow(m,e,n)</span><br><span class="line">print(&quot;n=&quot;,n)</span><br><span class="line">print(&quot;c=&quot;,c)</span><br><span class="line">print(&quot;p^q=&quot;,p^q)</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">n= 22424440693845876425615937206198156323192795003070970628372481545586519202571910046980039629473774728476050491743579624370862986329470409383215065075468386728605063051384392059021805296376762048386684738577913496611584935475550170449080780985441748228151762285167935803792462411864086270975057853459586240221348062704390114311522517740143545536818552136953678289681001385078524272694492488102171313792451138757064749512439313085491407348218882642272660890999334401392575446781843989380319126813905093532399127420355004498205266928383926087604741654126388033455359539622294050073378816939934733818043482668348065680837</span><br><span class="line">c= 1400352566791488780854702404852039753325619504473339742914805493533574607301173055448281490457563376553281260278100479121782031070315232001332230779334468566201536035181472803067591454149095220119515161298278124497692743905005479573688449824603383089039072209462765482969641079166139699160100136497464058040846052349544891194379290091798130028083276644655547583102199460785652743545251337786190066747533476942276409135056971294148569617631848420232571946187374514662386697268226357583074917784091311138900598559834589862248068547368710833454912188762107418000225680256109921244000920682515199518256094121217521229357</span><br><span class="line">p^q= 14488395911544314494659792279988617621083872597458677678553917360723653686158125387612368501147137292689124338045780574752580504090309537035378931155582239359121394194060934595413606438219407712650089234943575201545638736710994468670843068909623985863559465903999731253771522724352015712347585155359405585892</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>普通剪纸算法</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">import gmpy2</span><br><span class="line">import sys  # 导入sys模块</span><br><span class="line">sys.setrecursionlimit(3000)  # 将默认的递归深度修改为3000</span><br><span class="line"> </span><br><span class="line">n = 22424440693845876425615937206198156323192795003070970628372481545586519202571910046980039629473774728476050491743579624370862986329470409383215065075468386728605063051384392059021805296376762048386684738577913496611584935475550170449080780985441748228151762285167935803792462411864086270975057853459586240221348062704390114311522517740143545536818552136953678289681001385078524272694492488102171313792451138757064749512439313085491407348218882642272660890999334401392575446781843989380319126813905093532399127420355004498205266928383926087604741654126388033455359539622294050073378816939934733818043482668348065680837</span><br><span class="line">seed = 14488395911544314494659792279988617621083872597458677678553917360723653686158125387612368501147137292689124338045780574752580504090309537035378931155582239359121394194060934595413606438219407712650089234943575201545638736710994468670843068909623985863559465903999731253771522724352015712347585155359405585892</span><br><span class="line">#seed即p^q</span><br><span class="line"> </span><br><span class="line">def findp(p, rp):</span><br><span class="line">    l = len(p)</span><br><span class="line">    if l == 1024:</span><br><span class="line">        rp.append(int(p, 2))</span><br><span class="line">    else:</span><br><span class="line">        pp = int(p, 2)</span><br><span class="line">        qq = (seed ^ pp) % 2 ** l</span><br><span class="line">        if pp * qq % 2 ** l == n % 2 ** l:</span><br><span class="line">            findp(&#x27;1&#x27; + p, rp)</span><br><span class="line">            findp(&#x27;0&#x27; + p, rp)</span><br><span class="line"> </span><br><span class="line">rp = []</span><br><span class="line">findp(&#x27;1&#x27;, rp)</span><br><span class="line">for i in rp:</span><br><span class="line">    if n%i==0 &amp; isPrime(int(i)):</span><br><span class="line">        print(i)</span><br><span class="line">#145805499551351837545170670839798336872366414383311042018386386595288060139791135454980413014693924866953972662266748526407954492877610429602886244372924035960962307198910659475639333945895922717307291255423855616274924584270570126180050363106535962473049107576556315461013755859097114552522187755171423621071</span><br><span class="line">#153796947048270429510444756458855481287460639468563001213489907625132438953570738468181770925091867439727519074685449940618659583114338501872698220745473531199063071421852521618805765627999106188015431567625318850899895052130157037822960945909520973243793507740817436707504505709194025074527084803054107605547</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">p=145805499551351837545170670839798336872366414383311042018386386595288060139791135454980413014693924866953972662266748526407954492877610429602886244372924035960962307198910659475639333945895922717307291255423855616274924584270570126180050363106535962473049107576556315461013755859097114552522187755171423621071</span><br><span class="line">q=n//p</span><br><span class="line">c=1400352566791488780854702404852039753325619504473339742914805493533574607301173055448281490457563376553281260278100479121782031070315232001332230779334468566201536035181472803067591454149095220119515161298278124497692743905005479573688449824603383089039072209462765482969641079166139699160100136497464058040846052349544891194379290091798130028083276644655547583102199460785652743545251337786190066747533476942276409135056971294148569617631848420232571946187374514662386697268226357583074917784091311138900598559834589862248068547368710833454912188762107418000225680256109921244000920682515199518256094121217521229357</span><br><span class="line">e=65537</span><br><span class="line">phi = (p-1) * (q-1)</span><br><span class="line">d = gmpy2.invert(e, phi)</span><br><span class="line">m = pow(c, d, n)</span><br><span class="line">print(long_to_bytes(m))</span><br><span class="line">#password&#123;pruning_algorithm&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行得到password{pruning_algorithm}</p>
+<img src="/images/unctf/image-20240624204700462.png" alt="图片" width="300" height="200">
+
+<p>解压得到 txt 文本，里面是 no 和 yes 组成的。想到 01 画图。no 代表 0，yes 代表 1</p>
+<img src="/images/unctf/image-20240624204845310.png" alt="图片" width="300" height="200">
+
+<p>但要知道坐标才行，010 分析压缩包文件尾：</p>
+<img src="/images/unctf/image-20240624205023077.png" alt="图片" width="300" height="200">
+
+<p>发现base编码，base解码</p>
+<img src="/images/unctf/image-20240624205130508.png" alt="图片" width="300" height="200">
+
+<p>随言随语解密</p>
+<img src="/images/unctf/image-20240624205240999.png" alt="图片" width="300" height="200">
+
+<p>坐标和 flag 格式都有了，接下来进行画图：</p>
+<p>str 填入 01</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">MAX1 = 548</span><br><span class="line">MAX2=72</span><br><span class="line">pic = Image.new(&quot;RGB&quot;,(MAX1, MAX2))</span><br><span class="line">str = &quot;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111100000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000011111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111000000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111100000000011111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111000000001111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111110000000011111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000000000001111110000000000011111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000011111100000000001111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111110111111100000000111111110000000000000000000000000000000000000000000000001111111111111111111100000000000000000000011110000000000000000000000111100000000000011111000000000000111111000000000011111100000000111111111110000000000000000001001011111111111111111111111000000000000000000000111000000000000000000000000111110000000000001111100000000000000000000000000000000000000000000000000000000000000000000000000000000000001010000000000000000000000000000000011110000000000000111111100000000000000000000000000011111111111110000000001111000000000000111111110000111111000000000111111110000000000000000000000000000000000000000000111111111111111111111111111111100000000000001111100000000000000000000011111100000000000111110000000000000111110000000111111111111000111111111111110000111100000011111111111111111111111111111111000000000000000000011111000000000000000000000011111100000000000011111100000011111111111111111111111111111111100000001111000000000000000000000000000000001111111100000000001111110000000000011111111000000000111111111000000000000000000000000011111111111111111000001111111100000000011111110000001111110000000000111111110000000000000000000000000000000000000000001111111111111111111111111111111100000000000111111000000000000000000000011111100000000000111100000000000001111100000001111111111100001111111111111100001111000000111111111111111111111111111111110000000000000000000111110000000000000000000000111110000000000000011111000000111111111111111111111111111111111000000111111111111111000000000000000000000011111111000000000011111110000000001111111110000000011111111110000000000000100000000000111111111111111110000011111111000000000111111000000111111100000000000111111110000000000000000000000000000000000000000011111111111111111111111111111111000000000011111110000000000000000000000111111100000000000000000000000000111111000000001111111111000111111111111111000111110000001111111111111111111111111111111100000000000000000001111100000000000000000000001111100000000000000111110000000111111111111111111111111111111110000001111111111111111100000000000000000000111111110000000000111111100000000001111111100000001111111111000000000000111000000000001111111111111111000000111111110000000011111100000111111111000000000000111111100000000000000000000000000000000000000000111111111111111111111111111111100000000000111111000000000000000000000000111111000000000000000000000000001111100000000011111111100001111111111111110001111100000000111111111111111111111111111111000000000000000000011111000000000000000000000011111000000000000001111100000001111111111111111111111111111100000000011111111111111111100000000000000000000111111000000000001111110000000000000110000000000111111111100000000000111110000000000011111111111111100000001111111110000000111111000011111111100000000000000111111100000000000000000000000000000000000000001111111110000011000000000000000000000000011111100000000000000000000000000111111000000000000000000000000111111000000000011111111000011111111111111100011111000000000000000000000000000000000000000000000000000000111111111100000000000000000000111110000000000000011111000000000000000000000000000000000000000000000111111111111111111100000000000000000000000000000000000000000000000000000000000000000001111111110000000000011111100000000000111111111111100000000011111111100000011111100001111111110000000000000000111111000000000000000000000000000000000000000011111000000000000000000000000000000000001111110000000000000000000000000000111111000000000000000000001111111100000000000011111100000011111111111111000111110000000000000000000000000000000000000000000000000111111111111111111111100000000000011111100000000000000111111000000000000000000000000000000000000000000000111111111111111111100000000000000000000000000000000000000000000000000000000000000000011111111100000000001111110000000000001111111111110000000000111111111000000111110000011111110000000000000000001111111000000000000000000000000000000000000000111110000000000000000000000000000000000011111000000000000000000000000000001111110000000000000000111111111110000000000000111111000000000000011111110011111000000000000000000000000000000000000000000000000001111111111111111111111110000000000111110000000000000000111110000000000000000000000000000000000000000000000111100000001111111100000000000000000000000000000000000000000000000000000000000000000111111111000000001111111000000000000011111111110000000000001111111110000001111100001111110000000000000000000001111110000000000000000000000000000000000000001111100000000000000000000000000000000000111110000000000000000000000000000001111100000000000000001111111110000000000000000111100000000000000001111100111110000000000000000000000000000000000000000000000000011111111111111111111111110000000001111100000000000000001111100000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000000000000111111110000000111111100001100000000111111111000000000000011111111100000111110000011111000000000000000000000011111100000000000000000000000000000000000000011111000000000000000000000000000000000011111000000000000000000000000000000001111100000000000000011111111111000000000000000110000000000000000111110001111100000000000000000000000000000000000000000000000000011111111111111111111111100000000011111000000000000000011111000000000000000000000000000000000000000000000000000000000001111111111111000000000000000000000000000000000000000000000000000000000000111111100000111111110000111100000001111111000000000000000111111111000001111100001111110000000000000000000000011111000000000000000000000000000000000000000111111111000000011000000000000000000000111110000000000000000000000000000000011111000000000000000111111111111000000000000000000000000000000001111100011111000000000000000000000000000000000000000000000000000000001111111111011111111000000000111110000000000000000111110000000011111111111111111111111111000000000000000000000000001111111111111100000000111110000000000000000000000000000000111100000000000011111000011111111000111111000000011111100000000000000001111111100000011111000011111000000111000000000000000111110000000000000000000000000000000000000001111111111111111111111111111111000000001111100000000000000000000000000000000111110000000000000001111111111111000000000000000000000000000000011111001111100000000011111111111111111111111111111110000000000000000000111110000000111111000000001111100000000000000001111100000111111111111111111111111111111111000000000000000000000001111111111111100000011111111000000000000000000000000000111111110000000000111110011111111100011111110000000111110000000000000000011111111000000111110000111110000111111100000000000001111110000000000000000000000000000000000000011111111111111111111111111111110000000111110000000000000001111000000000000000111110000000000000000000001111111000000000000000000000000000000111100011111000000001111111111111111111111111111111100000000000000000001111100000000111110000000011111000000000000000011111000001111111111111111111111111111111111000000000111000000000001111111111111000000111111110000000000000000000000000011111111100000000001111111111111110000111111000000001111100000000000000000111111110000001111100011111000001111111000000000000001111100000000000000000000000000000000000000111111111111111111111111111111100000001111100000000000000111111000000000000001111100000000000000000000001111111000000000000000000000000000011111000111110000000011111111111111111111111111111111100000000000000000011111000000001111100000000111110000000000000000111110000001111111111111111111111111111111000000000001111000000000001111111111111000001111111100000000001111110000000000111111111000000000011111111111110000001111100000000011111000000000000000001111111100000011110000111110000111111110000000000000011111000000000000000000000000000000000000000111111111111111111111111111111100000011111000000000000011111111000000000000011111000000000000000000000001111110000000000000000000000000000111110001111100000000111111111111111111111111111111111000000000011100000111110000000011111000000001111100000000000000001111100000011111111111111111111111111111000000000000011110000000000000000011111110000001111111000000000111111110000000001111111100000000000111111111111000000000100000000000111100000000000000000011111111000000111100001111100001111111100000000000000111110000000000000000000000000000000000000000000000000000000000000001111111000000111110000000000000111111110000000000000111110000000000000000000000001111100000000000000000000000000001111100111110000000001111111111111111111111111111111110000000001111100001111100000000011110000000011111000000000000000011111000000000000000000000000000000000000000000000000111100000000000000000111111000000001111110000000011111111110000000011111100000000000001111111111111000000000000000000001111000000000000000000111111111000001111100011111000001111111000000000000001111100000000000000000000000000000000000000000000000000000000000000000111110000001111100000000000001111111100000000000001111100000000000000000000000011111100000000000000000000000000011110001111100000000011111000000000000000000000011111100000000011111100011111000000000111100000000111111000000000000001111110000000000000000000000000000000000000000000000011111000000000000000011111100000000001111100000000111111111100000000111110000000000000011111111111111111110000000000000011110000000000000000001111111100000011111000011111000011111110000000000000011110000000000000000000000000000000000000000000000000000000000000000001111100000011111000000000000011111111000000000000011111000000000000000000000000111111000000000000000000000000001111100011111000000000111110000000000000000000000011111000000000111111000111110000000011111000000000111110000000000000011111100000000000000000000000000000000000000000000000111110000000000000001111110000000000011111100000000111111111000000001111100000000000000111111111111111111100000000000000111100000000000000000011111110000000111110000111110000011111000000000000001111100000000000000000000000000000000000000000000000000000000000000000011111000000111110000000000000111111100000000000000111110000000000000000000000001111110000000000000000000000000011111000111110000000001111100000000000000000000000111110000000001111100001111100000000111110000000001111100000000000000111110000000000000000000000000000000000000000000000001111100000000000000111111000000000000011111000000000000000000000000011111000000000000001111111111111111111100000000000001111000000000000000000111111000000001111100001111100000000000000000000000011111000000000000000000000000000000000000000000000000000000000000000000111110000001111100000000000000111110000000000000001111100000011100000000000000011111100000000000000000000000000111110011111000000000011111000000000000000000000001111100000000001110000011111000000001111100000000011111000000000000001111100000000000000000000000000000000000000000000000011111000011110000011111100000000000000111110000000000000000000000000111110000000000000011111111111111111111000000000000011110000000000000000001111100000000011111100001111100000000000000000000000111110000000000000000000000000000000000000000000111000000000000011111111111100000011111000000000000000000000000000000000011111000011111100000000000000111111000000000000000000000000001111000111110000000000111110000000000000000000000011111000000000000000000111111000000011111000000000111110000000000000011111000000000000000000000000000000000000000000000000111110000111100001111110000000000000001111100000000000000000000000011111100000000000000111111010000011111110000000000000111100000000000000000011111000000000011111000011111100000000000000000000011111100000000000000000000000000000000000000001111111111111111111111111111111000000111110000000000000000000000000000000000111110000111111000000000000001111110000000000000000000000000111110001111100000000001111100000000000000000000000111110000000000000000111111111111111111110000000001111110000000000001111110000001111000000000000000000000000011110000000001111100001111100111111000000000000000011111000000000000000000000000111110000000000000001111110000000001111100000000000001111000000000000000000111100000000000111110000011111110000000011100000000111110000000000000000000000000000000000000000111111111111111111111111111111110000001111110000000000000000000000000000000011111100000111111000000000000111111000000000000000000000000001111100111111000000000011111000000000111000000000001111100000000000001111111111111111111111100000000001111100000000000011111000000011110000000000000000000000000111100000000011111000011111011111100000000000000000111111000000000000000000000001111100000000000000011111000000000011111000000000000011110000000000000000001111000000000001111110000111111111111111111000000011111100000000000000000000000000000000000000001111111111111111111111111111111000000001111100000000000000000000000000000000111110000001111110000000000011111110000000000000001100000000011111001111100000000000111110000000001111000000000011111000000000001111111111111111111111111000000000011111100000000001111110000000111100000000000000000000000001111000000000111110000111111111110000000000000000000111110000000000000000000000111111000000000000000111110000000000111110000000000000111100000000000000000011110000000000001111100000111111111111111110000000111111000000000000000000000000000000000000000011111111111111111111111111111110000000011111000000000000000000000011000000001111100000011111110000000001111111000000000000001111100000000111100011111000000000001111100000000011110000000000111110000000001111111111111111111111111110000000000111111100000000111111000000001111000000000000000000000000011110000000001111100001111111111000000000000000000001111110000000000000000000001111110000000000000001111100000000001111100000000000001111000000000000000000111100000000000011111100000111111111111111100000011111100000000000000000000000000000000000000000111111100000000000000000000000000000000111111000001111000000000001111100001111110000000011111111000001111111110000000000000011111000000011111000111110000000000011111000000000111110000000001111100000000111111111111100010111111111100000000000111111110000111111110000000011111000000000000000000000000111100000000011111000011111111100000000000000000000011111100000000000000000000111111000000000000000011111000000000011111000000000000011111000000000000000001111000000000000011111100000011111111111100000001111110000000000000000000000000000000000000000001111100000000000000000000000000000000000111111111111110001111100011111111111111100000000011111111111111111111000000000000000111111000000111110001111100000000000111110000000001111100000000011111000000001111111000000000000000011111000000000000111111111111111111000000000111110000000000000000000000001111000000000111110000111111110000000000000000000000011111100000000000000000001111110000000000000000111110000000000111111000000000000111110000000000000000011110000000000000111111100000001111111110000000111111100000000000000000000000000000000000000000011111000000000000000000000000000000000001111111111111100011111100011111111111110000000000011111111111111111100000000000000001111110000001111100111110000000000001111000000000011111000000000111110000000111111000000000000000000111110000000000001111111111111111110000000001111100000000000000000000000011110000000001111100011111111000000001000000000000000111111100000000000000000111111100000000000000001111100000000001111110000000000001111100000000000000000111100000000000000111111100000000000000000000011111110000000000000000000000000000000000000000000111110000000000000000111111111100000000001111111111110001111111100111111111111100000000000011111111111111110000000000000000011111110000111110001111100000000000011110000000000111110000000001111100000011111100000000000000000001111100000000000001111111111111111000000000011111000000000000000000000000111100000000011111000111111100000000111000000000000000111111100000000000000011111110000000000000000011111000000000011111100000000000011111100000000000000001111000000000000000111111100000000000000000001111111000000000000000000000000000000000000000000001111100000000000000001111111111000000000001111111111100111111111100111111111110000000000000011111111111110000000000000000000111111110011111100011111000000000000111100000000001111100000000011111000000111110000000000000000000011111000000000000000111111111111000000000000111110000000000000000000000001111000000000111110011111110000000011110000000000000001111111100000000000011111111000000000000000000111110000000000111111000000000000111111100000000000000011110000000000000000111111110000000000000001111111100000000000000000000000000000000000000000000011111111111111000000011111111110000000000001111111110011111111111000111111111000000000000000001111111110000000000000000000001111111111111111000111110000000000001111000000000011111110000011111110000001111100000000000000000000111110000000000000000011111111000000000000001111100000000000000000000000011110000000001111111111111000000000111110000000000000001111111111000000011111111100000000000000000001111100000000001111111000000000000111111110000000000000111100000000000000000111111111100000000011111111110000000000000000000000000000000000000000000000111111111111111111000011111111100000000000001111111100111111111111001111111100000000000000000000000000000000000000000000000011111111111111110011111000000000000011110000000000111111111111111111100000011110000000000000000000001111100000000000000000000000000000000000000011111000000000000000000000000111100000000001111111111100000000001111100000000000000001111111111111111111111110000000000000000000001111000000000111111111111000000001111111111111111000001111000000000000000000111111111111111111111111111000000000000000000000000000000000000000000000001111111111111111111000011111110000000000000001111110001111111111110001111100000000000000000000000000000000000000000000000000011111111111111000111110000000000000111000000000001111111111111111111000000111100000000000000000000001111000000000000000000000000000000000000000111100000000000000000000000001111000000000011111111110000000000011111000000000000000001111111111111111111111000000000000000000000011110000000011111111111111000000001111111111111110000011110000000000000000000011111111111111111111111100000000000000000000000000000000000000000000000011111111111111111110000011111000000000000000000000000011111111111100000000000000000000000000000000000000000000000000000000000011111111111110001111100000000000000100000000000011111111111111111110000001111000000000000000000000011111000000000000000000000000000000000000001111000000000000000000000000011110000000000111111111000000000000111100000000000000000000111111111111111111100000000000000000000000111000000000111111111111110000000001111111111111100000111100000000000000000000011111111111111111111100000000000000000000000000000000000000000000000000011111111111111111000000011100000000000000000000000000111111111111000000000000000000000000000000000000000000000000000000000000011111111111100001111000000000000000000000000000011111111111111111000000011110000000000000000000000111110000000000000000000000000000000000000011110000000000000000000000000111100000000001111111100000000000001111000000000000000000000011111111111111100000000000000000000000000110000000011111111111111000000000001111111111111000000111000000000000000000000000111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111100000000000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000001111101100000000000111000000000000000000000001111110000000000000000000000000000000000000011000000000000000000000000000110000000000000010100000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000011111111111100000000000000000000100000000000000000000000000000000000000001111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</span><br><span class="line">i = 0</span><br><span class="line">for y in range (0,MAX2):</span><br><span class="line">    for x in range (0,MAX1):</span><br><span class="line">        if(str[i] == &#x27;1&#x27;):</span><br><span class="line">            pic.putpixel([x,y],(0, 0, 0))</span><br><span class="line">        else:</span><br><span class="line">            pic.putpixel([x,y],(255,255,255))</span><br><span class="line">        i = i+1</span><br><span class="line">pic.show()</span><br><span class="line">pic.save(&quot;flag.png&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>运行得到图片</p>
+<img src="/images/unctf/image-20240624210005168.png" alt="图片" width="300" height="200">
+
+<p>原神文字，别问我怎么知道的，ctf玩原玩的</p>
+<img src="/images/unctf/image-20240624210219918.png" alt="图片" width="300" height="200">
+
+<p>对照得到：Sm3rt_y0u_can_do</p>
+<p>第八部分flag:Sm3rt_y0u_can_do</p>
+<h4 id="第九层-渡劫"><a href="#第九层-渡劫" class="headerlink" title="第九层:渡劫"></a>第九层:渡劫</h4><p>解压压缩包</p>
+<img src="/images/unctf/image-20240624210512831.png" alt="图片" width="300" height="200">
+
+<p>先看提示脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># hint9.py</span><br><span class="line"></span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">from random import randint</span><br><span class="line"></span><br><span class="line">p = getPrime(512)</span><br><span class="line">q = getPrime(512)</span><br><span class="line">n = p * q</span><br><span class="line">e = 65537</span><br><span class="line"></span><br><span class="line">list = []</span><br><span class="line">for _ in range(2):</span><br><span class="line">    a, b = randint(0, 2**8), randint(0, 2**256)</span><br><span class="line">    list.append(a * p + b * q)</span><br><span class="line"></span><br><span class="line">password = b&quot;xxxxx&quot;</span><br><span class="line">c = pow(bytes_to_long(password), e, n)</span><br><span class="line">print(f&#x27;&#123;n = &#125;&#x27;)</span><br><span class="line">print(f&#x27;&#123;c = &#125;&#x27;)</span><br><span class="line">print(f&#x27;&#123;list = &#125;&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#n = 107803636687595025440095910573280948384697923215825513033516157995095253288310988256293799364485832711216571624134612864784507225218094554935994320702026646158448403364145094359869184307003058983513345331145072159626461394056174457238947423145341933245269070758238088257304595154590196901297344034819899810707</span><br><span class="line">#c = 46049806990305232971805282370284531486321903483742293808967054648259532257631501152897799977808185874856877556594402112019213760718833619399554484154753952558768344177069029855164888168964855258336393700323750075374097545884636097653040887100646089615759824303775925046536172147174890161732423364823557122495</span><br><span class="line">#list = [618066045261118017236724048165995810304806699407382457834629201971935031874166645665428046346008581253113148818423751222038794950891638828062215121477677796219952174556774639587782398862778383552199558783726207179240239699423569318, 837886528803727830369459274997823880355524566513794765789322773791217165398250857696201246137309238047085760918029291423500746473773732826702098327609006678602561582473375349618889789179195207461163372699768855398243724052333950197]</span><br></pre></td></tr></table></figure>
+
+<p>爆破a求q，使用笛卡尔积</p>
+<p>h1 &#x3D; a1p + b1q h2 &#x3D; a2p + b2q而其中的 a1 和 a2 很小，所以爆破一下可求</p>
+<p>a2h1 – a1h2 &#x3D; (a2b1 – a1b2) q</p>
+<p>发现是 q 的倍数，然后和 n 进行 gcd 即可</p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import *</span><br><span class="line">from itertools import product</span><br><span class="line">from math import gcd</span><br><span class="line">import gmpy2</span><br><span class="line"> </span><br><span class="line">n = 107803636687595025440095910573280948384697923215825513033516157995095253288310988256293799364485832711216571624134612864784507225218094554935994320702026646158448403364145094359869184307003058983513345331145072159626461394056174457238947423145341933245269070758238088257304595154590196901297344034819899810707</span><br><span class="line">c = 46049806990305232971805282370284531486321903483742293808967054648259532257631501152897799977808185874856877556594402112019213760718833619399554484154753952558768344177069029855164888168964855258336393700323750075374097545884636097653040887100646089615759824303775925046536172147174890161732423364823557122495</span><br><span class="line">list = [618066045261118017236724048165995810304806699407382457834629201971935031874166645665428046346008581253113148818423751222038794950891638828062215121477677796219952174556774639587782398862778383552199558783726207179240239699423569318, 837886528803727830369459274997823880355524566513794765789322773791217165398250857696201246137309238047085760918029291423500746473773732826702098327609006678602561582473375349618889789179195207461163372699768855398243724052333950197]</span><br><span class="line">h1, h2 = list</span><br><span class="line"> </span><br><span class="line">for a, b in product(range(2**8), repeat=2):</span><br><span class="line">    q = gcd(a * h1 - b * h2, n)</span><br><span class="line">    if q != 1 and q &lt; n:</span><br><span class="line">        print(q, n)</span><br><span class="line">        break</span><br><span class="line">q = 12951283811821084332224320465045864899191924765916891677355364529850728204537369439910942929239876470054661306841056350863576815710640615409980095344446711</span><br><span class="line"> </span><br><span class="line">p = n // q</span><br><span class="line">e = 65537</span><br><span class="line">d = pow(e, -1, (p - 1) * (q - 1))</span><br><span class="line">m = pow(c, d, n)</span><br><span class="line">print(long_to_bytes(m))</span><br><span class="line">#game_over</span><br></pre></td></tr></table></figure>
+
+<p>解压压缩包 先看txt</p>
+<img src="/images/unctf/image-20240624211103295.png" alt="图片" width="300" height="200">
+
+<p>意思应该是压缩包有东西，图片没东西</p>
+<p>缩包名字叫我们的小秘密嘿嘿,想到oursecret,密码是game_over</p>
+<img src="/images/unctf/image-20240624211429328.png" alt="图片" width="300" height="200">
+
+<p>分离出flag.txt查看</p>
+<img src="/images/unctf/image-20240624211559804.png" alt="图片" width="300" height="200">
+
+<p>第九部分flag:_nine_turns?}</p>
+<p>最后合并flag为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XYCTF&#123;T3e_c0mb1nation_0f_crypt0_and_misc_1s_re6lly_fun!!L1u_and_K1cky_Mu_3re_so_sm4rt!In_just_a_few_m1nutes_they_were_thr0ugh!Sm3rt_y0u_can_do_nine_turns?&#125;</span><br></pre></td></tr></table></figure>
+
+<p>md5加密</p>
+<img src="/images/unctf/image-20240624211837032.png" alt="图片" width="300" height="200">
+
+<p>最后flag为XYCTF{b1bdc6cf06a28b97c91c1c12f0d3bc00}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      <a data-url="http://example.com/2024/06/24/XYCTFmisc/" data-id="clxt08w4o0000fgw3g0bk6c39" data-title="XYCTFmisc复现" class="article-share-link">分享</a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="/images/banner.webp" data-sizes="auto" alt="黑盾杯2024misc复现" class="lazyload">
+          
+        
+        <a href="/2024/06/24/heidun2024misc/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            黑盾杯2024misc复现
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="GeekChallenge2023 misc复现" class="lazyload">
+        
+      
+      <a href="/2024/06/23/jike2023misc/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          GeekChallenge2023 misc复现
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#game"><span class="toc-number">1.</span> <span class="toc-text">game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-%E9%9A%90%E5%86%99"><span class="toc-number">2.</span> <span class="toc-text">ez_隐写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EZ-Base1024-2"><span class="toc-number">3.</span> <span class="toc-text">EZ_Base1024*2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F-%E7%AD%BE%E5%88%B0"><span class="toc-number">4.</span> <span class="toc-text">真&gt;签到</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%8A%E5%8D%9A%E5%A3%AB"><span class="toc-number">5.</span> <span class="toc-text">熊博士</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BA%BF%E8%BF%BD%E8%B8%AA"><span class="toc-number">6.</span> <span class="toc-text">网线追踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCPL"><span class="toc-number">7.</span> <span class="toc-text">TCPL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#osint1"><span class="toc-number">8.</span> <span class="toc-text">osint1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Osint2"><span class="toc-number">9.</span> <span class="toc-text">Osint2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ez-osint"><span class="toc-number">10.</span> <span class="toc-text">Ez_osint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%96%AF%E7%8B%82%E5%A4%A7%E6%9D%82%E7%83%A9%EF%BC%81%E4%B9%9D%E8%BD%AC%E5%8A%9F%E6%88%90"><span class="toc-number">11.</span> <span class="toc-text">疯狂大杂烩！九转功成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82-%E7%82%BC%E6%B0%94"><span class="toc-number">11.1.</span> <span class="toc-text">第一层:炼气</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82-%E7%AD%91%E5%9F%BA"><span class="toc-number">11.2.</span> <span class="toc-text">第二层 :筑基</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82-%E7%BB%93%E4%B8%B9"><span class="toc-number">11.3.</span> <span class="toc-text">第三层:结丹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%B1%82-%E5%85%83%E5%A9%B4"><span class="toc-number">11.4.</span> <span class="toc-text">第四层:元婴</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%B1%82-%E5%8C%96%E7%A5%9E"><span class="toc-number">11.5.</span> <span class="toc-text">第五层:化神</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E5%B1%82-%E7%82%BC%E8%99%9A"><span class="toc-number">11.6.</span> <span class="toc-text">第六层:炼虚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E5%B1%82-%E5%90%88%E4%BD%93"><span class="toc-number">11.7.</span> <span class="toc-text">第七层:合体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E5%B1%82-%E5%A4%A7%E4%B9%98"><span class="toc-number">11.8.</span> <span class="toc-text">第八层:大乘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E5%B1%82-%E6%B8%A1%E5%8A%AB"><span class="toc-number">11.9.</span> <span class="toc-text">第九层:渡劫</span></a></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">15</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        yiqing
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          27.2k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          02:00
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#game"><span class="toc-number">1.</span> <span class="toc-text">game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ez-%E9%9A%90%E5%86%99"><span class="toc-number">2.</span> <span class="toc-text">ez_隐写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EZ-Base1024-2"><span class="toc-number">3.</span> <span class="toc-text">EZ_Base1024*2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F-%E7%AD%BE%E5%88%B0"><span class="toc-number">4.</span> <span class="toc-text">真&gt;签到</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%8A%E5%8D%9A%E5%A3%AB"><span class="toc-number">5.</span> <span class="toc-text">熊博士</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BA%BF%E8%BF%BD%E8%B8%AA"><span class="toc-number">6.</span> <span class="toc-text">网线追踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCPL"><span class="toc-number">7.</span> <span class="toc-text">TCPL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#osint1"><span class="toc-number">8.</span> <span class="toc-text">osint1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Osint2"><span class="toc-number">9.</span> <span class="toc-text">Osint2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ez-osint"><span class="toc-number">10.</span> <span class="toc-text">Ez_osint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%96%AF%E7%8B%82%E5%A4%A7%E6%9D%82%E7%83%A9%EF%BC%81%E4%B9%9D%E8%BD%AC%E5%8A%9F%E6%88%90"><span class="toc-number">11.</span> <span class="toc-text">疯狂大杂烩！九转功成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82-%E7%82%BC%E6%B0%94"><span class="toc-number">11.1.</span> <span class="toc-text">第一层:炼气</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82-%E7%AD%91%E5%9F%BA"><span class="toc-number">11.2.</span> <span class="toc-text">第二层 :筑基</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82-%E7%BB%93%E4%B8%B9"><span class="toc-number">11.3.</span> <span class="toc-text">第三层:结丹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E5%B1%82-%E5%85%83%E5%A9%B4"><span class="toc-number">11.4.</span> <span class="toc-text">第四层:元婴</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%B1%82-%E5%8C%96%E7%A5%9E"><span class="toc-number">11.5.</span> <span class="toc-text">第五层:化神</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E5%B1%82-%E7%82%BC%E8%99%9A"><span class="toc-number">11.6.</span> <span class="toc-text">第六层:炼虚</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E5%B1%82-%E5%90%88%E4%BD%93"><span class="toc-number">11.7.</span> <span class="toc-text">第七层:合体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E5%B1%82-%E5%A4%A7%E4%B9%98"><span class="toc-number">11.8.</span> <span class="toc-text">第八层:大乘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E5%B1%82-%E6%B8%A1%E5%8A%AB"><span class="toc-number">11.9.</span> <span class="toc-text">第九层:渡劫</span></a></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="yiqing" class="lazyload">
+  <div class="sidebar-author-name">yiqing</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">15</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/jquery@3.7.1/dist/jquery.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (document.querySelectorAll('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(document.querySelectorAll('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0-beta.1' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
